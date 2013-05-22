@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!--[if lt IE 7]>
+      <script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE7.js"></script>
+    <![endif]-->
+    <!--[if lt IE 8]>
+      <script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE8.js"></script>
+    <![endif]-->
+    <!--[if lt IE 9]>
+      <script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE9.js"></script>
+    <![endif]-->
+    <script type="text/javascript">
+      if (!window.console) console = {log: function() {}};
+    </script>
+    <link rel=stylesheet href="epht_demo.css" type="text/css" />
+<!-- 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript" src="epht_demo.js"></script>
+     -->
+  </head>
+  
+  <body>
+    <header>
+      <nav>
+        <a href="http://oregon-epht-demo.googlecode.com/svn/trunk/epht_demo.html">Oregon EPHT Demo</a>
+        <a href="user.html">User Demo</a>
+        <a href="http://oregon-epht-demo.googlecode.com/svn/trunk/slopegraph.html">Power User Demo</a>
+        <a href="http://oregon-epht-demo.googlecode.com/svn/trunk/snap_demo.html">Oregon SNAP Demo</a>
+        <a href="http://oregon-epht-demo.googlecode.com/svn/trunk/seachable_map/index.html">SNAP Retailer Map</a>
+        <a href="http://epht.oregon.gov">EPHT Official Site</a>
+      </nav>
+    </header>
+    <section>
+      <div id = "screenshots">
+        <div class="wrapper">
+          <div class = "user_writeup">
+            <p>A user can browse the datasetes and visualizations on an official Oregon data warehouse site. </p>
+
+            <p>As they explore, they might want to explore the data in more depth and compare some of the datasets they are viewing. For example, the user might notice that there are datasets for Asthma broken down by gender. They might be curious to know how Asthma rates vary county to county.</p>
+
+            <p>By clicking the "Explore this dataset" button, they are taken directly to the Fusion Table where the data is stored</p>
+          </div>
+          <img class = "user_img" src="img/epht_f.png"/>
+        </div>
+        <div class="wrapper">
+          <div class = "user_writeup">
+            <p>The user now is viewing the data in Fusion Tables where they are free to fully interact with the data, but not make any changes to the original data. The data owner's maps and charts are available to the user, as are filters and the ability to merge the table with other datasets</p>
+
+            <p>Since this user was interested in comparing Male and Female Asthma rates, they can create a merged table joining these two datasets. </p>
+          </div>
+          <img class = "user_img" src="img/epht_ft.png"/>
+        </div>
+        <div class="wrapper">
+          <div class = "user_writeup">
+            <p>Creating a merged table allows the user to explore data on their own and gain a more full understanding of the whole story around that data. </p>
+            <p>Merging tables also has the added benefit of maintaining the source attribution, so the new table cites the original. Also, changes to the original by the owner are reflected in the merged tables users created. So if the owner wants to update the data with a new year's worth of statistics or an error was found in the data, the owner of the original table can update the table, and those changes get pushed out to the users.</p>
+          </div>
+          <img class = "user_img" src="img/merged.png"/>
+        </div>
+        <div class="wrapper">
+          <div class = "user_writeup">
+            <p>Now that the user has a merge of Male and Female Asthma rates by County in Oregon, they can explore the data through visualization, much like on the original website. This example graph demonstrates how the user now has the ability to compare Male and Female Asthma rates with minimal effort and no downloading of data to their own computer.</p>
+            <p>These creations can then be shared via the web using the embedd links, as is done here.</p>
+          </div>
+          <iframe class = "user_chart" src="https://www.google.com/fusiontables/embedviz?&containerId=gviz_canvas&viz=GVIZ&q=select%20'Geography'%2C%20'col5%3E%3E0'%2C%20'col5%3E%3E2'%20from%201tqNc57DPVWzYoPkSitQIPxDy1KuqmHAWULazn7Q%20order%20by%20'Geography'%20limit%20100&t=BAR&gco_width=1040&gco_height=800&gco_chartArea=%7B%22height%22%3A%22700%22%2C%22top%22%3A%2250%22%2C%22left%22%3A%22100%22%7D&gco_hAxis=%7B%22viewWindowMode%22%3A%22pretty%22%2C%22viewWindow%22%3A%7B%7D%2C%22useFormatFromData%22%3Atrue%2C%22format%22%3A%22%22%7D&gco_vAxis=%7B%22format%22%3A%22%22%7D&gco_vAxes=%5B%7B%22title%22%3Anull%2C%22minValue%22%3Anull%2C%22maxValue%22%3Anull%2C%22viewWindowMode%22%3A%22pretty%22%2C%22viewWindow%22%3A%7B%22max%22%3Anull%2C%22min%22%3Anull%7D%2C%22useFormatFromData%22%3Atrue%2C%22textStyle%22%3A%7B%22color%22%3A%22%23222%22%2C%22fontSize%22%3A%2208%22%7D%7D%2C%7B%22viewWindowMode%22%3A%22pretty%22%2C%22viewWindow%22%3A%7B%7D%2C%22useFormatFromData%22%3Atrue%7D%5D&gco_curveType=&gco_animation=%7B%22duration%22%3A500%7D&gco_booleanRole=certainty&gco_lineWidth=2&gco_series=%7B%220%22%3A%7B%22hasAnnotations%22%3Atrue%7D%7D&gco_title=Comparison%20of%20Male%20(Blue)%20and%20Female%20(Red)%20Asthma%20Rates&gco_legend=none&gco_strictFirstColumnType=false" frameborder="0"  scrolling="no"></iframe>
+      </div>
+      <div class="wrapper">
+        <div class = "user_writeup">
+          <p>Alternatively, maybe the user is interested in comparing the Heart Attack data found on the EPHT website with other datasets from other data providers. Through Fuison Tables, the user can easily merge Oregon's data with data from other sources. </p>
+          <p>In this example, the user can merge the EPHT Heart Attack data with an National Obesity dataset from the CDC.</p>
+        </div>
+        <img class = "user_img" src="img/obesity.png"/>
+        </div>
+        <div class = "user_writeup">
+          <p>The user can create this graph comparing the difference between the rates for Heart Attacks and Obesity. Although the heart attack rates vary across counties, the obesity rates seem pretty steady and there doesnt seem to be a very strong visual correlation between the rates.</p>
+        </div>
+        <iframe class = "user_chart" src="https://www.google.com/fusiontables/embedviz?&containerId=gviz_canvas&viz=GVIZ&q=select%20'Geography'%2C%20'col5%3E%3E0'%2C%20'col11%3E%3E2'%20from%201hvI2i5JOsSDysTa4J9_QBiuZQvEYJBhDRV-LCQY%20order%20by%20'2007'%20DESC%20limit%20100&t=BAR&gco_width=1040&gco_height=800&gco_chartArea=%7B%22height%22%3A%22700%22%2C%22top%22%3A%2250%22%2C%22left%22%3A%22100%22%7D&gco_hAxis=%7B%22viewWindowMode%22%3A%22pretty%22%2C%22viewWindow%22%3A%7B%7D%2C%22useFormatFromData%22%3Atrue%2C%22format%22%3A%22%22%7D&gco_vAxis=%7B%22format%22%3A%22%22%7D&gco_vAxes=%5B%7B%22title%22%3Anull%2C%22minValue%22%3Anull%2C%22maxValue%22%3Anull%2C%22viewWindowMode%22%3A%22pretty%22%2C%22viewWindow%22%3A%7B%22max%22%3Anull%2C%22min%22%3Anull%7D%2C%22useFormatFromData%22%3Atrue%2C%22textStyle%22%3A%7B%22color%22%3A%22%23222%22%2C%22fontSize%22%3A%2208%22%7D%7D%2C%7B%22viewWindowMode%22%3A%22pretty%22%2C%22viewWindow%22%3A%7B%7D%2C%22useFormatFromData%22%3Atrue%7D%5D&gco_curveType=&gco_animation=%7B%22duration%22%3A500%7D&gco_booleanRole=certainty&gco_lineWidth=2&gco_series=%7B%220%22%3A%7B%22hasAnnotations%22%3Atrue%7D%7D&gco_title=Comparison%20of%20Heart%20Attack%20Rate%20(Blue)%20and%20Obesity%20(Red)%20Rates&gco_legend=none&gco_strictFirstColumnType=false" frameborder="0"  scrolling="no"></iframe>
+        <iframe class = "user_chart" src="https://www.google.com/fusiontables/embedviz?gco_hAxis=%7B%22title%22%3A%22Obesity%22%7D&gco_vAxis=%7B%22title%22%3A%222007%20Heart%20Attack%22%7D&rmax=250&q=select+col11%3E%3E2%2C+col5%3E%3E0+from+1hvI2i5JOsSDysTa4J9_QBiuZQvEYJBhDRV-LCQY&qrs=+where+col11%3E%3E2+%3E%3D+&qre=+and+col11%3E%3E2+%3C%3D+&qe=+order+by+col11%3E%3E2+asc&containerId=gviz_canvas&viz=GVIZ&t=SCATTER&width=800&height=800" frameborder="0"  scrolling="no"></iframe>
+      </div>
+      <!-- <iframe id = 'table' src="" frameborder="0"></iframe> -->
+    </section>
+  </body>
+</html>

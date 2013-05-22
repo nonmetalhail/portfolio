@@ -1,0 +1,154 @@
+html{
+  width: 1040px;
+  margin-left:auto;
+  margin-right:auto;
+  background:#fff;
+}
+
+body{
+  width:100%;
+  height: 100%;
+}
+
+section{
+  width: 1010px;
+  padding:15px;
+  margin-top:3px;
+  background:#fff;
+  background: -ms-linear-gradient(top, #74c6ff, #FFF);
+  background: -moz-linear-gradient(top, #74c6ff, #FFF);
+  background: -webkit-gradient(linear, left top, left 70%, from(#74c6ff), to(#fff));
+  background: linear-gradient(to bottom, #FFF 70%,#74c6ff 100%);
+}
+
+header{
+  width: 1040px;
+  height: 35px;
+  background: #fccb76;
+  margin-top:10px;
+  display: table-cell;
+  vertical-align: middle;
+}
+
+a{
+  font: bold 14px arial,sans-serif ;
+  color:black;
+  margin-left: 15px;
+  text-decoration:none;
+}
+
+a:hover{
+  color:white;
+}
+
+.chart { 
+  width:49%;
+  scrolling:no; 
+  frameBorder:0;
+  border: solid 4px white;
+  background: #fff;
+}
+
+#map{
+  float:left;
+  height:380px;
+}
+
+#graph{
+  height:400px;
+  float:right;
+}
+
+#table{
+  width: 100%;
+  min-height: 850px;
+  scrolling:auto; 
+  frameborder:0;
+  border: solid 1px lightgrey;
+  background: #fff;
+  margin-top:10px;
+}
+
+#table2{
+  width: 100%;
+  min-height: 975px;
+  scrolling:auto; 
+  frameborder:0;
+  border: solid 1px lightgrey;
+  background: #fff;
+  margin-top:10px;
+}
+
+#title{
+  font: bold 16px Verdana, arial,sans-serif;
+  margin: 8px 5px;
+}
+
+.wrapper{
+  width:100%;
+  height:500px;
+  clear:both;
+  display:block;
+  min-height:300px;
+}
+
+.user_chart { 
+  width:70%; 
+  height:800px;
+  float:right;
+  scrolling:no; 
+  frameBorder:0;
+  border: solid 4px white;
+  background: #fff;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.user_writeup{
+  width: 28%;
+  float:left;
+  font: 14px Verdana, arial,sans-serif;
+}
+
+.user_img{
+  width: 70%;
+  float:right;
+  margin-bottom:10px;
+}
+
+#legend{
+  background: white;
+  width:492px;
+  height: 20px;
+  margin: 0 0px;
+  position: absolute;
+  font: 11px arial,sans-serif ;
+  z-index:0;
+  top:500px;
+  padding: 7px 0 0 10px;
+
+}
+
+.legend_box{
+  width:10px;
+  height:10px;
+  display:inline;
+  z-index:1;
+  position: absolute;
+  top: 10px;
+}
+#legend_min{
+  background: #c0cedd;
+}
+
+#legend_avg{
+  background: #709ec9;
+}
+
+#legend_max{
+  background: #1a5788;
+}
+
+.legend_text{
+  margin: 10px 10px 5px 15px; 
+}

@@ -1,0 +1,17 @@
+<html>
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script type="text/javascript" src="js/ig-min.js"></script>
+    <!--<script type="text/javascript" src="js/oauth.js"></script>-->
+    <script type="text/javascript" src="js/location.js"></script>
+    <script type="text/javascript" src="js/instaphoto.js"></script>
+  </head>
+  <body>
+    
+    <div id="locationData">Location</div>
+    <input type="button" onclick="run()" value="Location"></input>
+    <section id = "photos"></section>
+    <input type="button" onclick="do_login()" value="Oauth"></input>
+    <div id="ig-root"></div>
+  </body>
+</html>

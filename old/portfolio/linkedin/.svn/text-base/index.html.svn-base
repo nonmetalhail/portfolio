@@ -1,0 +1,14 @@
+<html>
+  <head>
+    <script type="text/javascript" src="js/ig-min.js"></script>
+    <!--<script type="text/javascript" src="js/oauth.js"></script>-->
+    <script type="text/javascript" src="js/location.js"></script>
+  </head>
+  <body>
+    
+    <div id="locationData">Location</div>
+    <input type="button" onclick="myPhiltr.getUserLocation()" value="Location"></input>
+    <input type="button" onclick="do_login()" value="Oauth"></input>
+    <div id="ig-root"></div>
+  </body>
+</html>

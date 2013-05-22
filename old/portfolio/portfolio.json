@@ -1,0 +1,384 @@
+{
+  "xfit":{
+    "title":"LockerX: A CrossFit programming and tracking app",
+    "thumb":{
+      "src":"../images/xf_thumb.jpg",
+      "alt":"CrossFit",
+      "title":"LockerX: A CrossFit App"
+    },
+    "date":"Spring 2012",
+    "class":"UI Design and Development",
+    "site":[
+      {
+        "title":"Final Website",
+        "src":"http://www.crossmetrx.com/"
+      },
+      {
+        "title":"Balsamiq Mockup",
+        "src":"/portfolio/xf_balsamiq/login.html"
+      }
+    ],
+    "team":[
+      {
+        "name":"Andrew Chao",
+        "site":"http://www.acchao.com/"
+      },
+      {
+        "name":"Gilbert Hernandez",
+        "site":"http://thegilby.com/"
+      },
+      {
+        "name":"Laura Wishingrad",
+        "site":"http://laurawishingrad.com/"
+      },
+      {
+        "name":"Taeil Kwak"
+      }
+    ],
+    "keywords":"User Research, Rapid Prototyping, Javascript, jQuery, dJango, d3.js",
+    "text":[
+      {
+        "p":"CrossFit is a fitness routine which combines multiple other fitness styles. Some key aspects of CrossFit is that the workout routines change daily and there is a focus on tracking individual progress."
+      },
+      {
+        "p":[
+          {"span":"The goal of this project was to extend the CrossFit community such that coaches and members can have a better platform for interaction. In particular, we:"},
+          {
+            "ul":[
+              {"li":"Created a tool for coaches to program workouts"},
+              {"li":"Provided a simple way for members to record their performance"},
+              {"li":"Displayed performance data in a compelling, visual way"}
+            ]
+          }
+        ]
+      },
+      {
+        "p":[
+          {"span":"Once we had chosen these user groups, we have moved onto developing some rapid prototypes of three main features: "},
+          {
+            "ul":[
+              {"li":"A web app to programming workouts for the coaches (which I have focused on)"},
+              {"li":"A web app to view gym and user stats (for coaches and gym members)"},
+              {"li":"A mobile app to log member's workout performance."}
+            ]
+          }
+        ]
+      },
+      {
+        "p":"We iterated through many designs moving from paper prototypes, balsamiq mock-ups, and finally, a fully functional html site. After each iteration, we conducted formative and heuristic evaluations on these prototypes with designers and with CrossFit coaches. "
+      },
+      {
+        "p":"The website was built using a django backend and jQuery and jQuery UI frontend. The radar graoh visualizations were built using d3."
+      }
+    ],
+    "images":[
+      {
+        "src":"../images/xf_programming_page.png",
+        "caption":"Website Programming Page"
+      },
+      {
+        "src":"../images/xf_vis.png",
+        "caption":"d3 Radar Visualizations of Workouts"
+      },
+      {
+        "src":"../images/xf_front.png",
+        "caption":"Website Front Page"
+      },
+      {
+        "src":"../images/xf_coach.png",
+        "caption":"Website Coach Pannel Page"
+      },
+      {
+        "src":"../images/xf_sketch.jpg",
+        "alt":"Brainstorming sketches",
+        "caption":"Elliot's Brainstorming sketches of the Programming Page"
+      },
+      {
+        "src":"../images/xf_programming_prototype_v.jpg",
+        "caption":"Illustrator Concept 1"
+      },
+      {
+        "src":"../images/xf_programming_prototype_h.jpg",
+        "caption":"Illustrator Concept 2"
+      },
+      {
+        "src":"../images/xf_programming_bal.png",
+        "caption":"Balsamiq Programming Mockup"
+      },
+      {
+        "src":"../images/xf_ProgrammingSequenceModel.png",
+        "caption":"Programming Sequence model"
+      },
+      {
+        "src":"../images/xf_FlowModelCoach.png",
+        "caption":"Coach Flow Model"
+      }
+    ]
+  },
+  "eplus":{
+    "title":"Energy Plus Parametric Simulation Viewer",
+    "thumb":{
+      "src":"../images/eplus_thumb.jpg",
+      "alt":"Energy Plus Simulation Viewer",
+      "title":"Energy Plus Simulation Viewer"
+    },
+    "date":"Spring 2012",
+    "keywords":"Information Visualization, d3.js, Javascript, jQuery, VBA",
+    "site":[
+      {
+        "title":"Website Viewable Here",
+        "src":"eplus/eplusViewer.html"
+      }
+    ],
+    "text":[
+      {
+        "p":[
+          {"span":"In this class project for Info Vis, I created a viewer to analyze results from energy simulations I have been running as part of my Building Science Masters thesis. It uses the "},
+          {
+            "a":{
+              "src":"http://mbostock.github.com/d3/",
+              "text":"d3 "
+            }
+          },
+          {"span":"javascript library to compare two simulations and generates a series of small multiples bar charts. "}
+        ]
+      },
+      {
+        "p":"The data shows EUI (energy by square-foot) data, broken down by end use and separated by representative cities. The cities themselves are arranged in a matrix on the page based on climate zone and climate type (see ASHRAE map). Blanks exist because there are no such climate zone-type combinations in the US."
+      },
+      {
+        "p":"Hovering over the bars displays a pop-up showing total EUI, end use EUI,  and the percentage that end use represents."
+      },
+      {
+        "p":"Although the graphs themselves are done, this is still a work in progress. I intend to provide key differences between the two chosen simulations which will appear as you select a simulation."
+      },
+      {
+        "p":[
+          {"span":"This is live and can be viewed "},
+          {
+            "a":{
+              "src":"eplus/eplusViewer.html",
+              "text":"here. "
+            }
+          }
+        ]
+      }
+    ],
+    "images":[
+      {
+        "src":"../images/eplus_graph.png",
+        "alt":"small multiples",
+        "caption":"A pair of small multiple with the on-hover feature"
+      },
+      {
+        "src":"../images/eplus_site.png",
+        "alt":"",
+        "caption":"Simulation Viewer Site"
+      },
+      {
+        "src":"../images/eplus_map.gif",
+        "alt":"ASHRAE Climate Zone Map",
+        "caption":"ASHRAE Climate Zone Map illustrating the climate zone-climate type relationship"
+      }
+    ]
+  },
+  "kisok":{
+    "title":"Thermal Comfort Transient Survey Kiosk",
+    "thumb":{
+      "src":"../images/kiosk_thumb.jpg",
+      "alt":"Survey Kiosk",
+      "title":"Thermal Comfort Survey Kiosk"
+    },
+    "date":"Spring 2009 to Fall 2009",
+    "keywords": "Survey design and analysis, Flash/Action Script 3, PHP",
+    "text":[
+      {
+        "p":"My primary project with the Center for the Built Environment (CBE) was designing and building a kiosk system to administer thermal comfort surveys to transient occupants (people who occupy a space for a short period of time, say under 30 min). Typically, surveying this type of building occupant is difficult, requiring a lot of time and money spent in data collection. The purpose of building the kiosk is that it would allow for self-administered surveys and drastically reduce the cost of gathering data.The caveat is that the survey had to be short and intuitive enough for any passerby to be able to take it without assistance."
+      },
+      {
+        "p":"The survey kiosk is a computer with a touch screen interface and running a survey I developed in Flash (come on, give me a break! It was a couple years ago before Flash fell from grace). The Flash front-end communicated with a PHP back-end to record the survey results. Attached to the computer is a temperature & humidity sensor to record the ambient conditions inside the building. The PHP script also queried the data from this sensor and stamped all responses with the environmental conditions."
+      },
+      {
+        "p":"The survey questions and various iterations of the design can be seen in the photos. Design style and color schemes varied as the project moved forwards. User testing was performed on later iterations to ensure clarity of the survey questions and ease of interaction. Effects from these testings can particularly be seen in the readdition of the temperature scale bars from the first mockup to the final design, and in the changes from the functional mockup of Survey Page 2 to the final design. "
+      },
+      {
+        "p":"Also shown are images of the posters created to brand and advertise the kiosk in the building and one graph of some data gathered by the kiosk. Finally, the predecessor of the kiosk is depicted, which shows a push-button box capable of asking only one question and thereby yielding very ambiguous data...."
+      },
+      {
+        "p":"Special thanks should go to Katie Ackerly for her assistance in designing the posters."
+      }
+    ],
+    "images":[
+      {
+        "src":"../images/dr_kiosk.jpg",
+        "caption":"Survey Kiosk in situ in a Cost Plus store"
+      },
+      {
+        "src":"../images/dr_survey_intro.jpg",
+        "caption":"Suvey Front Screen"
+      },
+      {
+        "src":"../images/dr_q1.jpg",
+        "caption":"Survey Page 1"
+      },
+      {
+        "src":"../images/dr_q1_selected.jpg",
+        "caption":"Survey Page 1 with User Selections in Red"
+      },
+      {
+        "src":"../images/dr_q2.jpg",
+        "caption":"Survey Page 2"
+      },
+      {
+        "src":"../images/dr_q2_mock1.jpg",
+        "alt":"Functional mockup of Survey Page 2",
+        "caption":"Functional mockup of Survey Page 2: Selections are in red. Changes to the final version were made after user testing"
+      },
+      {
+        "src":"../images/dr_kiosk_brading.jpg",
+        "caption":"Kiosk Posters"
+      },
+      {
+        "src":"../images/dr_q1_mock1.jpg",
+        "alt":"Conceptual mockup of Survey Page 1",
+        "caption":"Conceptual mockup of Survey Page 1: The primary role of this early mockup was studying button size and information density. The Temperature bar was removed after this for fear that it was not intuitive to click on it. User testing resulted in it being added back in the final version"
+      },
+      {
+        "src":"../images/dr_q1_mock2.jpg",
+        "alt":"Iteration mockup of Survey Page 1",
+        "caption":"Iteration mockup of Survey Page 1 where a new look and feel was being explored"
+      },
+      {
+        "src":"../images/dr_graph.png",
+        "alt":"Graph of results",
+        "caption":"Graph of results: Temperature on x-axis; Comfort score on y-axis. Blue dots indicate test days."
+      },
+      {
+        "src":"../images/dr_old_poll.jpg",
+        "alt":"Original Push Button survey",
+        "caption":"Original Push Button survey, predecessor to the Kiosk"
+      }
+    ]
+  },
+  "psychrometric":{
+    "title":"Excel Psychrometric Chart",
+    "thumb":{
+      "src":"../images/excel_psych_thumb.jpg",
+      "alt":"Excel Psychrometric Chart",
+      "title":"Excel Psychrometric Chart"
+    },
+    "date":"Summer 2010",
+    "keywords":"VBA, Work Models",
+    "text":[
+      {
+        "p":[
+          {"span":"In this project, I created a "},
+          {
+            "a":{
+              "src":"http://en.wikipedia.org/wiki/Psychrometrics",
+              "text":"psychrometric chart "
+            }
+          },
+          {"span":"in Excel. When studying the built environment, it is often useful to graph environmental data on one of these charts and contrast it to HVAC setpoints and industry defined thermal comfort zones. "}
+        ]
+      },
+      {
+        "p":"In my former lab, Center for the Built Environment (CBE), researchers would often plot data on psychrometric charts manually by drawing points with tools such as Adobe Illustrator or MS Powerpoint. Although software tools with psychrometric chart graphing capabilities do exist, they are tailored towards mechanical engineers and packaged with many expensive and overly complicated add-ons. What my lab needed was a cheap, straightforward, and easy to use option. "
+      },
+      {
+        "p":"In response to this need for an intuitive and automatic psychrometric graphing tool, I decided to build one. Originally, I was going to use it as an opportunity to further my Processing skills. However, as I began to consider the problem in more depth, I realized Processing was a silly choice. In the end, I would end up with a pretty, but harder to use product&#x2014;one that interrupted the researchers' work flow. "
+      },
+      {
+        "p":"The researchers at CBE are all well versed in Excel and use it for most of their data analysis and graphing. Rather than making the researchers export their data from Excel and into my Processing program, it made much more sense just to build a tool in Excel using VBA. This would allow for a more seamless flow from the researchers' data analysis, to visualizing their data."
+      },
+      {
+        "p":[
+          {"span":"The psychrometric chart allows the researcher to specify the chart ranges and increments for Temperature on the "},
+          {"em":"x"},
+          {"span":"-axis and Humidity Ratio on the"},
+          {"em":"y"},
+          {"span":"-axis. Researchers can also specify what increment they want for the Wet Bulb lines and the Relative Humidity curves. I also included a converter, which can take Relative Humidity data (which is what is usually collected) and convert it to Humidity Ratio data (which is the "},
+          {"em":"y"},
+          {"span":"-axis). Finally, I wrote a method to allow researchers to specify a shaded zone; in this way, researchers can easily specify important regions of the chart such as the thermal comfort zones. "}
+        ]
+      },
+      {
+        "p":"Since this chart uses VBA to create the graph and axillary axes, researchers can easily graph their data using the native Excel functions they are accustomed to. "
+      }
+    ],
+    "images":[
+      {
+        "src":"../images/excel_psych2.jpg",
+        "caption":"Excel Psychrometric Chart"
+      },
+      {
+        "src":"../images/excel_psych_data.jpg",
+        "caption":"Psychrometric Chart with data graphed using Excel's standard graphing functions"
+      },
+      {
+        "src":"../images/excel_psych_fill.jpg",
+        "caption":"Psychrometric Chart with data and shaded comfort zone. The comfort zones are first graphed, and then converted into a shaded zone"
+      },
+      {
+        "src":"../images/excel_psych_rh.jpg",
+        "caption":"Relative Humidity to Humidity Ratio converter tool"
+      }
+    ]
+  },
+  "shade":{
+    "title":"Shade",
+    "thumb":{
+      "src":"../images/shade_thumb.jpg",
+      "alt":"Shade",
+      "title":"Shade"
+    },
+    "date":"Summer 2010",
+    "keywords":"VBA, Work Models",
+    "text":[
+      {
+        "p":"While teaching building science basics to undergraduate students, we introduced them to basic simulation software. One such program is a design tool created in Excel called Shade. Shade takes basic inputs about a building and outputs suggested percent shading requirements for different times of the year. However, the old version of Shade did not accomplish many of the goals it set out to accomplish."
+      },
+      {
+        "p":"First, Shade is intended as a design tool; all design is an iterative process but Shade did not easily support iteration and the ability to contrast two designs. Second, Shade required annual setup by the instructors. Each year, the final project guidelines would change and instructors had to manually input weather data for the chosen climates&#x2014;a very tedious process. Third, Shade failed as an education tool in that it provided suggestions for when to optimally shade windows, but it did not concisely demonstrate how input effects the overall performance of the building. Similarly, inputs were grouped haphazardly rather than in a logical, consistent manor which would aid student's understanding of the underlying theories. Finally, the algorithms which Shade ran were obfuscated by use of linked tables making it difficult for advanced students who wanted to understand the process of running these simulations. "
+      },
+      {
+        "p":"After teaching Arch 140 and being frustrated by these limitations, I decided to take it upon myself to redesign and recode Shade. I decided to leave it in Excel and use VBA as it was easily accessible to students and there would be no compatibility issues (Save for the lack of VBA support for Office 2008 for Mac of which I was unaware). Since I would not be around to constantly fix any issues that might arise with changing operating systems and versions, it seemed that Excel would be safe. Also, since the VBA code would be viewable by anyone running the program, it would support the ability for advanced students to learn the process running in the back-end."
+      },
+      {
+        "p":"To improve it's flexibility as a design tool, I added space for two design iterations and the ability to compare the two designs. Users can also copy values from one design to another, allowing students to perform a design iteration, analyze, and immediate run another comparison to a new design. Inputs were groups by category to both make entry easier, and to reinforce the underlying concepts presented in the course."
+      },
+      {
+        "p":"To make it easier on instructors and avoid tedious data entry every year, I added a 'Load Weather File' button which automatically loads the necessary data from a specified file."
+      },
+      {
+        "p":"Finally, I included graphs that visualized the the loads on the building as a result of the student's design choices. This allows students to assess the trade-offs and true impacts of their design on end energy use."
+      },
+      {
+        "p":"Again, a shoutout goes to Katie Ackerly for assisting with the graphic design choices and aiding in developing the work models"
+      }
+    ],
+    "images":[
+      {
+        "src":"../images/shade_top.jpg",
+        "caption":"Shade Redesign; two design options and inputs are grouped by type",
+        "alt":"Shade Redesign"
+      },
+      {
+        "src":"../images/shade_grpah.jpg",
+        "caption":"New Shade Graphs and Data Visualization"
+      },
+      {
+        "src":"../images/shade_grpah2.jpg",
+        "caption":"Comparing Design A and Design B shading needs"
+      },
+      {
+        "src":"../images/shade_old.png",
+        "caption":"Old version of Shade for comparison"
+      },
+      {
+        "src":"../images/shade_old2.png",
+        "caption":"Old version of shading needs table for comparison"
+      }
+    ]
+  }
+}

@@ -1,0 +1,104 @@
+{ 
+  "xfit":{
+    "title":"LockerX: A CrossFit programming and tracking app",
+    "thumb":{
+      "src":"../images/xf_thumb.jpg",
+      "alt":"CrossFit",
+      "title":"LockerX: A CrossFit App"
+    },
+    "date":"Spring 2012",
+    "class":"UI Design and Development",
+    "site":{
+      "title":"Final Website",
+      "src":"http://www.crossmetrx.com/"
+    },
+    "team":[
+      {
+        "name":"Andrew Chao",
+        "site":"http://www.acchao.com/"
+      },
+      {
+        "name":"Gilbert Hernandez",
+        "site":"http://thegilby.com/"
+      },
+      {
+        "name":"Laura Wishingrad",
+        "site":"http://laurawishingrad.com/"
+      },
+      {
+        "name":"Taeil Kwak"
+      },
+    ],
+    "keywords":"User Research, Rapid Prototyping, Javascript, jQuery, dJango, d3.js",
+    "text":[
+      {
+        "p":"CrossFit is a fitness routine which combines multiple other fitness styles. Some key aspects of CrossFit is that the workout routines change daily and there is a focus on tracking individual progress."
+      },
+      {
+        "p":"The goal of this project is to extend the CrossFit community such that coaches and members can have a better platform for interaction. In particular, we will:"
+      },
+      {
+        "ul":[
+          {"li":"Create a tool for coaches to program workouts"},
+          {"li":"Providing a simple way for members to record their performance"},
+          {"li":"Displaying performance data in a clear and relevant way"}
+        ]
+      },
+      {
+        "p":"Once we had chosen these user groups, we have moved onto developing some rapid prototypes of three main features: " 
+      },
+      {"ul":[
+        {"li":"A web app to programming workouts for the coaches (which I have focused on)"},
+        {"li":"A web app to view gym and user stats (for coaches and gym members)"},
+        {"li":"A mobile app to log member's workout performance."}
+        ]
+      },
+      {
+        "p":"We iterated through many designs moving from paper prototypes, balsamiq mock-ups, and finally, a fully functional html site. After each iteration, we conducted formative and heuristic evaluations on these prototypes with designers and with CrossFit coaches. "
+      }
+    ],
+    "images":[
+      {
+        "src":"../images/xf_elliot_whiteboard.jpg",
+        "caption":"Elliot working on an Affinity Diagram"
+      },
+      {
+        "src":"../images/xf_sketch.jpg",
+        "alt":"Brainstorming sketches",
+        "caption":"Elliot's Brainstorming sketches of the Programming Page"
+      },
+      {
+        "src":"../images/xf_group_working.jpg",
+        "caption":"Group discussion"
+      },
+      {
+        "src":"../images/xf_ProgrammingSequenceModel.png",
+        "caption":"Programming Sequence model"
+      },
+      {
+        "src":"../images/xf_FlowModelCoach.png",
+        "caption":"Coach Flow Model"
+      },
+      {
+        "src":"../images/xf_prototype_critique.jpg",
+        "caption":"Prototyping Critique"
+      },
+      {
+        "src":"../images/xf_programming_prototype_v.jpg",
+        "caption":"Illustrator Concept 1"
+      },
+      {
+        "src":"../images/xf_programming_prototype_h.jpg",
+        "caption":"Illustrator Concept 2"
+      },
+      {
+        "src":"./images/xf_programming_bal.png",
+        "caption":"Balsamiq Programming Mockup"
+      },
+      {
+        "src":"../images/xf_programming_page.png",
+        "caption":"Website Programming Page"
+      }
+    ]
+  }
+}

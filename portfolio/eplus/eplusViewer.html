@@ -1,0 +1,113 @@
+<html>
+  <head>
+    <title>Energy Plus Parametrics</title>
+    <script type="text/javascript" src="d3.v2.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script type="text/javascript" src = "eplusViewer.js"></script>
+    <link rel = "stylesheet" href="eplusViewer.css"/>
+    <script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-32910075-1']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+  </head>
+  <body>
+      <div id="header">
+         <h1>Energy Plus Parametrics</h1>
+      </div>
+      <div id="main">
+         <div id = "cType">
+           <div class = "centered">Climate Types</div>
+          <div class = "typeHold"><h3>C: Marine</h3></div>
+          <div class = "typeHold"><h3>B: Dry</h3></div>
+          <div class = "typeHold"><h3>A: Humid</h3></div>
+         </div>  
+         <table id = "cZoneAxis">
+          <tr>
+            <td></td>
+            <td class="bordered"><div class = "rotated">7</div></td>
+          </tr>
+          <tr class = "spacer"></tr>
+          <tr>
+            <td></td>
+            <td class="bordered"><div class = "rotated">6</div></td>
+          </tr>
+          <tr class = "spacer"></tr>
+          <tr>
+            <td></td>
+            <td class="bordered"><div class = "rotated">5</div></td>
+          </tr>
+          <tr class = "spacer"></tr>
+          <tr>
+            <td><div class = "rotated">Climate Zones</div></td>
+            <td class="bordered"><div class = "rotated">4</div></td>
+          </tr>
+          <tr class = "spacer"></tr>
+          <tr>
+            <td></td>
+            <td class="bordered"><div class = "rotated">3</div></td>
+          </tr>
+          <tr class = "spacer"></tr>
+          <tr>
+            <td></td>
+            <td class="bordered"><div class = "rotated">2</div></td>
+          </tr>
+          <tr class = "spacer"></tr>
+          <tr>
+            <td></td>
+            <td class="bordered"><div class = "rotated">1</div></td>
+          </tr>
+        </table>
+
+         <div class="infobox">
+           <h3 class="sim">sim</h3>
+           <h4 class ="eui">EUI</h4>
+           <p class ="eui">Here is where we will say something.</p>
+           <h4 class ="sys">system</h4>
+           <p class ="sys">Here is where we will say something.</p>
+           <h4 class ="per">Percent of EUI</h4>
+           <p class ="per">Here is where we will say something.</p>
+        </div> 
+      </div>
+
+      <div id="sidebar">
+        <div>
+          <label for="scenario1">Left Side: </br>Scenario One</label>
+            <select id="scenario1">
+              
+            </select>
+        </div>
+        <div>    
+             <label for="scenario2">Right Side: </br>Scenario Two</label>
+             <select id="scenario2">
+            
+            </select>
+        </div>
+        </br>
+        <!--
+        <div>
+          <a class="buttonType" id = "graphButton" href="#">Graph Scenario</a>
+        </div>
+        -->
+        <div id="runInfo">
+          <div id="runInfo1">
+            <h4 id="runInfo1Head"></h4>
+            <ul id="runInfo1List">
+            </ul>
+          </div>
+          <div id="runInfo2">
+            <h4 id="runInfo2Head"></h4>
+            <ul id="runInfo2List">
+            </ul>
+          </div>
+      </div>
+               
+      <div id="footer"></div>
+  </body>
+</html>

@@ -6095,6 +6095,8 @@ a.badge:hover {
   font-size: .85em;
   background-color: white;
   z-index: 5;
+  -webkit-transition:top 0.1s ease-out;
+  transition:top 0.1s ease-out;
 }
 
 .sidebar-nav-fixed {
@@ -6258,6 +6260,8 @@ ul{
 video{
   width:100%;
 }
+
+
 
 @media (max-width: 767px) {
   .sidebar-nav-fixed, #name {

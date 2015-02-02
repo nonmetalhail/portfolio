@@ -278,17 +278,18 @@ var loadProjects = function(){
 
 var setupListeners = function(){
   $('.port_data').hide();
-  $('#drinke').show();
+  $('#drinke').show().addClass('show_pro');
   $('#drinke_thumb').addClass('port_selected');
   //from footer...
   checkScrollPos();
 
   $('.port_link').on("click",function(){
-    $('.port_data').hide("slow");
+    $('.show_pro').slideToggle().removeClass('show_pro');
     $('.port_selected').removeClass('port_selected');
     $(this).addClass('port_selected');
     var pro = $(this).attr('value');
-    $('#'+pro).show("slow");
-    checkScrollPos();
+    $('#'+pro).addClass('show_pro').slideToggle("slow",function(){
+      checkScrollPos();
+    });    
   });
 }

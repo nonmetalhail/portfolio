@@ -116,12 +116,89 @@
     ],
     "video":[
       {
-        "src":"images/smartcup/drinks.mp4",
+        "src":"images/smartcup/drinks",
         "caption":"Video showing drinks being added to the smartcup and the webapp updating in response."
       },
       {
-        "src":"images/smartcup/drinke_leds.mp4",
+        "src":"images/smartcup/drinke_leds",
         "caption":"Video showing the smartcup LEDs cycling through their colors, water being added to the cup, and the webapp updating."
+      }
+    ]
+  },
+  "mapestry":{
+    "title":"Mapestry: A Suite of Tools for Collecting, Organizing, and Sharing Family Histories",
+    "thumb":{
+      "type":"apps",
+      "src":"",
+      "alt":"Mapestry",
+      "title":"Mapestry"
+    },
+    "date":"James R. Chen Award in Enhancing Information Systems, 2013",
+    "keywords":"Javascript, jQuery, Leaflet.js, maps, mobile, user research",
+    "class":"MIMS Final Project",
+    "site":[
+      {
+        "title":"Mapestry Main Website",
+        "src":"http://www.mapestry.co/"
+      },{
+        "title":"Mapestry Prototype",
+        "src":"http://www.mapestry.co/mapestry.html"
+      },{
+        "title":"Mapestry Final Report",
+        "src":"images/mapestry/mapestry-report.pdf"
+      },
+      {
+        "title":"Project Video",
+        "src":"https://vimeo.com/65877827"
+      }
+    ],
+    "team":[
+      {
+        "name":"Jennifer Wang",
+        "site":"http://dominantprimordialbeast.com/"
+      },
+      {
+        "name":"Ryan McAdam",
+        "site":"http://www.quantodesign.com/"
+      },{
+        "name":"Curtis Hwang"
+      },{
+        "name":"Carinne Johnson"
+      }
+    ],
+    "text":[
+      {
+        "p":"We started with an idea: maps and visual media can be a medium to evoke rich oral histories in the ones you love. With this thesis, we set about building a suite of tools to collect, organize, and share these stories."
+      },
+      {
+        "p":"Following a human centered design process, we did a deep dive into the world of oral histories, investigating the tools and methods currently available, and discovering the needs of both amateur and professional users. In the end, we settled on building a platform for an average amateur enthusiast."
+      },
+      {
+        "p":"The mobile and tablet apps integrate maps and other visual assets to go beyond a standard recording app with features to inspire detailed conversations. Bookmarking, topic lists, media, and maps are all available to seed discussions with features allowing either the interviewer or the interviewee to drive the conversation."
+      },
+      {
+        "p":"The web app is where narratives are shaped. Recordings are synced automatically with the mobile and tablet apps. Stories are refined through a lightweight audio editor. Locations, images, video, and text content can be added throughout the narrative."
+      },
+      {
+        "p":"When stories are ready to share, projects can be easily published for family members—or for the world. As the story plays, the audio narrative is synced with map locations and other media, creating a richer experience than audio alone."
+      },
+      {
+        "p":"This project won the prestigious James R. Chen Award in Enhancing Information Systems in 2013."
+      }
+    ],
+    "images":[
+      {
+        "src":"images/mapestry/suite.png",
+        "caption":"The Suite of Tools"
+      },{
+        "src":"images/mapestry/suite.png",
+        "caption":"The Suite of Tools"
+      }
+    ],
+    "video":[
+      {
+        "src":"images/mapestry/Mapestry-HD",
+        "caption":"Mapestry Promotional Video."
       }
     ]
   },

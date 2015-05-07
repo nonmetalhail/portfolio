@@ -190,7 +190,8 @@ var loadProjects = function(){
             '</div>'+
             '<div class="span6">'+
               '<video controls>'+
-                '<source src="'+videoList[i+1]['src']+'" type="video/mp4">'+
+                '<source src="'+videoList[i+1]['src']+'.webm" type="video/webm">'+
+                '<source src="'+videoList[i+1]['src']+'.mp4" type="video/mp4">'+
                 'There would be a video here if your browser supported it...'+
               '</video>'+
               '<div class = "port_caption">'+videoList[i+1]['caption']+'</div>'+
@@ -200,7 +201,8 @@ var loadProjects = function(){
         vids.push('<div class="row-fluid">'+
           '<div class="span6">'+
             '<video controls>'+
-                '<source src="'+videoList[last]['src']+'" type="video/mp4">'+
+                '<source src="'+videoList[i+1]['src']+'.webm" type="video/webm">'+
+                '<source src="'+videoList[i+1]['src']+'.mp4" type="video/mp4">'+
                 'There would be a video here if your browser supported it...'+
               '</video>'+
             '<div class = "port_caption">'+videoList[last]['caption']+'</div>'+

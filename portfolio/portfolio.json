@@ -149,9 +149,6 @@
       },{
         "title":"Mapestry Final Presentation (sans videos)",
         "src":"https://docs.google.com/presentation/d/1k764nb1k3kognF9BzNqPwk4j4Ncf27vU3VChCqCz2mM/edit?usp=sharing"
-      },{
-        "title":"Project Video",
-        "src":"https://vimeo.com/65877827"
       }
     ],
     "team":[
@@ -196,7 +193,7 @@
         "src":"images/mapestry/mapestry.png",
         "caption":"Mapestry Player App"
       },{
-        "src":"images/mapestry/medialib.png",
+        "src":"images/mapestry/medialib.jpg",
         "caption":"Mapestry Media Library"
       },{
         "src":"images/mapestry/storycreator.png",
@@ -215,7 +212,7 @@
     "video":[
       {
         "src":"images/mapestry/Mapestry-HD",
-        "caption":"Mapestry Promotional Video."
+        "caption":"Mapestry Promotional Video"
       }
     ]
   },

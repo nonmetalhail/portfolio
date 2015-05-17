@@ -1,0 +1,81 @@
+[
+  {
+    "title":"Drinke: The Hydration Tracking Smartcup",
+    "id":"drinke",
+    "thumb":{
+      "type":"tangible",
+      "src":"smartcup/drinke_thumb.jpg",
+      "alt":"Drinke",
+      "title":"Drinke Smartcup"
+    }
+  },      
+  {
+    "title":"Mapestry: A Suite of Tools for Collecting, Organizing, and Sharing Family Histories",
+    "id":"mapestry",
+    "thumb":{
+      "type":"apps",
+      "src":"mapestry/mapestry_thumb.png",
+      "alt":"Mapestry",
+      "title":"Mapestry"
+    }
+  },
+  {
+    "title":"Phauffiti: A Mobile Geocoded 3d Street Art Platform",
+    "id":"graffiti",
+    "thumb":{
+      "type":"apps",
+      "src":"graffiti/graffiti_thumb.jpg",
+      "alt":"Phauffiti",
+      "title":"Phauffiti"
+    }
+  },
+  {
+    "title":"Pole Aerial Photography Rig",
+    "id":"pap",
+    "thumb":{
+      "type":"tangible",
+      "src":"pap/pap_thumb.jpg",
+      "alt":"PAP"
+    }
+  },
+  {
+    "title":"CrossMetRx: A CrossFit programming and tracking app",
+    "id":"xfit",
+    "thumb":{
+      "type":"apps",
+      "src":"xfit/xf_thumb.png",
+      "alt":"CrossFit",
+      "title":"CrossMetRx"
+    }
+  },
+  {
+    "title":"Oregon Health Statistics Slopegraph",
+    "id":"slopegraph",
+    "thumb":{
+      "type":"info_vis",
+      "src":"slopegraph/slopegraph_thumb.jpg",
+      "alt":"Slopegraph",
+      "title":"Slopegraph"
+    }
+  },
+  {
+    "title":"Energy Plus Parametric Simulation Viewer",
+    "id":"eplus",
+    "thumb":{
+      "type":"info_vis",
+      "src":"eplus/eplus_thumb.png",
+      "alt":"Energy Plus Simulation Viewer",
+      "title":"Energy+ Sim Viewer"
+    }
+  },
+  {
+    "title":"Code Samples",
+    "id":"codesam",
+    "thumb":{
+      "type":"code",
+      "src":"code/codesam_thumb.jpg",
+      "alt":"Code Samples",
+      "title":"Code Samples"
+    }
+  }
+]

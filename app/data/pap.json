@@ -1,0 +1,70 @@
+{
+  "id":"pap",
+  "title":"Pole Aerial Photography Rig",
+  "thumb":{
+    "type":"tangible",
+    "src":"pap_thumb.jpg",
+    "alt":"PAP",
+    "title":"Pole Aerial Photography"
+  },
+  "date":"Summer 2010",
+  "keywords":"Arduino, xbee",
+  "text":[
+    {
+      "p":"I am a tinkerer. I am also a photographer. This is a personal project which combines both."
+    },
+    {
+      "p":[
+        {"span":"Inspired by my former professor, "},
+        {
+          "a":{
+            "src":"http://www.flickr.com/people/kap_cris/",
+            "text":"Cris Benton"
+          }
+        },
+        {"span":", I wanted to get into aerial photography for some time. Unfortunately, kite aerial photography has a high barrier for entry for someone who has never flown a kite. But pole aerial photography seemed much easier."}
+      ]
+    },
+    {
+      "p":"I bought a 9.5 meter long carbon fiber margin pole, typically used for fishing in the UK. I then built a rig to attach my camera and designed a device to remotely fire the shutter."
+    },
+    {
+      "p":"To fire the camera, I have two parts: one on the ground and one on the camera. Attached to the camera is an Arduino mini, connected to an xbee radio transmitter and a servo motor which physically presses the camera shutter button. On the ground is a remote with a button connected to another xbee radio transmitter. When the button is pressed, the signal is transmitted to the Arduino which then actuates the server. An LED indicates the signal was sent."
+    },
+    {
+      "p":"For the remote, I reused an old case my former lab was throwing out. Not shown are they batteries which I could not fit inside. Instead, I mounted them on the back which actually provided a decent grip on an object that was otherwise slightly too big for my hands."
+    },
+    {
+      "p":"After my first use, I immediately realized I had forgotten one very important feature...a belt clip, luckily, an easy to add feature."
+    },
+    {
+      "p":"My current goal for the Spring of 2013 is to make use of my access to the CITRIS Innovation Lab and 3d print some custom cases and design/mill a PCB board."
+    }
+  ],
+  "images":[
+    {
+      "src":"pap/pap_all.jpg",
+      "caption":"Pole with rig and camera"
+    },
+    {
+      "src":"pap/pap_rig.jpg",
+      "caption":"Pole Rig"
+    },
+    {
+      "src":"pap/pap_arduino.jpg",
+      "caption":"Arduino connected to a servo motor and xbee"
+    },
+    {
+      "src":"pap/pap_camera.jpg",
+      "caption":"Camera plus remote shutter"
+    },
+    {
+      "src":"pap/pap_remote.jpg",
+      "caption":"Remote"
+    },
+    {
+      "src":"pap/pap_remote_open.jpg",
+      "caption":"Remote innards"
+    }
+  ]
+}

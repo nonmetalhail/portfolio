@@ -1,0 +1,50 @@
+{
+  "id":"codesam",
+  "title":"Code Samples",
+  "thumb":{
+    "type":"code",
+    "src":"",
+    "alt":"Code Samples",
+    "title":"Code Samples"
+  },
+  "date":"Various Dates",
+  "keywords":"Python, Javascript, Jquery, Arduino",
+  "site":[
+    {
+      "title":"Github Examples",
+      "src":"https://github.com/nonmetalhail"
+    },
+    {
+      "title":"Fusion Tables Python API sample",
+      "src":"https://code.google.com/p/fusion-tables-api-v1-samples/"
+    },
+    {
+      "title":"Fusion Tables EPHT demo",
+      "src":"https://code.google.com/p/oregon-epht-demo/"
+    }
+  ],
+  "text":[
+    {
+      "p":"The links above are some examples of my code. These are mostly in Python, Javascript, and Arduino."
+    },
+    {
+      "p":"My Github hosts a variety of code from classes and projects I've worked on over the past year. It includes a Search Engine I wrote in Python for an I School course, an experiment with acoustic barcodes, and Parrot AR Drone scripts that are being developed with other I School students."
+    },
+    {
+      "p":"The other two links show code I developed while an intern at Google with the Fusion Tables team. One link is to Python code which authenticates the user with OAuth and gives them access to a variety of API methods. It also updates other code writen by the DevRel team to the v1 API."
+    },
+    {
+      "p":"The final link is to javascript files and mock websites I made as part of my intern project. The most interesting one is a d3 slopegraph. More info on this visualization can be seen under INFO VIS/Slopegraph in this portfolio."
+    }
+  ],
+  "images":[
+    {
+      "src":"code/barcode1.jpg",
+      "caption":"Acoustic Barcodes"
+    },
+    {
+      "src":"slopegraph/slopegraph.jpg",
+      "caption":"The basic slopegraph, comparing Male vs Female Asthama rates in 2007"
+    }
+  ]
+}

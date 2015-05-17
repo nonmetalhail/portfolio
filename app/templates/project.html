@@ -1,0 +1,45 @@
+<div class="row-fluid port_data">
+  <div class="span12">
+    <h4>{{project.title}}<br/>
+      <small>project.date</small>
+    </h4>
+    <hr>
+    <h6><span class = "titles">Keywords: </span>{{project.keywords}}</h6>
+    <h6>
+      <span ng-if="project.team" class="titles">Team: </span>
+      <span ng-repeat="t in project.team">
+        <a ng-if="t.site" href="{{t.site}}" target="_blank">{{t.name}}</a><span ng-if="!t.site">{{t.name}}</span><span ng-if="!$last">,</span>
+      </span>
+    </h6>
+    <h6>
+      <span class="titles">Links: </span>
+      <span ng-repeat="s in project.site">
+        <a href="{{s.src}}" target="_blank">{{s.title}}</a><span ng-if="!$last">,</span>
+      </span>
+    </h6>
+    <hr>
+    <div class="row-fluid">
+      <div class="span12">
+        <div ng-bind-html="text" class="text_column">
+        </div>
+      </div>
+    </div>
+    <div ng-repeat="row in photos" class="row-fluid">
+      <div ng-repeat="item in row" class="span6">
+        <a class="highslide" ng-href="static/images/{{item.src}}" onClick="return hs.expand(this,gallery_mapestry)">
+        <img ng-src = "static/images/{{item.src}}" alt= "{{item.caption}}"></a>
+        <div class = "port_caption">{{item.caption}}</div>
+      </div>
+    </div>
+    <div ng-repeat="row in videos" class="row-fluid">
+      <div ng-repeat="item in row" class="span6">
+        <video controls>
+          <source ng-src="{{'static/images/' + item.src + '.webm'}}" type="video/webm">
+          <source ng-src="{{'static/images/' + item.src  + '.mp4'}}" type="video/mp4">
+          'There would be a video here if your browser supported it...'+
+        </video>
+        <div class = "port_caption">{{item.caption}}</div>
+      </div>
+    </div>
+  </div>
+</div>

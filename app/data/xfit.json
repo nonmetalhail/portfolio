@@ -1,0 +1,117 @@
+{
+  "id":"xfit",
+  "title":"CrossMetRx: A CrossFit programming and tracking app",
+  "thumb":{
+    "type":"apps",
+    "src":"xf_thumb.jpg",
+    "alt":"CrossFit",
+    "title":"CrossMetRx"
+  },
+  "date":"Spring 2012",
+  "class":"UI Design and Development",
+  "site":[
+    {
+      "title":"Final Website",
+      "src":"http://www.crossmetrx.com/"
+    },
+    {
+      "title":"Balsamiq Mockup",
+      "src":"/portfolio/xf_balsamiq/login.html"
+    }
+  ],
+  "team":[
+    {
+      "name":"Andrew Chao",
+      "site":"http://www.acchao.com/"
+    },
+    {
+      "name":"Gilbert Hernandez",
+      "site":"http://thegilby.com/"
+    },
+    {
+      "name":"Laura Wishingrad"
+    },
+    {
+      "name":"Taeil Kwak"
+    }
+  ],
+  "keywords":"Javascript, jQuery, Django, d3.js, User Research, Rapid Prototyping",
+  "text":[
+    {
+      "p":"CrossFit is a fitness routine which combines multiple other fitness styles. Some key aspects of CrossFit is that the workout routines change daily and there is a focus on tracking individual progress."
+    },
+    {
+      "p":[
+        {"span":"The goal of this project was to extend the CrossFit community such that coaches and members can have a better platform for interaction. In particular, we:"},
+        {
+          "ul":[
+            {"li":"Created a tool for coaches to program workouts"},
+            {"li":"Provided a simple way for members to record their performance"},
+            {"li":"Displayed performance data in a compelling, visual way"}
+          ]
+        }
+      ]
+    },
+    {
+      "p":[
+        {"span":"Once we had chosen these user groups, we have moved onto developing some rapid prototypes of three main features: "},
+        {
+          "ul":[
+            {"li":"A web app to programming workouts for the coaches (which I have focused on)"},
+            {"li":"A web app to view gym and user stats (for coaches and gym members)"},
+            {"li":"A mobile app to log member's workout performance."}
+          ]
+        }
+      ]
+    },
+    {
+      "p":"We iterated through many designs moving from paper prototypes, balsamiq mock-ups, and finally, a fully functional html site. After each iteration, we conducted formative and heuristic evaluations on these prototypes with designers and with CrossFit coaches. "
+    },
+    {
+      "p":"The website was built using a django backend and jQuery and jQuery UI frontend. The radar graoh visualizations were built using d3."
+    }
+  ],
+  "images":[
+    {
+      "src":"xfit/xf_programming_page.png",
+      "caption":"Website Programming Page"
+    },
+    {
+      "src":"xfit/xf_vis.png",
+      "caption":"d3 Radar Visualizations of Workouts"
+    },
+    {
+      "src":"xfit/xf_front.png",
+      "caption":"Website Front Page"
+    },
+    {
+      "src":"xfit/xf_coach.png",
+      "caption":"Website Coach Pannel Page"
+    },
+    {
+      "src":"xfit/xf_sketch.jpg",
+      "alt":"Brainstorming sketches",
+      "caption":"Elliot's Brainstorming sketches of the Programming Page"
+    },
+    {
+      "src":"xfit/xf_programming_prototype_v.jpg",
+      "caption":"Illustrator Concept 1"
+    },
+    {
+      "src":"xfit/xf_programming_prototype_h.jpg",
+      "caption":"Illustrator Concept 2"
+    },
+    {
+      "src":"xfit/xf_programming_bal.png",
+      "caption":"Balsamiq Programming Mockup"
+    },
+    {
+      "src":"xfit/xf_ProgrammingSequenceModel.png",
+      "caption":"Programming Sequence model"
+    },
+    {
+      "src":"xfit/xf_FlowModelCoach.png",
+      "caption":"Coach Flow Model"
+    }
+  ]
+}

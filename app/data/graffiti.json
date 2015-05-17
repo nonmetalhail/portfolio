@@ -1,0 +1,121 @@
+{
+ "id":"graffiti",
+  "title":"Phauffiti: A Mobile Geocoded 3d Street Art Platform",
+  "thumb":{
+    "type":"apps",
+    "src":"",
+    "alt":"Phauffiti",
+    "title":"Phauffiti"
+  },
+  "date":"3rd Place, Designing Mobile Experiences, Fall 2012",
+  "keywords":"Mobile Design, Axure, User Research",
+  "class":"Designing Mobile Experiences",
+  "site":[
+    {
+      "title":"Axure prototype",
+      "src":"portfolio/Graffiti_jen/graffiti.html"
+    },
+    {
+      "title":"Final Presentation",
+      "src":"https://docs.google.com/presentation/d/1kyb2g3JFnvs9i68-WGZfYR57PE1KYGQom4CFqMxUEUE/edit"
+    }
+  ],
+  "team":[
+    {
+      "name":"Jennifer Wang",
+      "site":"http://dominantprimordialbeast.com/"
+    },
+    {
+      "name":"Sam Tolkheim"
+    }
+  ],
+  "text":[
+    {
+      "p":"Phauffiti is a mobile app which re-envisions how we interact with our mobile devices. It augments reality to extend the physical world into digital space, providing a medium for the anonymous creation and display of art, statements, and self-expressions, which fosters interaction between the user community."
+    },
+    {
+      "p":"Basically, it is the cowards-yuppies-hipsters graffiti medium."
+    },
+    {
+      "p":"Unlike other drawing apps for which you use your finger on the touch screen, Phauffiti makes use of the affordances of the phone to recreate the experience of drawing with a spray-paint can while making use of the affordances of digital space to allow the user to draw in 3d, rather than being tied to a flat surface. By combining GPS and accelerometer data, Phauffiti detects the paths of a user swinging their phone about in space and create a 3d object situated in a particular location."
+    },
+    {
+      "p":"Part of the fun of street art is discovering hidden gems which have become an intricate part of the urban fabric. Instead of divorcing the Phauffiti art from its environment, users must visit the location in order to view the art. It&#39;s an artistic way for people to engage in the community. Teaser thumbnails are displayed in a gallery and on a map so the user can located art which intrigues them. "
+    },
+    {
+      "p":[
+        {"span":"As part of our user research, we identified two user groups: "},
+        {
+          "ul":[
+            {"li":"ARTISTS: Those who will interact with physical environments by using the tool to customize them virtually."},
+            {"li":"ACTIVISTS: Those who will use the tool to express free speech. "}
+          ]
+        }
+      ]
+    },
+    {
+      "p":"During our user research, we discovered two important facets to Phauffiti. First, street art is anonymous, and often an anonymous form of communication between artists who may not know each other except by their work. Phauffiti will support these concerns by allowing artists to publish completely anonymously or with a handle. An anonymous handle allows users to follow each other and their work, but divorces the user&#39;s true identity from their work. "
+    },
+    {
+      "p":"A second discovery is that street art is ephemeral. Part of the appeal, and what sets it apart from gallery art, is that it decays with the environment and can disappear completely. Phauffiti art will too, be ephemeral, with decay algorithms built in. "
+    }
+  ],
+  "images":[
+    {
+      "src":"graffiti/jen_storyboard.jpg",
+      "caption":"Jennifer&#39;s storyboard demonstrating the draw section of Phauffiti"
+    },
+    {
+      "src":"graffiti/deviceecosystem-01.png",
+      "caption":"Phauffiti device ecosystem showing that phones can be used to draw and view art, but tablets can be used to view only."
+    },
+    {
+      "src":"graffiti/phauffiti_wire.png",
+      "caption":"Wireframes of all the screens which explores the interactions, layout, and App map"
+    },
+    {
+      "src":"graffiti/app_map_med.jpg",
+      "caption":"App Map showing every screen and their links. There are two main sections, Viewing Art and Drawing Art."
+    },
+    {
+      "src":"graffiti/splash_screen.jpg",
+      "caption":"Mockup Splashscreen"
+    },
+    {
+      "src":"graffiti/Near_you2_sm.jpg",
+      "caption":"Mockup Gallery showing art nearby"
+    },
+    {
+      "src":"graffiti/Map2_sm.jpg",
+      "caption":"Mockup Map"
+    },
+    {
+      "src":"graffiti/Finding_art_sm.jpg",
+      "caption":"Mockup Viewer showing art in a specific location"
+    },
+    {
+      "src":"graffiti/Start_draw_sm.jpg",
+      "caption":"Mockup Draw screen"
+    },
+    {
+      "src":"graffiti/Color_Select_sm.jpg",
+      "caption":"Mockup Color Selection screen"
+    },
+    {
+      "src":"graffiti/Brush_select_sm.jpg",
+      "caption":"Mockup Brush Selection screen"
+    },
+    {
+      "src":"graffiti/Check_Art_Made_sm.jpg",
+      "caption":"Mockup Draw screen with art"
+    },
+    {
+      "src":"graffiti/Brag_sm.jpg",
+      "caption":"Mockup Metadata screen"
+    },
+    {
+      "src":"graffiti/affinity_diagram.jpg",
+      "caption":"Affinity Diagram"
+    }
+  ]
+}

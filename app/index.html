@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html lang="en" ng-app="portfolioApp" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html lang="en" ng-app="portfolioApp" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html lang="en" ng-app="portfolioApp" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en" ng-app="portfolioApp"  class="no-js"> <!--<![endif]-->
+  <head>
+    <!-- <base href="/app/"> -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>elliot nahman</title>
+    <meta name="elliot nahman" content="portfolio">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="bower_components/html5-boilerplate/css/normalize.css">
+    <link rel="stylesheet" href="bower_components/html5-boilerplate/css/main.css">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap-responsive.min.css" rel="stylesheet">
+    <link rel = "stylesheet" href="css/highslide.css">
+    <link href="css/elliot.css" rel="stylesheet">
+    <script src="bower_components/html5-boilerplate/js/vendor/modernizr-2.6.2.min.js"></script>
+    <script src="bower_components/angular/angular.min.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="bower_components/angular-resource/angular-resource.js"></script>
+    <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+    
+    <script src="components/version/version.js"></script>
+    <script src="components/version/version-directive.js"></script>
+    <script src="components/version/interpolate-filter.js"></script>
+    
+    <script src="js/animations.js"></script>
+
+    <script src="js/filters.js"></script>
+
+    
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/footer.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/controllers.js"></script>
+    <script src="js/services.js"></script>
+    <script src="js/highslide-full.js"></script>
+    <script src="js/portfolio.js"></script>
+    <script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-32910075-1']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+  </head>
+  <body>
+    <!--[if lt IE 8]>
+        <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+    <div class="container-fluid main">
+      <div class="row-fluid">
+        <div class="span2">
+        </div>
+        <div class="span2">
+          <div ng-controller="SidebarCtrl" class = "sidebar-nav sidebar-nav-fixed">
+            <div id = "logo">
+              <a ng-href = "#/portfolio"><img ng-src = "static/images/logo.png"/></a>
+            </div>
+            
+            <hr>
+            
+            <div class="well">
+              <ul id = "port_thumb" class="nav nav-list">
+                <li>
+                  <a ng-href="#/about">About</a>
+                </li>
+                <li>
+                  <a ng-href="#/cv">Resum&#233;</a>
+                </li>
+                <li class="nav-header">
+                  <a href = "static/nahman_elliot_resume.pdf">PDF Version</a>
+                </li>
+                <li class="active">
+                  <a ng-href="#/portfolio">Portfolio</a>
+                </li>
+                <!--portfolio links -->
+                <li ng-repeat-start="(k,v) in links" class="nav-header">{{v.text}}</li>
+                <li ng-repeat="a in v.arr" id="{{a.id}}" class="nav-header nav_item">
+                  <a href="#/portfolio/{{a.id}}" class = "port_link">{{a.title}}</a>
+                </li>
+                <li ng-repeat-end class="divider"></li>
+              </ul>
+            </div><!--/.well -->
+            
+            <div id="name">
+              <div class="well">
+                <ul class="nav">
+                  <li>elliot nahman</li>
+                  <li class="orange">elliot@ischool.berkeley.edu</li>
+                </ul>
+              </div>
+              <hr>
+            </div>
+          </div>
+        </div><!--/span2-->
+        <div ng-view id = "port_proj" class="span6">
+        <!--projects-->
+
+        <!--close projects -->
+        </div>
+        <div class="span2">
+        </div>
+
+      </div><!--/row-->
+      
+    </div><!--/.fluid-container-->
+    <hr id="foot">
+    <footer>
+      <div class="row-fluid">
+        <div class="span2">
+        </div>
+        <div class = "span10">
+          <p>&copy; 2015 All rights reserved</p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

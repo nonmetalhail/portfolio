@@ -4,7 +4,7 @@
 <!--[if IE 8]>         <html lang="en" ng-app="portfolioApp" class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!--> <html lang="en" ng-app="portfolioApp"  class="no-js"> <!--<![endif]-->
   <head>
-    <!-- <base href="/app/"> -->
+    <base href="/">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>elliot nahman</title>
@@ -62,7 +62,7 @@
         <div class="span2">
           <div ng-controller="SidebarCtrl" class = "sidebar-nav sidebar-nav-fixed">
             <div id = "logo">
-              <a ng-href = "#/portfolio"><img ng-src = "static/images/logo.png"/></a>
+              <a ng-href = "/portfolio"><img ng-src = "static/images/logo.png"/></a>
             </div>
             
             <hr>
@@ -70,21 +70,21 @@
             <div class="well">
               <ul id = "port_thumb" class="nav nav-list">
                 <li ng-class="{true: 'active'}['about'==isActive]">
-                  <a ng-href="#/about">About</a>
+                  <a ng-href="/about">About</a>
                 </li>
                 <li ng-class="{true: 'active'}['cv'==isActive]">
-                  <a ng-href="#/cv">Resum&#233;</a>
+                  <a ng-href="/cv">Resum&#233;</a>
                 </li>
                 <li class="nav-header">
                   <a href = "static/nahman_elliot_resume.pdf">PDF Version</a>
                 </li>
                 <li ng-class="{true: 'active'}['portfolio'==isActive]">
-                  <a ng-href="#/portfolio">Portfolio</a>
+                  <a ng-href="/portfolio">Portfolio</a>
                 </li>
                 <!--portfolio links -->
                 <li ng-repeat-start="(k,v) in links" class="nav-header">{{v.text}}</li>
                 <li ng-repeat="a in v.arr" ng-class="{true: 'active'}['{{a.id}}'==isActive]" class="nav-header nav_item">
-                  <a href="#/portfolio/{{a.id}}" class = "port_link">{{a.title}}</a>
+                  <a href="/portfolio/{{a.id}}" class = "port_link">{{a.title}}</a>
                 </li>
                 <li ng-class="{'last':$last}" ng-repeat-end class="divider"></li>
               </ul>

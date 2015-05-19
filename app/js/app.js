@@ -33,5 +33,5 @@ portfolioApp.config(['$routeProvider','$locationProvider',
       .otherwise({
         redirectTo: '/portfolio'
       });
-    // $locationProvider.html5Mode(true);
+    $locationProvider.html5Mode(true);
   }]);

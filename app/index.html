@@ -76,17 +76,18 @@
                   <a ng-href="/cv">Resum&#233;</a>
                 </li>
                 <li class="nav-header">
-                  <a href = "static/nahman_elliot_resume.pdf">PDF Version</a>
+                  <a href = "static/nahman_elliot_resume_2015.pdf" target="_self">PDF Version</a>
                 </li>
                 <li ng-class="{true: 'active'}['portfolio'==isActive]">
                   <a ng-href="/portfolio">Portfolio</a>
                 </li>
+                <li class="divider"></li>
                 <!--portfolio links -->
                 <li ng-repeat-start="(k,v) in links" class="nav-header">{{v.text}}</li>
                 <li ng-repeat="a in v.arr" ng-class="{true: 'active'}['{{a.id}}'==isActive]" class="nav-header nav_item">
                   <a href="/portfolio/{{a.id}}" class = "port_link">{{a.title}}</a>
                 </li>
-                <li ng-class="{'last':$last}" ng-repeat-end class="divider"></li>
+                <li ng-repeat-end class="divider"></li>
               </ul>
             </div><!--/.well -->
             

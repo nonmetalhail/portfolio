@@ -81,10 +81,6 @@ a:hover {
   font-size: 12px;
 }
 
-.nav li.active + li.nav-header a{
-  margin-top: -10px;
-}
-
 .nav li.nav-header a{
   margin-top:0;
  }

@@ -8,7 +8,6 @@ portfolioControllers.controller('ProjectListCtrl', ['$scope', 'Portfolio',
   function($scope, Portfolio) {
     $scope.portfolio = Portfolio.query(function(portfolio){
       $scope.pf = _arrSlicer(portfolio,2);
-      // $scope.links = _linkCompiler(portfolio);
     });
   }]);
 
@@ -28,14 +27,14 @@ portfolioControllers.controller('CVCtrl', ['$scope', 'Portfolio',
 
 portfolioControllers.controller('SidebarCtrl', ['$scope', '$location', 'Portfolio',
   function($scope, $location, Portfolio) {
-    // console.log($location.url());
-    // if($location.url()=='/portfolio'){
-      $scope.portfolio = Portfolio.query(function(portfolio){
-        $scope.links = _linkCompiler(portfolio);
-      });
-    // }
-    // else{ $scope.links = [] }
-  }]);
+    $scope.portfolio = Portfolio.query(function(portfolio){
+      $scope.links = _linkCompiler(portfolio);
+    });
+    $scope.$on('$locationChangeStart', function(event) {
+      console.log('change');
+      $scope.isActive = $location.path().split('/').pop();
+    });
+ }]);
 
 function _arrSlicer(arr, size) {
   var newArr = [];

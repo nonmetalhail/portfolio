@@ -94,21 +94,3 @@ hs.addSlideshow({
     relativeTo: 'viewport'
   }
 });
-
-// var setupListeners = function(){
-//   $('.port_data').hide();
-//   $('#drinke').show().addClass('show_pro');
-//   $('#drinke_thumb').addClass('port_selected');
-//   //from footer...
-//   checkScrollPos();
-
-//   $('.port_link').on("click",function(){
-//     $('.show_pro').slideToggle().removeClass('show_pro');
-//     $('.port_selected').removeClass('port_selected');
-//     $(this).addClass('port_selected');
-//     var pro = $(this).attr('value');
-//     $('#'+pro).addClass('show_pro').slideToggle("slow",function(){
-//       checkScrollPos();
-//     });    
-//   });
-// }

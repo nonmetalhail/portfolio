@@ -1,7 +1,7 @@
 <hr>
 <div ng-repeat="project in pf" class="row-fluid project-listing">
   <div ng-repeat="p in project" class="span6">
-    <a href="#/portfolio/{{p.id}}" class="thumb">
+    <a href="#/portfolio/{{p.id}}" pid="{{p.id}}" class="thumb">
       <img class="thumbnail" ng-src="static/images/{{p.thumb.src}}">
       <h5>{{p.title}}</h5>
     </a>

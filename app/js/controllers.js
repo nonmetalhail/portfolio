@@ -63,7 +63,6 @@ function _linkCompiler(pArr){
     "info_vis": { "text":"Info Vis", "arr":[] },
     "code": { "text":"Code Samples", "arr":[] }
   };
-
   for(var p in pArr.slice(0,pArr.length)){
     var index = pArr[p]["thumb"]["type"];
     d[index]['arr'].push( { "id":pArr[p]["id"], "title":pArr[p]["thumb"]["title"] } );

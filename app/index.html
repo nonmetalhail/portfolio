@@ -86,7 +86,7 @@
                 <li ng-repeat="a in v.arr" ng-class="{true: 'active'}['{{a.id}}'==isActive]" class="nav-header nav_item">
                   <a href="#/portfolio/{{a.id}}" class = "port_link">{{a.title}}</a>
                 </li>
-                <li ng-repeat-end class="divider"></li>
+                <li ng-class="{'last':$last}" ng-repeat-end class="divider"></li>
               </ul>
             </div><!--/.well -->
             

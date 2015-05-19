@@ -35,7 +35,8 @@
     "thumb":{
       "type":"tangible",
       "src":"pap/pap_thumb.jpg",
-      "alt":"PAP"
+      "alt":"PAP",
+      "title":"Pole Aerial Photography"
     }
   },
   {

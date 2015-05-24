@@ -31,7 +31,6 @@ portfolioControllers.controller('SidebarCtrl', ['$scope', '$location', 'Portfoli
       $scope.links = _linkCompiler(portfolio);
     });
     $scope.$on('$locationChangeStart', function(event) {
-      console.log('change');
       $scope.isActive = $location.path().split('/').pop();
     });
  }]);

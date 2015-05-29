@@ -359,7 +359,7 @@ video{
   }
 }
 
-@media (max-height: 885px){
+@media (max-height: 885px) and (max-width: 768px){
   .sidebar-nav-fixed{
     height:auto;
   }

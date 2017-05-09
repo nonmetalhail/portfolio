@@ -1,0 +1,54 @@
+{
+  "id":"slopegraph",
+  "title":"Oregon Health Statistics Slopegraph",
+  "thumb":{
+    "type":"info_vis",
+    "src":"",
+    "alt":"Slopegraph",
+    "title":"Slopegraph"
+  },
+  "date":"Summer 2012",
+  "keywords":"Javascript, d3, Fusion Tables",
+  "site":[
+    {
+      "title":"Code Repository",
+      "src":"https://code.google.com/p/oregon-epht-demo/"
+    },
+    {
+      "title":"Live Demo",
+      "src":"http://www.nonmetalhail.com/projects/oregon-epht-demo/slopegraph.html"
+    }
+  ],
+  "text":[
+    {
+      "type":"text",
+      "text":"While interning with the Fusion Table team at Google during the summer of 2012, my primary project was to work with the State of Oregon and convince them to host data with us. This project included a wide variety of skills: conducting user research on their needs and processes, discovering what types and formats their data came in, providing some initial training and use guides, and designing and creating various demonstration projects. I am very happy to say that it sounds like the project was quite successful and the State of Oregon is pursuing hosting data with Fusion Tables."
+    },
+    {
+      "type":"text",
+      "text":"This slopegraph is one visualization which I developed as part of that project. It pulls data at runtime from several Fusion Tables I created. The dataset I used contained a variety of health outcomes broken down by county and year. The slopegraph is a great way to represent this data as it allows the viewer to compare each county&#39;s performance to one another while simultaneously comparing a county&#39;s change from one dataset to another. The datasets on either side can compare data from different years or different disease sets. This allows the user to explore changes over time or the differing rates of diseases. "
+    },
+    {
+      "type":"text",
+      "text":"I connected a county with an increase in the disease rate from the left side to the right side green, and decrease blue. The state average is given in black. On hover over a particular county, all other counties fade, the text of that county gets bigger, and a pop-up opens showing the change across the two datasets. The state average remains solid for comparison. "
+    }
+  ],
+  "images":[
+    {
+      "src":"slopegraph/slopegraph.jpg",
+      "caption":"The basic slopegraph, comparing Male vs Female Asthma rates in 2007"
+    },
+    {
+      "src":"slopegraph/slopegraph2.jpg",
+      "caption":"Slopegraph hovering over a county"
+    },
+    {
+      "src":"slopegraph/slopegraph3.jpg",
+      "caption":"Slopegraph comparing two years"
+    },
+    {
+      "src":"slopegraph/slopegraph4.jpg",
+      "caption":"Slopegraph hovering over a county on the right side"
+    }
+  ]
+}

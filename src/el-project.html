@@ -1,0 +1,135 @@
+<link rel="import" href="../bower_components/polymer/polymer-element.html">
+<link rel="import" href="shared-styles.html">
+<link rel="import" href="shared-styles-mid-break.html">
+
+<link rel="import" href="../bower_components/iron-ajax/iron-ajax.html">
+<link rel="import" href="../bower_components/iron-image/iron-image.html">
+<link rel="import" href="el-project-meta.html">
+<link rel="import" href="el-project-images.html">
+
+<dom-module id="el-project">
+  <template>
+    <style include="shared-styles">
+      :host {
+        display: block;
+
+        padding: 10px;
+      }
+
+      .no-bottom-margin {
+        margin-bottom: 0;
+      }
+
+      .text_column {
+        column-count: 2;
+
+        margin-bottom:15px;
+      }
+
+      @media (max-width: 1050px) {
+        .text_column {
+          column-count: 1;
+        }
+      }
+
+    </style>
+
+    <style include="shared-styles-mid-break"></style>
+
+  <!-- TITLE -->
+    <hr class="orange">
+
+    <h1 class="no-bottom-margin">[[projectData.title]]</h1>
+    <h2 class="grey no-bottom-margin">[[projectData.date]]</h2>
+
+
+    <!-- META -->
+    <hr class="orange">
+
+    <el-project-meta title="Keywords" data="[[projectData.keywords]]"></el-project-meta>
+    <template is="dom-if" if="[[projectData.team]]">
+      <el-project-meta title="Team" data="[[projectData.team]]" title-key="name"></el-project-meta>
+    </template>
+    <el-project-meta title="Links" data="[[projectData.site]]"></el-project-meta>
+
+
+    <!-- BODY -->
+    <hr class="orange">
+
+    <div class="text_column">
+      <template is="dom-repeat" items="[[projectData.text]]">
+
+        <template is="dom-if" if="[[_elemText(item)]]">
+          <p>[[item.text]]</p>
+        </template>
+
+        <template is="dom-if" if="[[_elemList(item)]]">
+          <ul>
+            <template is="dom-repeat" items="[[item.list]]" as="li">
+              <li>[[li]]</li>
+            </template>
+          </ul>
+        </template>
+
+      </template>
+    </div>
+
+
+    <!-- IMAGES -->
+    <el-project-images data="[[projectData.images]]"></el-project-images>
+
+
+    <iron-ajax
+      auto
+      url="[[url]]"
+      handle-as="json"
+      last-response="{{projectData}}"
+      debounce-duration="300">
+    </iron-ajax>
+
+  </template>
+
+  <script>
+    class ElProject extends Polymer.Element {
+      static get is() { return 'el-project'; }
+
+      static get properties() {
+        return {
+          route: {
+            type: String
+          },
+          projectData: {
+            type: Array
+          },
+          url: {
+            type: String,
+            computed: '_resolveURL(route)'
+          }
+        };
+      }
+
+      ready() {
+        super.ready()
+      }
+
+      _resolveURL(pid) {
+        if(pid.prefix === '/project') {
+          return `../data${pid.path}.json`;
+        } else {
+          this.projectData = {};
+        }
+      }
+
+      _elemText(item) {
+        return item.type === 'text';
+      }
+
+      _elemList(item) {
+        return item.type === 'list';
+      }
+
+    }
+
+    window.customElements.define(ElProject.is, ElProject);
+  </script>
+</dom-module>

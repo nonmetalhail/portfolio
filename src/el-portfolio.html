@@ -1,0 +1,59 @@
+<link rel="import" href="../bower_components/polymer/polymer-element.html">
+<link rel="import" href="shared-styles.html">
+<link rel="import" href="shared-styles-mid-break.html">
+
+<link rel="import" href="../bower_components/iron-ajax/iron-ajax.html">
+<link rel="import" href="el-portfolio-item.html">
+
+<dom-module id="el-portfolio">
+  <template>
+    <style include="shared-styles">
+      :host {
+        display: block;
+
+        padding: 10px;
+      }
+    </style>
+<!--
+    <style include="shared-styles-mid-break"></style>
+  -->
+    <hr class="orange">
+
+    <div class="container">
+      <template is="dom-repeat" items="[[portfolioItems]]">
+        <div class="container50">
+          <el-portfolio-item
+            pid="[[item.id]]"
+            img="[[item.thumb.src]]"
+            title="[[item.title]]">
+          </el-portfolio-item>
+        </div>
+      </template>
+    </div><!--/container-->
+
+    <iron-ajax
+      auto
+      url="../data/portfolio.json"
+      handle-as="json"
+      last-response="{{portfolioItems}}"
+      debounce-duration="300">
+    </iron-ajax>
+
+  </template>
+
+  <script>
+    class ElPortfolio extends Polymer.Element {
+      static get is() { return 'el-portfolio'; }
+
+      static get properties() {
+        return {
+          portfolioItems: {
+            type: Array
+          }
+        };
+      }
+    }
+
+    window.customElements.define(ElPortfolio.is, ElPortfolio);
+  </script>
+</dom-module>

@@ -1,0 +1,92 @@
+<link rel="import" href="../bower_components/polymer/polymer-element.html">
+<link rel="import" href="../bower_components/polymer/lib/mixins/gesture-event-listeners.html">
+<link rel="import" href="shared-styles.html">
+<link rel="import" href="shared-styles-mid-break.html">
+
+<link rel="import" href="../bower_components/paper-dialog/paper-dialog.html">
+<link rel="import" href="el-carousel.html">
+
+<dom-module id="el-project-images">
+  <template>
+    <style include="shared-styles">
+      :host {
+        display: block;
+      }
+
+
+      .img {
+        --iron-image-width: 100%;
+        border: 1px solid var(--el-tertiary-color);
+      }
+
+      .img_caption {
+        margin: 5px 0 15px 0;
+      }
+    </style>
+
+    <style include="shared-styles-mid-break"></style>
+
+
+    <div class="container">
+      <template is="dom-repeat" items="[[data]]">
+        <div class="container50">
+          <iron-image class="img" src="../images/projects/[[item.src]]" on-tap="_openModal"></iron-image>
+          <p class="img_caption">[[item.caption]]</p>
+        </div>
+      </template>
+    </div>
+
+
+    <!--
+        <div ng-repeat="row in videos" class="row-fluid">
+          <div ng-repeat="item in row" class="span6">
+            <video controls>
+              <source ng-src="{{'static/images/' + item.src + '.webm'}}" type="video/webm">
+              <source ng-src="{{'static/images/' + item.src  + '.mp4'}}" type="video/mp4">
+              'There would be a video here if your browser supported it...'+
+            </video>
+            <div class="img_caption">{{item.caption}}</div>
+          </div>
+        </div> -->
+
+
+    <paper-dialog
+      id="modal"
+      entry-animation="scale-up-animation"
+      exit-animation="fade-out-animation"
+      with-backdrop>
+      <el-carousel images="[[data]]"></el-carousel>
+    </paper-dialog>
+  </template>
+
+  <script>
+    class ElProjectImages extends Polymer.Element {
+      static get is() { return 'el-project-images'; }
+
+      static get properties() {
+        return {
+          data: {
+            type: String
+          },
+          dialogContent: {
+            type: HTMLElement,
+            notify: true
+          }
+        };
+      }
+
+      ready() {
+        super.ready();
+        // Must move our modal to the body so it has the proper stacking context
+        Polymer.dom(document.body).appendChild(this.$.modal);
+      }
+
+      _openModal() {
+        this.$.modal.open();
+      }
+
+    }
+
+    window.customElements.define(ElProjectImages.is, ElProjectImages);
+  </script>
+</dom-module>

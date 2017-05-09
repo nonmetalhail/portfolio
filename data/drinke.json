@@ -1,0 +1,136 @@
+{
+  "id":"drinke",
+  "title":"Drinke: The Hydration Tracking Smartcup",
+  "thumb":{
+    "type":"tangible",
+    "src":"",
+    "alt":"Drinke",
+    "title":"Drinke Smartcup"
+  },
+  "date":"Best Project, Interactive Device Design, Fall 2012",
+  "keywords":"Arduino, xbee, jQuery Mobile, Node.js, Django, Solid Works, PCB, Rapid Prototyping",
+  "class":"Interactive Device Design",
+  "site":[
+    {
+      "title":"Drinke Business Plan PDF",
+      "src":"smartcup/Drinkebusinessplan_rev2.pdf"
+    }
+  ],
+  "team":[
+    {
+      "name":"Amy Pavel"
+    },
+    {
+      "name":"Sean Chen"
+    },
+    {
+      "name":"Steve Rubin"
+    }
+  ],
+  "text":[
+    {
+      "type":"text",
+      "text":"Drinke is a smartcup which aims to improve the hydration habits of users by tracking what and how much they drink while providing in-depth analytics and goal-tracking. It does so by automatically detecting what beverage is in the cup and how much. In this way, the user needs to exert very little effort to track their hydration, caffeine intake, and sugar intake. "
+    },
+    {
+      "type":"text",
+      "text":"Drinke is inspired by the Quantified Self trend and we sought to create a tool to help aid the user track their beverage consumption. More personally, all four of us find that we tend to forget to drink when deep in the coding mindset. "
+    },
+    {
+      "type":"text",
+      "text":"Although mobile apps to track hydration are in abundance, they rely heavily on the user to manually enter their data. We felt this was a major pain-point and too prone to error and an incomplete dataset. Instead of relying solely on the user, we created a device to automatically detect the beverage type and volume and upload it to a server. A companion webapp can then display the user&#39;s consumption data and allow them to set alerts and goals with regards to specific drink types."
+    },
+    {
+      "type":"text",
+      "text":"To determine drink types, we developed an elegant, cheap solution: using a photoresistor and RGB LED to develop a profile for each drink type. The LED cycles through different colors; we found that Red, Green, Blue, and White were sufficient, though of course more channels does provide a bit more accuracy. The different beverage types transmit differing amounts of light based on the color and a unique classification profile is made for each drink. These profiles are fed into a SciPy learning algorithm which can then compare the current drink state to its database and return the best match. "
+    },
+    {
+      "type":"text",
+      "text":"We also included a temperature sensor for an additional datapoint. Hot and dark would probably be coffee; cold and dark, a cola. A force sensor on the bottom of the cup provides the weight of the cup from which we calculate the volume of the liquid in the cup. A LCD screen can display data directly on the cup providing feedback to the user without them having to pull out their smartphone. An xbee embedded in the bottom of the cup transmits the data to a node.js server. The whole cup is controlled by an Arduino Mini"
+    },
+    {
+      "type":"text",
+      "text":"The cup itself is a 3D printed prototype, designed in Solidworks. It is comprised of a transparent inner cup which holds the beverage and an outer opaque shell. The base is detachable and holds all the electronics. We created a top to provide a more stable environment for our light readings, though in theory one could calibrate the readings to account for the ambient environment. In order to perform initial tests of our light classification system, we used a clear plastic, cup. After ensuring our hypothesis was correct, we then moved on to creating our custom cup. "
+    },
+    {
+      "type":"text",
+      "text":"The light readings plus learning algorithm worked amazingly well. Although we cannot tell the difference between a Coke and Pepsi, we can certainly tell the difference between a cola, tea, and coffee. That said, brewed drinks can be a bit difficult as individual preference can lead to quite different levels of brewing. Sometimes a peppermint tea can look like an apple juice, for instance. In the end, the user will have to initially train the cup and develop a profile for each drink. In this way, the cup will learn how dark the user typically brews their drinks."
+    },
+    {
+      "type":"text",
+      "text":"If there is ambiguity, we thought that the user could clarify them directly on the cup through the LCD screen and a couple buttons. This initial prototype did not include these buttons however for time and cost considerations in reprinting the cup."
+    },
+    {
+      "type":"text",
+      "text":"The companion webapp is built off of jQuery Mobile. It provides the user with the ability to set goals and limits for each beverage type. It also provides overview and consumption history graphs, implemented in d3. The data for the webapp is served from a Django server."
+    }
+  ],
+  "images":[
+    {
+      "src":"smartcup/drinke.jpg",
+      "caption":"Drinke: The 3D Printed Smartcup"
+    },
+    {
+      "src":"smartcup/drinke_poster.jpg",
+      "caption":"Presentation poster showing cup construction and componenets, drink types and process, and mobile app screenshots."
+    },
+    {
+      "src":"smartcup/home_goals.png",
+      "caption":"Screenshots of the webapp Homescreen and Goals page"
+    },
+    {
+      "src":"smartcup/overview.png",
+      "caption":"Screenshots of the webapp Overview pages. The bullet chart is done in d3 and shows current consumption compared to the user set goals and limits"
+    },
+    {
+      "src":"smartcup/history.png",
+      "caption":"Screenshots of the webapp Consumption History pages. The chart is done in d3"
+    },
+    {
+      "src":"smartcup/concept_1.jpg",
+      "caption":"My Initial Concept Sketches"
+    },
+    {
+      "src":"smartcup/concept_2.jpg",
+      "caption":"More Initial Concept Sketches"
+    },
+    {
+      "src":"smartcup/initial_light_test.jpg",
+      "caption":"Initial light test setup"
+    },
+    {
+      "src":"smartcup/lcd_temp.jpg",
+      "caption":"Testing the temperature sensor and LCD screen"
+    },
+    {
+      "src":"smartcup/cup.jpg",
+      "caption":"3D printed cup, fresh out of the oven"
+    },
+    {
+      "src":"smartcup/electronics.jpg",
+      "caption":"Photo showing the bottom of the cup with all the electronics. The arduino is being programmed in this image."
+    },
+    {
+      "src":"smartcup/base.jpg",
+      "caption":"Photo of the base of the cup with the LiPo battery and charger. You can also see the mounts for the Arduino/PCB."
+    },
+    {
+      "src":"smartcup/sensor_chart.png",
+      "caption":"Chart showing the light readings for different drink types"
+    },
+    {
+      "src":"smartcup/team.jpg",
+      "caption":"Team photo after winning the Best Project award"
+    }
+  ],
+  "video":[
+    {
+      "src":"smartcup/drinks",
+      "caption":"Video showing drinks being added to the smartcup and the webapp updating in response."
+    },
+    {
+      "src":"smartcup/drinke_leds",
+      "caption":"Video showing the smartcup LEDs cycling through their colors, water being added to the cup, and the webapp updating."
+    }
+  ]
+}

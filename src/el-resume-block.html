@@ -1,0 +1,49 @@
+<link rel="import" href="../bower_components/polymer/polymer-element.html">
+<link rel="import" href="shared-styles.html">
+<link rel="import" href="shared-styles-mid-break.html">
+
+<dom-module id="el-resume-block">
+  <template>
+    <style include="shared-styles">
+      :host {
+        display: block;
+
+        padding: 10px;
+      }
+    </style>
+    <style include="shared-styles-mid-break"></style>
+
+    <hr class="orange">
+
+    <div class="container">
+      <div class="container25">
+        <h1>[[title]]</h1>
+        <slot name="sidebar"></slot>
+      </div>
+
+      <div class="container75">
+        <slot></slot>
+      </div>
+
+      <slot name="custom"></slot>
+    </div><!--/container-->
+
+
+  </template>
+
+  <script>
+    class ElResumeBlock extends Polymer.Element {
+      static get is() { return 'el-resume-block'; }
+
+      static get properties() {
+        return {
+          title: {
+            type: String
+          }
+        };
+      }
+    }
+
+    window.customElements.define(ElResumeBlock.is, ElResumeBlock);
+  </script>
+</dom-module>

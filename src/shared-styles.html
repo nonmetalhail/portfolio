@@ -14,31 +14,136 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <dom-module id="shared-styles">
   <template>
     <style>
-      .card {
-        margin: 24px;
-        padding: 16px;
-        color: #757575;
-        border-radius: 5px;
-        background-color: #fff;
-        box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
-      }
 
-      .circle {
-        display: inline-block;
-        width: 64px;
-        height: 64px;
-        text-align: center;
-        color: #555;
-        border-radius: 50%;
-        background: #ddd;
-        font-size: 30px;
-        line-height: 64px;
+      :host {
+        --el-primary-color: #fff;
+        --el-secondary-color: #E97724;
+        --el-tertiary-color: #e5e5e5;
+
+        --el-grey1: #444;
+        --el-grey2: #666;
+        --el-grey3: #999;
       }
 
       h1 {
-        margin: 16px 0;
-        color: #212121;
-        font-size: 22px;
+        font-size: 18px;
+        font-weight: bold;
+        text-transform: uppercase;
+        margin: 10px 0;
+        text-rendering: optimizelegibility;
+      }
+
+      h2 {
+        font-size: 14px;
+        font-weight: bold;
+        text-transform: uppercase;
+        margin: 8px 0;
+        color: black;
+      }
+
+      h3 {
+        font-size: 14px;
+        font-weight: normal;
+        text-transform: uppercase;
+        font-style: italic;
+        margin: 8px 0;
+        color: black;
+      }
+
+      h4 {
+        font-size: 12px;
+        margin: 6px 0;
+        color: black;
+      }
+
+      small {
+        font-weight: normal;
+        line-height: 1;
+        font-size: 85%;
+      }
+
+      hr.orange {
+        margin: 20px 0;
+        border: 0;
+        border-top: 1px solid var(--el-secondary-color);
+      }
+
+      hr.grey {
+        margin: 10px 0;
+        border: 0;
+        border-top: 1px solid var(--el-tertiary-color);
+      }
+
+      a {
+        color: var(--el-secondary-color);
+        text-decoration: none;
+      }
+
+      a:hover {
+        color: #808080;
+      }
+
+      ul {
+        padding: 0;
+        margin: 0 0 10px 25px;
+        list-style: circle;
+      }
+
+      li {
+        margin-bottom: 10px;
+      }
+
+      .orange {
+        color: var(--el-secondary-color);
+      }
+
+      .grey {
+        color: var(--el-grey3);
+      }
+
+      .container {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        width: 100%;
+      }
+
+      .container75 {
+        width: calc(75% - 10px);
+        margin: 0 5px;
+        display: inline-block;
+      }
+
+      .container50 {
+        width: calc(50% - 20px);
+        margin: 0 10px;
+        display: inline-block;
+      }
+
+      .container25,
+      .container25NoBreak {
+        width: calc(25% - 10px);
+        margin: 0 5px;
+        display: inline-block;
+      }
+
+      .nowrap {
+        display:inline;
+      }
+
+      .showOnSmall {
+        display: none;
+      }
+
+      @media (max-width: 640px) {
+        .showOnSmall {
+          display: block;
+        }
+
+        .container50 {
+          width: 98%;
+          margin: 0 1%
+        }
       }
     </style>
   </template>

@@ -1,0 +1,100 @@
+<link rel="import" href="../bower_components/polymer/polymer-element.html">
+<link rel="import" href="../bower_components/iron-image/iron-image.html">
+<link rel="import" href="../images/icons/icons.html">
+<link rel="import" href="../bower_components/iron-icon/iron-icon.html">
+<link rel="import" href="shared-styles.html">
+<link rel="import" href="shared-styles-mid-break.html">
+
+<dom-module id="el-about">
+  <template>
+    <style include="shared-styles">
+      :host {
+        --iron-image-width: 100%;
+
+        --iron-icon-height: 80%;
+        --iron-icon-width: auto;
+
+        --iron-icon-fill-color: var(--el-tertiary-color);
+
+        display: block;
+
+        padding: 10px;
+      }
+
+      iron-icon {
+        transition: all 0.1s;
+      }
+
+      a.github:hover {
+        --iron-icon-fill-color: #181616;
+      }
+      a.twitter:hover {
+        --iron-icon-fill-color: #1DA1F2;
+      }
+      a.pintrest:hover {
+        --iron-icon-fill-color: #BD081C;
+      }
+      a.flickr:hover {
+        --iron-icon-fill-color: #0063dc;
+      }
+
+    </style>
+    <!--<style include="shared-styles-mid-break"></style>-->
+
+    <hr class="orange">
+    <div class="container">
+
+      <div class="container50">
+        <iron-image id="elliot" src="../images/elliot_web.jpg"></iron-image>
+
+        <div class="container">
+          <div class="container25NoBreak">
+            <a class="socialButton github" href="https://github.com/nonmetalhail" target = "_blank">
+              <iron-icon icon="social:github"></iron-icon>
+            </a>
+          </div>
+          <div class="container25NoBreak">
+            <a class="socialButton twitter" href="https://twitter.com/Nonmetalhail" target = "_blank">
+              <iron-icon icon="social:twitter"></iron-icon>
+            </a>
+          </div>
+          <div class="container25NoBreak">
+            <a class="socialButton flickr" href="http://www.flickr.com/photos/7175744@N02/" target = "_blank">
+              <iron-icon icon="social:flickr"></iron-icon>
+            </a>
+          </div>
+          <div class="container25NoBreak">
+            <a class="socialButton pintrest" href="http://pinterest.com/nonmetalhail/" target = "_blank">
+              <iron-icon icon="social:pintrest"></iron-icon>
+            </a>
+          </div>
+        </div>
+      </div> <!--/container50-->
+      <div class="container50">
+        <p>
+          Hi, I&rsquo;m Elliot! I&rsquo;m an architect turned building scientist turned developer. I pride myself on being a generalist, part designer, part scientist, and part engineer and well versed in both atoms and bits.
+        </p>
+        <p>
+          With a Masters degree from the <a href="http://www.ischool.berkeley.edu/" target = "_blank">School of Information</a> at UC Berkeley. I am well versed with the Human Centered Design process.
+        </p>
+        <p>
+          In school and my professional career, I have worked on both physical and digital products including web, mobile, wearables, automotive infotainment head units, and other consumer products. I can lend expertise in user experience, human-computer interaction, product design, frontend engineering, and prototyping, and have worked in the audio domain, automotive domain, education, and building sector.
+        </p>
+        <p>
+          Outside work, I enjoy the hiking-<a href = "http://www.flickr.com/photos/7175744@N02/"
+          target = "_blank">photography</a> nexus, cooking
+          delicious meals, baking bread and fancy cakes, nerding out over TED talks, and playing
+          my guitar or listening to music (from bluegrass to the symphony).
+        </p>
+      </div><!--/container50-->
+    </div><!--/container-->
+  </template>
+
+  <script>
+    class ElAbout extends Polymer.Element {
+      static get is() { return 'el-about'; }
+    }
+
+    window.customElements.define(ElAbout.is, ElAbout);
+  </script>
+</dom-module>

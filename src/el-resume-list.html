@@ -1,0 +1,40 @@
+<link rel="import" href="../bower_components/polymer/polymer-element.html">
+<link rel="import" href="shared-styles.html">
+
+<dom-module id="el-resume-list">
+  <template>
+    <style include="shared-styles">
+      :host {
+        display: inline-block;
+        width: 100%;
+      }
+    </style>
+
+    <h2>[[title]]</h2>
+    <ul>
+      <template is="dom-repeat" items="[[listItems]]">
+        <li>[[item]]</li>
+      </template>
+    </ul>
+
+  </template>
+
+  <script>
+    class ElResumeList extends Polymer.Element {
+      static get is() { return 'el-resume-list'; }
+
+      static get properties() {
+        return {
+          title: {
+            type: String
+          },
+          listItems: {
+            type: Array
+          }
+        };
+      }
+    }
+
+    window.customElements.define(ElResumeList.is, ElResumeList);
+  </script>
+</dom-module>

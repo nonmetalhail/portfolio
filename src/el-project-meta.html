@@ -1,0 +1,91 @@
+<link rel="import" href="../bower_components/polymer/polymer-element.html">
+<link rel="import" href="shared-styles.html">
+
+<dom-module id="el-project-meta">
+  <template>
+    <style include="shared-styles">
+      :host {
+        display: block;
+      }
+      .titles{
+        text-transform: uppercase;
+        color:#888;
+      }
+    </style>
+
+    <h4>
+      <span class="titles">[[title]]: </span>
+      <template is="dom-if" if="[[_isTypeString(data)]]">
+        [[data]]
+      </template>
+
+      <template is="dom-if" if="[[!_isTypeString(data)]]">
+        <template is="dom-repeat" items="[[data]]" rendered-item-count="{{drCount}}">
+
+          <template is="dom-if" if="[[!_hasLink(item)]]">
+            <span>[[_getTitle(item)]]</span>
+          </template>
+
+          <template is="dom-if" if="[[_hasLink(item)]]">
+            <a href="[[_getHref(item)]]" target="_blank">[[_getTitle(item)]]</a>
+          </template>
+
+          <template is="dom-if" if="[[_isLastItem(index, drCount)]]">
+            <span >,</span>
+          </template>
+
+        </template>
+      </template>
+
+    </h4>
+
+
+  </template>
+
+  <script>
+    class ElProjectMeta extends Polymer.Element {
+      static get is() { return 'el-project-meta'; }
+
+      static get properties() {
+        return {
+          title: {
+            type: String
+          },
+          data: {
+            type: String
+          },
+          titleKey: {
+            type: String,
+            value: 'title'
+          },
+          linkKey: {
+            type: String,
+            value: 'src'
+          }
+        };
+      }
+
+      _isLastItem(i, l) {
+        return i !== l-1;
+      }
+
+      _isTypeString(data) {
+        return typeof data === 'string';
+      }
+
+      _hasLink(item) {
+        return item[this.linkKey] ? true : false;
+      }
+
+      _getHref(item) {
+        return item[this.linkKey];
+      }
+
+      _getTitle(item) {
+        return item[this.titleKey];
+      }
+    }
+
+    window.customElements.define(ElProjectMeta.is, ElProjectMeta);
+  </script>
+</dom-module>

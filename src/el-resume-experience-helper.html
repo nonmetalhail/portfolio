@@ -1,0 +1,62 @@
+<link rel="import" href="../bower_components/polymer/polymer-element.html">
+<link rel="import" href="shared-styles.html">
+
+<dom-module id="el-resume-experience-helper">
+  <template>
+    <style include="shared-styles">
+      :host {
+        display: block;
+      }
+
+      p {
+        margin: 0 0 10px 0;
+        width: 100%;
+      }
+
+      ul {
+        width: 100%;
+      }
+
+    </style>
+
+    <div class="container">
+      <template is="dom-repeat" items="[[description]]">
+        <template is="dom-if" if="[[_isPara(item.type)]]">
+          <p>[[item.content]]</p>
+        </template>
+        <template is="dom-if" if="[[_isList(item.type)]]">
+          <ul>
+            <template is="dom-repeat" items="[[item.content]]" as="cont">
+              <li>[[cont]]</li>
+            </template>
+          </ul>
+        </template>
+      </template>
+    </div><!--/container-->
+
+  </template>
+
+  <script>
+    class ElResumeExperienceHelper extends Polymer.Element {
+      static get is() { return 'el-resume-experience-helper'; }
+
+      static get properties() {
+        return {
+          description: {
+            type: Array
+          }
+        };
+      }
+
+      _isPara(type) {
+        return type === 'p'
+      }
+
+      _isList(type) {
+        return type === 'li'
+      }
+    }
+
+    window.customElements.define(ElResumeExperienceHelper.is, ElResumeExperienceHelper);
+  </script>
+</dom-module>

@@ -1,0 +1,49 @@
+{
+  "id":"germanmap",
+  "title":"Map of the German Speaking Countries",
+  "thumb":{
+    "type":"info_vis",
+    "src":"",
+    "alt":"German Countries",
+    "title":"German Countries"
+  },
+  "date":"May 2015",
+  "keywords":"Javascript, d3, maps",
+  "site":[
+    {
+      "title":"Live Demo",
+      "src":"http://www.nonmetalhail.com/projects/German-Speaking-Countries/"
+    },{
+      "title":"Code Repository",
+      "src":"https://github.com/nonmetalhail/German-Speaking-Countries"
+    }
+  ],
+  "text":[
+    {
+      "type":"text",
+      "text":"My girlfriend, for her PhD dissertation, wanted to create some simple maps highlighting cities she is writing about at different time periods. To help her, I created this simple mapping application in d3.js."
+    },
+    {
+      "type":"text",
+      "text":"The map allows you to choose to show Germany, Austria, and Switzerland and/or California. You can then add specific cities to the map, add a year (or other title), and export the d3 graphic as a PNG file."
+    },
+    {
+      "type":"text",
+      "text":"The editor is currently bare-bones, but will continue to evolve as I tinker with it in my spare time and add more contries/states. The hardest part was creating the former East Germany boarder. I could not find any decent standalone file for the boarder, so I had to create it by drawing only the boader between specific German states."
+    }
+  ],
+  "images":[
+    {
+      "src":"gsc/gsc_1982.png",
+      "caption":"A png created and saved from the app"
+    },
+    {
+      "src":"gsc/gsc1.png",
+      "caption":"Screenshot of the bare-bones editor"
+    },
+    {
+      "src":"gsc/gsc2.png",
+      "caption":"Screenshot with CA and the German Speaking Countries"
+    }
+  ]
+}

@@ -1,0 +1,98 @@
+<link rel="import" href="../bower_components/polymer/polymer-element.html">
+<link rel="import" href="shared-styles.html">
+
+<dom-module id="el-resume-experience">
+  <template>
+    <style include="shared-styles">
+      :host {
+        display: block;
+      }
+
+      /*a {
+        color: inherit;
+      }
+
+      a:hover {
+        color: var(--el-secondary-color);
+      }*/
+
+      h2 {
+        margin-bottom: 3px;
+      }
+
+      .city {
+        font-size: 12px;
+        font-weight: normal;
+        text-transform: uppercase;
+      }
+
+      .link {
+        font-style: italic;
+        font-size: 12px;
+      }
+
+      .subtitle {
+        margin-top: 0;
+        margin-bottom: 15px;
+      }
+
+    </style>
+
+    <div>
+      <h2>[[title]] — <small>[[company]]</small></h2>
+      <div class="subtitle">
+        <span class="grey city">[[city]], [[state]]</span>  —  <a class="link" href$="[[url]]" target="_blank">[[url]]</a>
+      </div>
+
+      <!-- <h2>[[title]]</h2>
+      <h3>
+        <a href$="[[url]]" target="_blank">[[company]],</a><span class="grey city"> [[city]], [[state]]</span>
+      </h3> -->
+
+      <slot name="description">
+      </slot>
+
+    </div><!--/container-->
+
+  </template>
+
+  <script>
+    class ElResumeExperience extends Polymer.Element {
+      static get is() { return 'el-resume-experience'; }
+
+      static get properties() {
+        return {
+          startDate: {
+            type: String
+          },
+
+          endDate: {
+            type: String
+          },
+
+          title: {
+            type: String
+          },
+
+          company: {
+            type: String
+          },
+
+          url: {
+            type: String
+          },
+
+          city: {
+            type: String
+          },
+
+          state: {
+            type: String
+          }
+        };
+      }
+    }
+
+    window.customElements.define(ElResumeExperience.is, ElResumeExperience);
+  </script>
+</dom-module>

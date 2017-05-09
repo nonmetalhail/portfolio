@@ -1,0 +1,68 @@
+<link rel="import" href="../bower_components/polymer/polymer-element.html">
+<link rel="import" href="shared-styles.html">
+
+<link rel="import" href="../bower_components/iron-image/iron-image.html">
+
+<dom-module id="el-portfolio-item">
+  <template>
+    <style include="shared-styles">
+      :host {
+        display: block;
+
+        padding: 10px;
+      }
+
+      .thumbnail {
+        --iron-image-width: 100%;
+        border: 1px solid var(--el-tertiary-color);
+        border-radius: 4px;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.055);
+        transition: all .2s ease-in-out;
+        padding: 4px;
+      }
+
+      h2 {
+        color: var(--el-grey1);
+        transition: all .2s ease-in-out;
+      }
+
+      a:hover h2 {
+        color: var(--el-secondary-color);
+      }
+
+      a:hover .thumbnail {
+        border: 1px solid var(--el-secondary-color);
+      }
+    </style>
+
+    <!-- <div class="container50"> -->
+      <a href$="/portfolio/{{pid}}" class="thumb">
+        <iron-image class="thumbnail" src$="../images/projects/{{img}}"></iron-image>
+        <h2>{{title}}</h2>
+      </a>
+    <!-- </div> -->
+
+  </template>
+
+  <script>
+    class ElPortfolioItem extends Polymer.Element {
+      static get is() { return 'el-portfolio-item'; }
+
+      static get properties() {
+        return {
+          title: {
+            type: String
+          },
+          img: {
+            type: String
+          },
+          pid: {
+            type: String
+          }
+        };
+      }
+    }
+
+    window.customElements.define(ElPortfolioItem.is, ElPortfolioItem);
+  </script>
+</dom-module>

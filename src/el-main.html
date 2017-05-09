@@ -1,0 +1,331 @@
+<!--
+@license
+Copyright (c) 2016 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+-->
+
+<link rel="import" href="../bower_components/polymer/polymer-element.html">
+<link rel="import" href="../bower_components/app-layout/app-drawer/app-drawer.html">
+<link rel="import" href="../bower_components/app-layout/app-drawer-layout/app-drawer-layout.html">
+<link rel="import" href="../bower_components/app-layout/app-header/app-header.html">
+<link rel="import" href="../bower_components/app-layout/app-header-layout/app-header-layout.html">
+<link rel="import" href="../bower_components/app-layout/app-scroll-effects/app-scroll-effects.html">
+<link rel="import" href="../bower_components/app-layout/app-toolbar/app-toolbar.html">
+<link rel="import" href="../bower_components/app-route/app-location.html">
+<link rel="import" href="../bower_components/app-route/app-route.html">
+<link rel="import" href="../bower_components/iron-pages/iron-pages.html">
+<link rel="import" href="../bower_components/iron-selector/iron-selector.html">
+<link rel="import" href="../bower_components/paper-icon-button/paper-icon-button.html">
+<link rel="import" href="../bower_components/iron-image/iron-image.html">
+<link rel="import" href="my-icons.html">
+
+<link rel="import" href="shared-styles.html">
+
+<dom-module id="el-main">
+  <template>
+    <style include="shared-styles"></style>
+    <style>
+      :host {
+        --el-footer-height: 80px;
+        --el-page-width: 70vw;
+        --el-page-height: 100vh;
+        --el-page-margin: 15vw;
+
+        --el-page-min-height: 90vh;
+
+        --app-drawer-width: 20vw;
+        --el-drawer-height: calc(100vh - var(--el-footer-height));
+        --el-drawer-nav-width: calc(var(--app-drawer-width) * .75);
+        --el-drawer-nav-margin-size: calc(var(--app-drawer-width) * .125);
+
+        display: block;
+      }
+
+      app-drawer-layout {
+        width: var(--el-page-width);
+        min-height: var(--el-page-min-height);
+        margin-left: var(--el-page-margin);
+        margin-right: var(--el-page-margin);
+      }
+
+      app-drawer-layout:not([narrow]) [drawer-toggle] {
+        display: none;
+      }
+
+      app-header {
+        color: --el-primary-color;
+        background-color: var(--el-primary-color);
+      }
+
+      app-header paper-icon-button {
+        --paper-icon-button-ink-color: white;
+      }
+
+      app-drawer {
+        --app-drawer-content-container: {
+          background-color: transparent;
+          margin-left: var(--el-page-margin);
+          height: var(--el-drawer-height);
+        }
+      }
+
+      #drawer_cont {
+        height: 100%;
+        overflow-y: scroll;
+      }
+
+      #logo {
+        --iron-image-width: 100%;
+        min-width: 100px;
+        width: var(--el-drawer-nav-width);
+        display: block;
+        margin: 20px auto 0 auto;
+      }
+
+      #nav {
+        width: var(--el-drawer-nav-width);
+        display: block;
+        margin: 0 var(--el-drawer-nav-margin-size);
+      }
+
+      .nav-item-large {
+        font-size: 18px;
+        margin: 16px 0 0 0;
+      }
+
+      .nav-item-small {
+        margin: 3px 0 3px 15px;
+        font-size: 12px;
+        font-weight: bold;
+      }
+
+      .nav-heading {
+        text-transform: uppercase;
+      }
+
+      .drawer-list a {
+        display: block;
+        text-decoration: none;
+      }
+
+      a.iron-selected {
+        color: black;
+        font-weight: bold;
+      }
+
+      #nav_footer {
+        /*position: absolute;
+        bottom:10;
+        z-index: 5;*/
+      }
+
+      #name {
+        margin: 0 0 0 var(--el-drawer-nav-margin-size);
+        font-size: 12px;
+        line-height: 14px
+      }
+
+      footer {
+        height: var(--el-footer-height);
+      }
+
+      #copywrite {
+        margin-left: calc(var(--el-page-margin) + var(--el-drawer-nav-margin-size));
+        font-size: 10px;
+      }
+
+      @media (max-width: 640px) {
+        :host {
+          --el-page-width: 100vw;
+          --el-page-height: 100vh;
+          --el-page-margin: 0;
+          --app-drawer-width: 90vw;
+        }
+
+        app-drawer-layout {
+          width: var(--el-page-width);
+          height: var(--el-page-height);
+          margin-left: var(--el-page-margin);
+          margin-right: var(--el-page-margin);
+        }
+
+        app-drawer {
+          --app-drawer-content-container: {
+            background-color: var(--el-primary-color);;
+            margin-left: var(--el-page-margin);
+          }
+        }
+
+        #copywrite {
+          margin-left: var(--el-page-margin);
+        }
+      }
+    </style>
+
+    <app-location route="{{route}}"></app-location>
+    <app-route
+      route="{{route}}"
+      pattern="/:page"
+      data="{{routeData}}"
+      tail="{{subroute}}">
+    </app-route>
+
+    <app-drawer-layout>
+      <!-- Drawer content -->
+      <app-drawer id="drawer" slot="drawer">
+        <div id="drawer_cont">
+          <!-- Logo -->
+          <a name="portfolio" href="/portfolio" class="nav-item nav-item-large">
+            <iron-image id="logo" src="../images/logo.png"></iron-image>
+          </a>
+
+          <hr class="orange" />
+
+          <div id="nav">
+            <iron-selector class="drawer-list" selected="[[page]]" attr-for-selected="name" role="navigation">
+              <a name="about" href="/about" class="nav-item nav-item-large">About</a>
+
+              <a name="resume" href="/resume" class="nav-item-large">Resum&#233;</a>
+              <a name="resume_pdf" href="resume_pdf" class="nav-item-small">PDF VERSION</a>
+
+              <a name="portfolio" href="/portfolio" class="nav-item-large">Portfolio</a>
+              <hr class="grey" />
+
+              <p class="nav-item-small nav-heading">CODE</p>
+              <a name="view1" href="/view1" class="nav-item-small">View One</a>
+              <a name="view2" href="/view2" class="nav-item-small">View Two</a>
+              <a name="view3" href="/view3" class="nav-item-small">View Three</a>
+              <hr class="grey" />
+
+              <p class="nav-item-small nav-heading">APPS</p>
+              <a name="mapestry" href="/project/mapestry" class="nav-item-small">Mapestry</a>
+              <a name="phauffiti" href="/project/phauffiti" class="nav-item-small">Phauffiti</a>
+              <a name="xfit" href="/project/xfit" class="nav-item-small">CrossMetRx</a>
+              <hr class="grey" />
+
+              <p class="nav-item-small nav-heading">INFO VIS</p>
+              <a name="slopegraph" href="/project/slopegraph" class="nav-item-small">Slopegraph</a>
+              <a name="germanmap" href="/project/germanmap" class="nav-item-small">German Map</a>
+              <a name="eplus" href="/project/eplus" class="nav-item-small">Energy+ Sim Viewer</a>
+              <hr class="grey" />
+
+              <p class="nav-item-small nav-heading">TANGIBLE DEVICES</p>
+              <a name="drinke" href="/project/drinke" class="nav-item-small">Drinke</a>
+              <a name="pap" href="/project/pap" class="nav-item-small">Pole Aerial Photography</a>
+              <hr class="grey" />
+            </iron-selector>
+          </div>  <!-- nav -->
+
+          <div id="nav_footer">
+            <div id="name">
+              <p>elliot nahman</p>
+              <p class="orange">elliot@ischool.berkeley.edu</p>
+            </div>
+            <hr class="orange">
+          </div> <!-- nav_foot -->
+
+        </div> <!-- draw_cont -->
+      </app-drawer>
+
+      <!-- Main content -->
+      <app-header-layout>
+
+        <app-header class="showOnSmall" slot="header" condenses reveals effects="waterfall">
+          <app-toolbar>
+            <paper-icon-button icon="my-icons:menu" drawer-toggle></paper-icon-button>
+            <iron-image id="logo" src="../images/logo.png"></iron-image>
+          </app-toolbar>
+        </app-header>
+
+        <iron-pages
+          selected="[[page]]"
+          attr-for-selected="name"
+          fallback-selection="view404"
+          role="main">
+
+          <el-about name="about"></el-about>
+          <el-resume name="resume"></el-resume>
+          <el-portfolio name="portfolio"></el-portfolio>
+          <el-project name="project" route="[[subroute]]"></el-project>
+          <el-view404 name="view404"></el-view404>
+
+        </iron-pages>
+
+      </app-header-layout>
+    </app-drawer-layout>
+
+    <footer>
+      <hr class="orange"/>
+        <div id="copywrite">
+          <p>&copy; 2012-2017 All rights reserved</p>
+        </div>
+    </footer>
+
+  </template>
+
+  <script>
+    class ElMain extends Polymer.Element {
+
+      static get is() { return 'el-main'; }
+
+      static get properties() {
+        return {
+          page: {
+            type: String,
+            reflectToAttribute: true,
+            observer: '_pageChanged',
+          },
+        };
+      }
+
+      static get observers() {
+        return [
+          '_routePageChanged(routeData.page)',
+        ];
+      }
+
+      _routePageChanged(page) {
+        // Polymer 2.0 will call with `undefined` on initialization.
+        // Ignore until we are properly called with a string.
+        if (page === undefined) {
+          return;
+        }
+
+        // If no page was found in the route data, page will be an empty string.
+        // Deault to 'view1' in that case.
+        this.page = page || 'view1';
+
+        // Close a non-persistent drawer when the page & route are changed.
+        if (!this.$.drawer.persistent) {
+          this.$.drawer.close();
+        }
+      }
+
+      _pageChanged(page) {
+
+        if(page === 'resume_pdf') {
+          window.open('../images/nahman_elliot_resume_2015.pdf');
+          return;
+        }
+        // Load page import on demand. Show 404 page if fails
+        var resolvedPageUrl = this.resolveUrl('el-' + page + '.html');
+
+        Polymer.importHref(
+            resolvedPageUrl,
+            null,
+            this._showPage404.bind(this),
+            true);
+      }
+
+      _showPage404() {
+        this.page = 'view404';
+      }
+    }
+
+    window.customElements.define(ElMain.is, ElMain);
+  </script>
+</dom-module>

@@ -6,7 +6,6 @@
   "license": "https://polymer.github.io/LICENSE.txt",
   "dependencies": {
     "app-layout": "^2.0.0",
-    "app-route": "^2.0.0",
     "iron-ajax": "^2.0.0",
     "iron-flex-layout": "^2.0.0",
     "iron-icon": "^2.0.0",
@@ -20,7 +19,8 @@
     "polymer": "^2.0.0",
     "paper-dialog": "^2.0.0",
     "paper-icon-button": "^2.0.0",
-    "web-animations-js": "^2.2.2"
+    "web-animations-js": "^2.2.2",
+    "app-route": "PolymerElements/app-route#^2.0.3"
   },
   "devDependencies": {
     "web-component-tester": "^6.0.0"

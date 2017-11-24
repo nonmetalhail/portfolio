@@ -293,6 +293,11 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
           return;
         }
 
+        if(page === 'resume_pdf') {
+          window.open('../images/nahman_elliot_resume_2017.pdf');
+          page = 'resume';
+        }
+
         // If no page was found in the route data, page will be an empty string.
         // Deault to 'portfolio' in that case.
         this.page = page || 'portfolio';
@@ -304,11 +309,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       }
 
       _pageChanged(page) {
-
-        if(page === 'resume_pdf') {
-          window.open('../images/nahman_elliot_resume_2017.pdf');
-          return;
-        }
         // Load page import on demand. Show 404 page if fails
         var resolvedPageUrl = this.resolveUrl('el-' + page + '.html');
 

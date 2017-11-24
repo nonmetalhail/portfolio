@@ -100,8 +100,8 @@
             city="[[item.city]]"
             state="[[item.state]]"
             title="[[item.title]]"
-            startDate="[[item.startDate]]"
-            endDate="[[item.endDate]]">
+            start-date="[[item.startDate]]"
+            end-date="[[item.endDate]]">
             <span slot="description">
               <el-resume-experience-helper description="[[item.desc]]"></el-resume-experience-helper>
             </span>
@@ -119,8 +119,8 @@
                 city="[[item.city]]"
                 state="[[item.state]]"
                 title="[[item.title]]"
-                startDate="[[item.startDate]]"
-                endDate="[[item.endDate]]">
+                start-date="[[item.startDate]]"
+                end-date="[[item.endDate]]">
                 <span slot="description">
                   <el-resume-experience-helper description="[[item.desc]]"></el-resume-experience-helper>
                 </span>
@@ -133,7 +133,7 @@
 
     <el-resume-block title="Patents">
       <el-resume-link-list
-        title="Issued"
+        title="Granted"
         list-items='[[patentIssued]]'>
       </el-resume-link-list>
       <el-resume-link-list
@@ -205,15 +205,15 @@
       constructor() {
         super();
         this.prgList = [
-          "Javascript & ES6",
+          "Javascript / ES6",
           "HTML & CSS",
           "Polymer & web components",
           "d3.js",
+          "Node.js",
           "Python",
           "Django",
-          "Node.js",
           "SASS",
-          "Arduino & other microcontrollers"
+          "Arduino / microcontrollers"
         ];
 
         this.researchList = [
@@ -239,10 +239,10 @@
         ];
 
         this.expertiseList = [
+          "Data visualization",
           "Rapid prototyping",
           "HCI",
           "Tangible product design",
-          "Data visualization",
           "Product management",
           "Cost estimating",
           "Graphic and web design",
@@ -251,10 +251,22 @@
         ];
 
         this.patentIssued = [{
+          "url" : "https://patents.google.com/patent/US9795015B2/",
+          "title" : "Automatic identification and localization of wireless light emitting elements",
+          "id" : "US9795015B2",
+          "date": "2017-10-17",
+          "type" : "Utility"
+        },{
+          "url" : "https://patents.google.com/patent/US9720510B2/",
+          "title" : "User-directed personal information assistant",
+          "id" : "US9720510B2",
+          "date": "2017-08-01",
+          "type" : "Utility"
+        },{
           "url" : "https://patents.google.com/patent/USD773433S1",
           "title" : "Wearable loudspeaker",
           "id" : "USD773433S1",
-          "date": "2015-01-02",
+          "date": "2016-12-06",
           "type" : "Design"
         }];
 
@@ -289,16 +301,16 @@
           "date": "2015-05-14",
           "type" : "Utility"
         },{
+          "url" : "https://patents.google.com/patent/US20170206913A1/",
+          "title" : "Voice affect modification",
+          "id" : "US20170206913A1",
+          "date": "2016-01-20",
+          "type" : "Utility"
+        },{
           "url" : "https://patents.google.com/patent/WO2016118656A1/",
           "title" : "Techniques for amplifying sound based on directions of interest",
           "id" : "WO2016118656A1",
           "date": "2015-01-21",
-          "type" : "Utility"
-        },{
-          "url" : "https://patents.google.com/patent/US20160366752A1/",
-          "title" : "Automatic identification and localization of wireless light emitting elements",
-          "id" : "US20160366752A1",
-          "date": "2015-06-11",
           "type" : "Utility"
         },{
           "url" : "https://patents.google.com/patent/WO2016115052A1/",
@@ -313,10 +325,16 @@
           "date": "2014-01-03",
           "type" : "Utility"
         },{
-          "url" : "https://patents.google.com/patent/US20150193005A1/",
-          "title" : "User-directed personal information assistant",
-          "id" : "US20150193005A1",
-          "date": "2014-01-03",
+          "url" : "https://patents.google.com/patent/US20170153268A1/",
+          "title" : "Center of gravity shifting force device",
+          "id" : "US20170153268A1",
+          "date": "2015-11-30",
+          "type" : "Utility"
+        },{
+          "url" : "https://patents.google.com/patent/US20170178469A1/",
+          "title" : "Fan-driven force device",
+          "id" : "US20170178469A1",
+          "date": "2015-12-17",
           "type" : "Utility"
         },{
           "url" : "https://patents.google.com/patent/WO2016112353A1/",
@@ -331,16 +349,28 @@
           "date": "2014-12-11",
           "type" : "Utility"
         },{
-          "url" : "http://www.freepatentsonline.com/WO2017023243A1.html",
+          "url" : "https://patents.google.com/patent/WO2017023243A1/",
           "title" : "Self-adjusting head-mounted audio device",
           "id" : "US2015043099",
           "date": "2015-07-31",
+          "type" : "Utility"
+        },{
+          "url" : "https://patents.google.com/patent/EP3151581A1/",
+          "title" : "Headphones with thermal control",
+          "id" : "EP3151581A1",
+          "date": "2015-10-02",
+          "type" : "Utility"
+        },{
+          "url" : "https://patents.google.com/patent/US20170140649A1/",
+          "title" : "Parking limit notification system",
+          "id" : "US20170140649A1",
+          "date": "2015-11-18",
           "type" : "Utility"
         }];
 
         this.exp = [
           {
-            "company": "GE Digital: Predix UI",
+            "company": "GE Digital: Predix Design System",
             "url": "https://www.predix-ui.com",
             "city": "San Ramon",
             "state": "CA",
@@ -469,8 +499,8 @@
             "city": "Berkeley",
             "state": "CA",
             "title": "Research Associate",
-            "startDate": "May 2012",
-            "endDate": "Aug 2012",
+            "startDate": "Aug 2010",
+            "endDate": "May 2012",
             "desc": [{
               "type": "p",
               "content": "Built educational software to teach building industry professionals about building systems, installation, and integration. Projects included: CEC Learn Green Buildings software, DOE/NIBS Weatherization training program, DHS/NIBS building design tool, among others."
@@ -485,70 +515,71 @@
                 "Conducted parametric energy simulations using Energy Plus"
               ]
             }]
-          },{
-            "company": "Center for the Built Environment",
-            "url": "http://cbe.berkeley.edu/",
-            "city": "Berkeley",
-            "state": "CA",
-            "title": "Graduate Student Researcher",
-            "startDate": "July 2008",
-            "endDate": "Aug 2010",
-            "secondStartDate": "Aug 2011",
-            "secondEndDate": "Dec 2011",
-            "desc": [{
-              "type": "li",
-              "content": [
-                "Conducted research on a wide variety of projects including thermal comfort, integrated buildings systems, water and energy studies, UFAD systems, and radiant heating and cooling systems.",
-                'Research methods included computer simulations, field measurements using "off the shelf" tools, building custom tools, controlled chamber studies, IEQ Occupant surveys, interviews, literary reviews/case studies.'
-              ]
-            }]
-          },{
-            "company": "The Green Initiative Fund",
-            "url": "http://tgif.berkeley.edu/",
-            "city": "University of California",
-            "state": "Berkeley",
-            "title": "TGIF Grant Recipient",
-            "startDate": "April 2009",
-            "endDate": "Dec 2012",
-            "desc": [{
-              "type": "li",
-              "content": [
-                "Received a grant of $114,000 to conduct water metering research and build infrastructure on campus; partnered with a PhD student in Mechanical Engineering, Lindsay Miller.",
-                "Responsible for Project Management: coordinating with campus facilities (and getting them onboard and committed to the project), budgeting, cost estimating, (re)allocating funds, researching metering technologies, and hiring/coordinating undergrad assistants"
-              ]
-            }]
-          },{
-            "company": "Department of Architecture",
-            "url": "http://www.ced.berkeley.edu/courses/sp10/arch140/",
-            "city": "University of California",
-            "state": "Berkeley",
-            "title": "Graduate Student Instructor: Architecture 140",
-            "startDate": "Jan 2010",
-            "endDate": "June 2010",
-            "desc": [{
-              "type": "li",
-              "content": [
-                "Taught a lab/section on the fundamentals of building science: building physics, daylighting, solar control, and the evolving nature of building technologies, energy efficiency, ecology, and design.",
-                "Developed homeworks, labs, and a final design project. Graded homeworks, labs, tests, and design projects. Managed grades for the all course labs.",
-                "Developed computer tools to aid the pedagogical objectives of the course."
-              ]
-            }]
-          },{
-            "company": "Leland Saylor Associates",
-            "url": "http://www.lelandsaylor.com/",
-            "city": "San Francisco",
-            "state": "CA",
-            "title": "Junior Estimator",
-            "startDate": "Dec 2007",
-            "endDate": "July 2008",
-            "desc": [{
-              "type": "li",
-              "content": [
-                "Developed construction cost estimates for all phases of design and construction in collaboration with clients and members of the design team.",
-                "Projects included public schools, residences, SF municipal water supply projects, and airports: LAX, SFO, SAC, OAK, SJC"
-              ]
-            }]
           }
+          // ,{
+          //   "company": "Center for the Built Environment",
+          //   "url": "http://cbe.berkeley.edu/",
+          //   "city": "Berkeley",
+          //   "state": "CA",
+          //   "title": "Graduate Student Researcher",
+          //   "startDate": "July 2008",
+          //   "endDate": "Aug 2010",
+          //   "secondStartDate": "Aug 2011",
+          //   "secondEndDate": "Dec 2011",
+          //   "desc": [{
+          //     "type": "li",
+          //     "content": [
+          //       "Conducted research on a wide variety of projects including thermal comfort, integrated buildings systems, water and energy studies, UFAD systems, and radiant heating and cooling systems.",
+          //       'Research methods included computer simulations, field measurements using "off the shelf" tools, building custom tools, controlled chamber studies, IEQ Occupant surveys, interviews, literary reviews/case studies.'
+          //     ]
+          //   }]
+          // },{
+          //   "company": "The Green Initiative Fund",
+          //   "url": "http://tgif.berkeley.edu/",
+          //   "city": "University of California",
+          //   "state": "Berkeley",
+          //   "title": "TGIF Grant Recipient",
+          //   "startDate": "April 2009",
+          //   "endDate": "Dec 2012",
+          //   "desc": [{
+          //     "type": "li",
+          //     "content": [
+          //       "Received a grant of $114,000 to conduct water metering research and build infrastructure on campus; partnered with a PhD student in Mechanical Engineering, Lindsay Miller.",
+          //       "Responsible for Project Management: coordinating with campus facilities (and getting them onboard and committed to the project), budgeting, cost estimating, (re)allocating funds, researching metering technologies, and hiring/coordinating undergrad assistants"
+          //     ]
+          //   }]
+          // },{
+          //   "company": "Department of Architecture",
+          //   "url": "http://www.ced.berkeley.edu/courses/sp10/arch140/",
+          //   "city": "University of California",
+          //   "state": "Berkeley",
+          //   "title": "Graduate Student Instructor: Architecture 140",
+          //   "startDate": "Jan 2010",
+          //   "endDate": "June 2010",
+          //   "desc": [{
+          //     "type": "li",
+          //     "content": [
+          //       "Taught a lab/section on the fundamentals of building science: building physics, daylighting, solar control, and the evolving nature of building technologies, energy efficiency, ecology, and design.",
+          //       "Developed homeworks, labs, and a final design project. Graded homeworks, labs, tests, and design projects. Managed grades for the all course labs.",
+          //       "Developed computer tools to aid the pedagogical objectives of the course."
+          //     ]
+          //   }]
+          // },{
+          //   "company": "Leland Saylor Associates",
+          //   "url": "http://www.lelandsaylor.com/",
+          //   "city": "San Francisco",
+          //   "state": "CA",
+          //   "title": "Junior Estimator",
+          //   "startDate": "Dec 2007",
+          //   "endDate": "July 2008",
+          //   "desc": [{
+          //     "type": "li",
+          //     "content": [
+          //       "Developed construction cost estimates for all phases of design and construction in collaboration with clients and members of the design team.",
+          //       "Projects included public schools, residences, SF municipal water supply projects, and airports: LAX, SFO, SAC, OAK, SJC"
+          //     ]
+          //   }]
+          // }
         ]
       }
     }

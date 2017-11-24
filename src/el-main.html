@@ -30,15 +30,15 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     <style include="shared-styles"></style>
     <style>
       :host {
-        --el-footer-height: 80px;
+        --el-footer-height: 37px;
         --el-page-width: 70vw;
         --el-page-height: 100vh;
         --el-page-margin: 15vw;
 
-        --el-page-min-height: 90vh;
+        --el-page-min-height: calc(var(--el-page-height) - var(--el-footer-height) - 10px);
 
         --app-drawer-width: 20vw;
-        --el-drawer-height: calc(100vh - var(--el-footer-height));
+        --el-drawer-height: 100vh;
         --el-drawer-nav-width: calc(var(--app-drawer-width) * .75);
         --el-drawer-nav-margin-size: calc(var(--app-drawer-width) * .125);
 
@@ -47,13 +47,16 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
       app-drawer-layout {
         width: var(--el-page-width);
-        min-height: var(--el-page-min-height);
         margin-left: var(--el-page-margin);
         margin-right: var(--el-page-margin);
       }
 
       app-drawer-layout:not([narrow]) [drawer-toggle] {
         display: none;
+      }
+
+      app-header-layout {
+        min-height: var(--el-page-min-height);
       }
 
       app-header {
@@ -117,12 +120,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         font-weight: bold;
       }
 
-      #nav_footer {
-        /*position: absolute;
-        bottom:10;
-        z-index: 5;*/
-      }
-
       #name {
         margin: 0 0 0 var(--el-drawer-nav-margin-size);
         font-size: 12px;
@@ -133,8 +130,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         height: var(--el-footer-height);
       }
 
-      #copywrite {
-        margin-left: calc(var(--el-page-margin) + var(--el-drawer-nav-margin-size));
+      #copyright {
+        text-align: right;
         font-size: 10px;
       }
 
@@ -180,7 +177,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         <div id="drawer_cont">
           <!-- Logo -->
           <a name="portfolio" href="/portfolio" class="nav-item nav-item-large">
-            <iron-image id="logo" src="../images/logo.png"></iron-image>
+            <iron-image id="logo" src="../images/logo.svg"></iron-image>
           </a>
 
           <hr class="orange" />
@@ -254,16 +251,16 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
           <el-view404 name="view404"></el-view404>
 
         </iron-pages>
-
       </app-header-layout>
-    </app-drawer-layout>
 
-    <footer>
-      <hr class="orange"/>
-        <div id="copywrite">
+      <footer>
+        <hr class="small"/>
+        <div id="copyright">
           <p>&copy; 2012-2017 All rights reserved</p>
         </div>
-    </footer>
+      </footer>
+
+    </app-drawer-layout>
 
   </template>
 
@@ -274,17 +271,18 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
       static get properties() {
         return {
+          routeData: Object,
           page: {
             type: String,
-            reflectToAttribute: true,
-            observer: '_pageChanged',
-          },
+            reflectToAttribute: true
+          }
         };
       }
 
       static get observers() {
         return [
           '_routePageChanged(routeData.page)',
+          '_pageChanged(page)'
         ];
       }
 
@@ -296,8 +294,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         }
 
         // If no page was found in the route data, page will be an empty string.
-        // Deault to 'view1' in that case.
-        this.page = page || 'view1';
+        // Deault to 'portfolio' in that case.
+        this.page = page || 'portfolio';
 
         // Close a non-persistent drawer when the page & route are changed.
         if (!this.$.drawer.persistent) {
@@ -308,7 +306,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       _pageChanged(page) {
 
         if(page === 'resume_pdf') {
-          window.open('../images/nahman_elliot_resume_2015.pdf');
+          window.open('../images/nahman_elliot_resume_2017.pdf');
           return;
         }
         // Load page import on demand. Show 404 page if fails

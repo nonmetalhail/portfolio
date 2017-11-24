@@ -36,7 +36,7 @@
     </style>
 
     <!-- <div class="container50"> -->
-      <a href$="/portfolio/{{pid}}" class="thumb">
+      <a href$="/project/{{pid}}" class="thumb">
         <iron-image class="thumbnail" src$="../images/projects/{{img}}"></iron-image>
         <h2>{{title}}</h2>
       </a>
@@ -50,15 +50,9 @@
 
       static get properties() {
         return {
-          title: {
-            type: String
-          },
-          img: {
-            type: String
-          },
-          pid: {
-            type: String
-          }
+          title: String,
+          img: String,
+          pid: String
         };
       }
     }

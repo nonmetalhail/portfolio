@@ -1,12 +1,7 @@
 <link rel="import" href="../bower_components/polymer/polymer-element.html">
 <link rel="import" href="shared-styles.html">
 
-<link rel="import" href="../bower_components/neon-animation/web-animations.html">
-
-<link rel="import" href="../bower_components/neon-animation/neon-animated-pages.html">
-<link rel="import" href="../bower_components/neon-animation/neon-animatable.html">
-<link rel="import" href="../bower_components/neon-animation/neon-animations.html">
-
+<link rel="import" href="../bower_components/iron-image/iron-image.html">
 
 <dom-module id="el-carousel">
   <template>
@@ -18,40 +13,126 @@
         height: 80vh;
       }
 
-      neon-animated-pages {
+      #sliderCont {
         width: 100%;
         height: 80%;
       }
-       neon-animatable {
-         color: white;
-         width: 100%;
-         height: 100%;
-       }
 
-       .fullHeight{
-         height: 100%;
-       }
+      .wrapper {
+        color: white;
+        width: 100%;
+        height: 80%;
+        position:absolute;
+        transition: transform 0.3s;
+      }
 
-       .img {
-         --iron-image-width: 100%;
-         --iron-image-height: 100%;
-         width: 100%;
-         height: 100%;
-       }
+      .right {
+        transform: translateX(100vw);
+      }
+
+      .left {
+        transform: translateX(-100vw);
+      }
+
+      .img {
+        --iron-image-width: 100%;
+        --iron-image-height: 100%;
+        width: 100%;
+        height: 100%;
+      }
+
+      .slide-btn {
+        width: 50px;
+        height: 100px;
+        background-color: var(--el-grey1);
+        position: absolute;
+        top: calc(50% - 50px);
+        opacity: 0.5;
+        border: 1px solid var(--el-grey1);
+        transition: all 0.3s;
+      }
+
+      .slide-btn:hover {
+        opacity: 0.8;
+        border-color: var(--el-secondary-color);
+      }
+
+      .slide-btn:active {
+        opacity: 1;
+        border-color: var(--el-secondary-color);
+      }
+
+      .slide-btn:focus {
+        outline: 1px dotted var(--el-secondary-color);
+      }
+
+      .slide-btn__left {
+        left: 0px;
+      }
+      .slide-btn__right {
+        right: 0px;
+      }
+
+      .caret:after,
+      .caret:before {
+        content: '';
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-color: transparent;
+        border-top-width: 30px;
+        border-bottom-width: 30px;
+        position: absolute;
+        top: 20px;
+      }
+
+      .caret__right:before,
+      .caret__right:after {
+        border-left-width: 25px;
+      }
+      .caret__right:before {
+        border-left-color: var(--el-grey2);
+        left: 14px
+      }
+      .caret__right:after {
+        border-left-color: var(--el-grey1);
+        top: 20px;
+        left: 12px;
+      }
+
+      .caret__left:before,
+      .caret__left:after {
+        border-right-width: 25px;
+      }
+      .caret__left:before {
+        border-right-color: var(--el-grey2);
+        right: 14px
+      }
+      .caret__left:after {
+        border-right-color: var(--el-grey1);
+        top: 20px;
+        right: 12px;
+      }
     </style>
 
-    <neon-animated-pages id="pages" selected="[[selected]]" entry-animation="[[entryAnimation]]" exit-animation="[[exitAnimation]]">
+    <div id="sliderCont" on-click="_containerClicked">
       <template is="dom-repeat" items="[[images]]">
-          <neon-animatable class="container fullHeight">
+          <div class="wrapper right">
             <iron-image sizing="contain" class="img" src="../images/projects/[[item.src]]"></iron-image>
-          </neon-animatable>
+          </div>
       </template>
-    </neon-animated-pages>
-
-    <div class="toolbar">
-      <button on-click="_onPrevClick">&#8678;</button>
-      <button on-click="_onNextClick">&#8680;</button>
     </div>
+
+    <button class="slide-btn slide-btn__left" on-click="_onPrevClick"><div class="caret caret__left"></div></button>
+    <button class="slide-btn slide-btn__right" on-click="_onNextClick"><div class="caret caret__right"></div></button>
+
+    <!-- <div id="sliderCont">
+      <template is="dom-repeat" items="[[images]]">
+          <div class="wrapper right">
+            <iron-image sizing="contain" class="img" src="../images/projects/[[item.src]]"></iron-image>
+          </div>
+      </template>
+    </div> -->
 
   </template>
 
@@ -70,29 +151,69 @@
             value: 0
           },
 
-          entryAnimation: {
-            type: String,
-            value: 'slide-from-right-animation'
-          },
-
-          exitAnimation: {
-            type: String,
-            value: 'slide-left-animation'
-          }
+          _selectedElem: HTMLElement,
+          _slides: HTMLElement
 
         };
       }
 
+      ready() {
+        super.ready();
+        this.addEventListener('dom-change', () => {
+          this._slides = this.shadowRoot.querySelectorAll('.wrapper');
+          this._initSlides();
+        });
+      }
+
+
       _onPrevClick() {
-        this.entryAnimation = 'slide-from-left-animation';
-        this.exitAnimation = 'slide-right-animation';
-        this.selected = this.selected === 0 ? 4 : (this.selected - 1);
+        this.selected -= 1;
+
+        if(this.selected < 0) {
+          this.selected = this._slides.length - 1;
+          this._initSlides();
+          return;
+        }
+
+        this._selectedElem.classList.add('right');
+        this._selectedElem = this._slides[this.selected];
+        this._selectedElem.classList.remove('left');
       }
 
       _onNextClick() {
-        this.entryAnimation = 'slide-from-right-animation';
-        this.exitAnimation = 'slide-left-animation';
-        this.selected = this.selected === 4 ? 0 : (this.selected + 1);
+        this.selected += 1;
+
+        if(this.selected >= this._slides.length) {
+          this.selected = 0;
+          this._initSlides();
+          return;
+        }
+
+        this._selectedElem.classList.add('left');
+        this._selectedElem = this._slides[this.selected];
+        this._selectedElem.classList.remove('right');
+
+      }
+
+      _initSlides() {
+        for(var i=0; i<this._slides.length; i++) {
+          if(i < this.selected) {
+            this._slides[i].classList.remove('right');
+            this._slides[i].classList.add('left');
+          } else if(i === this.selected) {
+            this._slides[i].classList.remove('right');
+            this._slides[i].classList.remove('left');
+            this._selectedElem = this._slides[i];
+          } else {
+            this._slides[i].classList.add('right');
+            this._slides[i].classList.remove('left');
+          }
+        }
+      }
+
+      _containerClicked() {
+        console.log("click")
+        this.dispatchEvent(new CustomEvent('el-carousel-clicked', {composed: true, bubbles: true}));
       }
 
     }

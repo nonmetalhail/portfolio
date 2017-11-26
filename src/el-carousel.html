@@ -1,4 +1,6 @@
 <link rel="import" href="../bower_components/polymer/polymer-element.html">
+<link rel="import" href="../bower_components/iron-a11y-keys-behavior/iron-a11y-keys-behavior.html">
+
 <link rel="import" href="shared-styles.html">
 
 <link rel="import" href="../bower_components/iron-image/iron-image.html">
@@ -7,7 +9,7 @@
   <template>
     <style include="shared-styles">
       :host {
-        display:block;
+        display: block;
         overflow: hidden;
         width: 80vw;
         height: 80vh;
@@ -16,12 +18,22 @@
       #sliderCont {
         width: 100%;
         height: 80%;
+        max-height: calc(100% - 130px);
+      }
+
+      #thumbCont {
+        width: 100%;
+        height: 105px;
+        margin-top: 25px;
+        display: flex;
+        flex-wrap: nowrap;
       }
 
       .wrapper {
         color: white;
         width: 100%;
         height: 80%;
+        max-height: calc(100% - 130px);
         position:absolute;
         transition: transform 0.3s;
       }
@@ -41,6 +53,28 @@
         height: 100%;
       }
 
+      .thumb {
+        flex-shrink: 0;
+        --iron-image-width: 100%;
+        --iron-image-height: 100%;
+        width: 100px;
+        height: 100px;
+        border: 2px inset transparent;
+        transition: all 0.3s;
+        opacity: 0.8;
+      }
+
+      .thumb:hover {
+        opacity: 1;
+        border: 2px inset var(--el-secondary-color);
+      }
+
+      .selected,
+      .thumb:active {
+        opacity: 1;
+        border: 2px outset var(--el-secondary-color);
+      }
+
       .slide-btn {
         width: 50px;
         height: 100px;
@@ -50,6 +84,7 @@
         opacity: 0.5;
         border: 1px solid var(--el-grey1);
         transition: all 0.3s;
+        border-radius: 5px;
       }
 
       .slide-btn:hover {
@@ -115,29 +150,27 @@
       }
     </style>
 
-    <div id="sliderCont" on-click="_containerClicked">
+    <div id="sliderCont" on-tap="_containerClicked">
       <template is="dom-repeat" items="[[images]]">
-          <div class="wrapper right">
-            <iron-image sizing="contain" class="img" src="../images/projects/[[item.src]]"></iron-image>
-          </div>
+        <div class="wrapper right">
+          <iron-image sizing="contain" class="img" src="../images/projects/[[item.src]]"></iron-image>
+        </div>
       </template>
     </div>
 
-    <button class="slide-btn slide-btn__left" on-click="_onPrevClick"><div class="caret caret__left"></div></button>
-    <button class="slide-btn slide-btn__right" on-click="_onNextClick"><div class="caret caret__right"></div></button>
+    <button class="slide-btn slide-btn__left" on-tap="_onPrevClick"><div class="caret caret__left"></div></button>
+    <button class="slide-btn slide-btn__right" on-tap="_onNextClick"><div class="caret caret__right"></div></button>
 
-    <!-- <div id="sliderCont">
+    <div id="thumbCont">
       <template is="dom-repeat" items="[[images]]">
-          <div class="wrapper right">
-            <iron-image sizing="contain" class="img" src="../images/projects/[[item.src]]"></iron-image>
-          </div>
+        <iron-image sizing="cover" class="thumb" data-index$="[[index]]" src="../images/projects/[[item.src]]" on-tap="_goToImage"></iron-image>
       </template>
-    </div> -->
+    </div>
 
   </template>
 
   <script>
-    class ElCarousel extends Polymer.Element {
+    class ElCarousel extends Polymer.mixinBehaviors([Polymer.IronA11yKeysBehavior], Polymer.Element) {
       static get is() { return 'el-carousel'; }
 
       static get properties() {
@@ -152,19 +185,50 @@
           },
 
           _selectedElem: HTMLElement,
-          _slides: HTMLElement
+          _selectedThumb: HTMLElement,
+          _slides: HTMLElement,
+          _thumbs: HTMLElement,
 
+          // for iron-a11y-keys-behavior
+          keyEventTarget: {
+            type: Object,
+            value: function() {
+              return document.body;
+            }
+          }
         };
+      }
+
+      get keyBindings() {
+        return {
+          'left': '_onPrevClick',
+          'right space': '_onNextClick'
+        }
       }
 
       ready() {
         super.ready();
         this.addEventListener('dom-change', () => {
           this._slides = this.shadowRoot.querySelectorAll('.wrapper');
+          this._thumbs = this.shadowRoot.querySelectorAll('.thumb');
+
+          if(!this._slides || this._slides.length === 0 || !this._thumbs || this._thumbs.length === 0) {
+            return;
+          }
+
+          this._selectedThumb = this._thumbs[0];
           this._initSlides();
         });
       }
 
+      moveTo(slideNumber) {
+        this.selected = slideNumber;
+        this._initSlides();
+      }
+
+      _goToImage(evt) {
+        this.moveTo(Number(evt.target.getAttribute('data-index')));
+      }
 
       _onPrevClick() {
         this.selected -= 1;
@@ -178,6 +242,8 @@
         this._selectedElem.classList.add('right');
         this._selectedElem = this._slides[this.selected];
         this._selectedElem.classList.remove('left');
+
+        this._updateThumb();
       }
 
       _onNextClick() {
@@ -192,6 +258,8 @@
         this._selectedElem.classList.add('left');
         this._selectedElem = this._slides[this.selected];
         this._selectedElem.classList.remove('right');
+
+        this._updateThumb();
 
       }
 
@@ -209,10 +277,17 @@
             this._slides[i].classList.remove('left');
           }
         }
+
+        this._updateThumb();
+      }
+
+      _updateThumb() {
+        this._selectedThumb.classList.remove('selected');
+        this._selectedThumb = this._thumbs[this.selected];
+        this._selectedThumb.classList.add('selected');
       }
 
       _containerClicked() {
-        console.log("click")
         this.dispatchEvent(new CustomEvent('el-carousel-clicked', {composed: true, bubbles: true}));
       }
 

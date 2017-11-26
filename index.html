@@ -62,24 +62,23 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     <!-- Load your application shell -->
     <link rel="import" href="/src/el-main.html">
 
-    <!-- Add any global styles for body, document, etc. -->
     <style>
       @import url(http://fonts.googleapis.com/css?family=Trykker);
       body {
         margin: 0;
         font-family: 'Trykker',"Century Gothic", Helvetica, "Helvetuca Neue", sans-serif;
-        font-size: .85em; /*14px*/
-        font-size: .85em; /*14px*/
+        font-size: .85em;
         color:#444;
         line-height: 20px;
         min-height: 100vh;
         background-color: #fff;
         --iron-overlay-backdrop-opacity: 0.85;
+        /* Firefox fuzzy font fix: https://stackoverflow.com/questions/44897652/font-looks-blurry-on-firefox */
+        -moz-osx-font-smoothing: grayscale;
       }
     </style>
   </head>
   <body>
     <el-main></el-main>
-    <!-- Built with love using Polymer Starter Kit -->
   </body>
 </html>

@@ -18,6 +18,7 @@
       .img {
         --iron-image-width: 100%;
         border: 1px solid var(--el-tertiary-color);
+        cursor: zoom-in;
       }
 
       .img_caption {
@@ -40,7 +41,7 @@
           <p class="img_caption">[[item.caption]]</p>
         </div>
       </template>
-      <template is="dom-repeat" items="[[videos]]">
+      <template id="vidRepeat" is="dom-repeat" items="[[videos]]">
         <div class="container50">
           <video controls class="vid">
             <source src$="../images/projects/[[item.src]].webm" type="video/webm"/>
@@ -56,7 +57,7 @@
       id="modal"
       with-backdrop>
       <!-- <div style="height:50px;width:50px;background-color:transparent;position:absolute;top:-25px;left:-25px;font-size:40px;text-align:center;color: transparent;text-shadow: 0 0 0 #444;pointer-events:none;">&#x274C;</div> -->
-      <el-carousel id="carousel" images="[[data]]"></el-carousel>
+      <el-carousel id="carousel" images="[[images]]"></el-carousel>
     </el-overlay>
   </template>
 
@@ -69,8 +70,7 @@
           images: Array,
           videos: {
             type: Array,
-            value: function() { return []; },
-            observe: '_reloadVids'
+            value: function() { return []; }
           },
           _hadVids: {
             type: Boolean,
@@ -90,6 +90,7 @@
         Polymer.dom(document.body).appendChild(this.$.modal);
 
         window.addEventListener('el-carousel-clicked', this._boundCloseModal);
+        this.$.vidRepeat.addEventListener('dom-change', this._reloadVids.bind(this));
       }
 
       disconnectedCallback() {
@@ -110,14 +111,14 @@
         The video elem doesnt update on a dom-repeat change due to some video caching optimization where it doesnt reload on a source change. So we need to manually force it to reload.
       */
       _reloadVids() {
-        if(this.videos.length > 0 && this._hadVids) {
+        if(this.videos && this.videos.length > 0 && this._hadVids) {
           let vids = this.shadowRoot.querySelectorAll('.vid');
           for(let i=0; i<vids.length;i++) {
             vids[i].load();
           }
         }
 
-        this._hadVids = this.videos.length ? true : false;
+        this._hadVids = this.videos && this.videos.length ? true : false;
       }
     }
 

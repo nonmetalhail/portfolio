@@ -209,10 +209,12 @@
       ready() {
         super.ready();
         this.addEventListener('dom-change', () => {
+
           this._slides = this.shadowRoot.querySelectorAll('.wrapper');
           this._thumbs = this.shadowRoot.querySelectorAll('.thumb');
 
-          if(!this._slides || this._slides.length === 0 || !this._thumbs || this._thumbs.length === 0) {
+          if(!this._slides || this._slides.length === 0 ||
+              !this._thumbs || this._thumbs.length === 0) {
             return;
           }
 
@@ -264,7 +266,7 @@
       }
 
       _initSlides() {
-        for(var i=0; i<this._slides.length; i++) {
+        for(let i=0; i<this._slides.length; i++) {
           if(i < this.selected) {
             this._slides[i].classList.remove('right');
             this._slides[i].classList.add('left');

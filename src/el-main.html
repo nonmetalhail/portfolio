@@ -157,8 +157,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
           }
         }
 
-        #copywrite {
-          margin-left: var(--el-page-margin);
+        #copyright {
+          margin-right: 10px;
         }
       }
     </style>
@@ -284,6 +284,19 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
           '_routePageChanged(routeData.page)',
           '_pageChanged(page)'
         ];
+      }
+
+      connectedCallback() {
+        super.connectedCallback();
+
+        // for some reason, you cant get rid of the close() onClick  for the app-drawer scrim. So lets prevent someone from clicking on it if we're not in mobile
+        // TODO add ironResize to reshow the scrim should someone resize the browser?
+        requestAnimationFrame(() => {
+          if(window.innerWidth > 640) {
+            const scrim = this.$.drawer.shadowRoot.querySelector('#scrim');
+            scrim.style.display = 'none';
+          }
+        });
       }
 
       _routePageChanged(page) {

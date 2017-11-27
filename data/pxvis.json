@@ -1,0 +1,65 @@
+{
+  "id":"pxvis",
+  "title":"px-vis",
+  "thumb":{
+    "type":"code",
+    "src":"",
+    "alt":"px-vis",
+    "title":"px-vis"
+  },
+  "date":"2016-present",
+  "keywords":"Javascript, Polymer, d3.js, SVG, Canvas",
+  "team":[{
+    "name":"Benoit Chevalier"
+  }],
+  "site":[
+    {
+      "title":"Github repo",
+      "src":"https://github.com/PredixDev/px-vis"
+    },
+    {
+      "title":"Predix UI site",
+      "src":"https://www.predix-ui.com/#/elements/vis/px-vis/px-vis"
+    }
+  ],
+  "text":[
+    {
+      "type":"text",
+      "text":"While at GE: Digital, my primary project has been building px-vis, a charting library for the Predix design system. "
+    },
+    {
+      "type":"text",
+      "text":"Px-vis itself is a set of semi-standalone web components with which, one can build charts. From these building blocks, I and my collegue have built a number of reusable, customizable chart components, including the following types of charts:"
+    },
+    {
+      "type": "list",
+      "list":[
+        "Timeseries",
+        "XY",
+        "Polar",
+        "Parallel Coordinates",
+        "Radar",
+        "Pie",
+        "Area"
+      ]
+    },
+    {
+      "type":"text",
+      "text":"Px-vis includes a series of novel features, such as hybrid svg-canvas charts, using web workers for data processing, a specialized canvas renderer to maintain 60fps frame rate, and a customizable toolbar allowing end developer hooks to create custom interactions on the chart."
+    },
+    {
+      "type":"text",
+      "text":"One of the greatest challenges in creating this charting library is creating an open system allowing end developers who consume our web components a high degree of customization."
+    }
+  ],
+  "images":[
+    {
+      "src":"code/barcode1.jpg",
+      "caption":"Acoustic Barcodes"
+    },
+    {
+      "src":"slopegraph/slopegraph.jpg",
+      "caption":"The basic slopegraph, comparing Male vs Female Asthama rates in 2007"
+    }
+  ]
+}

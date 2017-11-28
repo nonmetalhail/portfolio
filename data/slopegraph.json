@@ -26,7 +26,7 @@
     },
     {
       "type":"text",
-      "text":"This slopegraph is one visualization which I developed as part of that project. It pulls data at runtime from several Fusion Tables I created. The dataset I used contained a variety of health outcomes broken down by county and year. The slopegraph is a great way to represent this data as it allows the viewer to compare each county&#39;s performance to one another while simultaneously comparing a county&#39;s change from one dataset to another. The datasets on either side can compare data from different years or different disease sets. This allows the user to explore changes over time or the differing rates of diseases. "
+      "text":"This slopegraph is one visualization which I developed as part of that project. It pulls data at runtime from several Fusion Tables I created. The dataset I used contained a variety of health outcomes broken down by county and year. The slopegraph is a great way to represent this data as it allows the viewer to compare each county&#39;s performance to one another while simultaneously comparing the change in the county from one dataset to another. The datasets on either side can compare data from different years or different disease sets. This allows the user to explore changes over time or the differing rates of diseases. "
     },
     {
       "type":"text",

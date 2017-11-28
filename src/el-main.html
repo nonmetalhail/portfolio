@@ -275,7 +275,12 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
           page: {
             type: String,
             reflectToAttribute: true
-          }
+          },
+
+          _afRequested: {
+            type: Boolean,
+            value: false
+          },
         };
       }
 
@@ -286,16 +291,43 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         ];
       }
 
+      ready() {
+        super.ready();
+
+        this.addEventListener('iron-resize', this._showHideScrim.bind(this));
+      }
+
       connectedCallback() {
         super.connectedCallback();
 
-        // for some reason, you cant get rid of the close() onClick  for the app-drawer scrim. So lets prevent someone from clicking on it if we're not in mobile
-        // TODO add ironResize to reshow the scrim should someone resize the browser?
+        this._showHideScrim();
+      }
+
+      /*
+        The app-drawer scrim has no config options and has an on-click method to hide the drawer.
+        By giving the app-drawer a margin, I've ended up exposing the opacity 0 scrim.
+         So lets prevent someone from clicking on it if we're not in mobile by truly hiding it.
+      */
+      _showHideScrim() {
+        this._debouncer = Polymer.Debouncer.debounce(
+          this._debouncer,
+          Polymer.Async.timeOut.after(250),
+          this._showHideScrimDebounced.bind(this));
+      }
+
+      _showHideScrimDebounced() {
+        if(this._afRequested) {
+          return;
+        }
+
+        this._afRequested = true;
+
         requestAnimationFrame(() => {
-          if(window.innerWidth > 640) {
-            const scrim = this.$.drawer.shadowRoot.querySelector('#scrim');
-            scrim.style.display = 'none';
-          }
+          this._afRequested = false;
+
+          const scrim = this.$.drawer.shadowRoot.querySelector('#scrim');
+          scrim.style.display = window.innerWidth > 640 ? 'none' : '';
+
         });
       }
 

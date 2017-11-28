@@ -18,15 +18,17 @@
       #sliderCont {
         width: 100%;
         height: 80%;
-        max-height: calc(100% - 130px);
+        max-height: calc(100% - 90px);
       }
 
       #thumbCont {
-        width: 100%;
-        height: 105px;
+        width: auto;
+        height: 65px;
         margin-top: 25px;
         display: flex;
         flex-wrap: nowrap;
+        justify-content: center;
+        transition: transform 0.3s;
       }
 
       .wrapper {
@@ -57,11 +59,15 @@
         flex-shrink: 0;
         --iron-image-width: 100%;
         --iron-image-height: 100%;
-        width: 100px;
-        height: 100px;
+        width: 80px;
+        height: 60px;
         border: 2px inset transparent;
         transition: all 0.3s;
         opacity: 0.8;
+      }
+
+      .thumb + .thumb {
+        margin-left: 5px;
       }
 
       .thumb:hover {
@@ -80,7 +86,7 @@
         height: 100px;
         background-color: var(--el-grey1);
         position: absolute;
-        top: calc(50% - 50px);
+        top: calc(50% - 25px - 90px);
         opacity: 0.5;
         border: 1px solid var(--el-grey1);
         transition: all 0.3s;
@@ -161,7 +167,7 @@
     <button class="slide-btn slide-btn__left" on-tap="_onPrevClick"><div class="caret caret__left"></div></button>
     <button class="slide-btn slide-btn__right" on-tap="_onNextClick"><div class="caret caret__right"></div></button>
 
-    <div id="thumbCont">
+    <div id="thumbCont" style$="transform:translateX([[_translateAmount]]px)">
       <template is="dom-repeat" items="[[images]]">
         <iron-image sizing="cover" class="thumb" data-index$="[[index]]" src="../images/projects/[[item.src]]" on-tap="_goToImage"></iron-image>
       </template>
@@ -170,7 +176,7 @@
   </template>
 
   <script>
-    class ElCarousel extends Polymer.mixinBehaviors([Polymer.IronA11yKeysBehavior], Polymer.Element) {
+    class ElCarousel extends Polymer.mixinBehaviors([Polymer.IronA11yKeysBehavior, Polymer.IronResizableBehavior], Polymer.Element) {
       static get is() { return 'el-carousel'; }
 
       static get properties() {
@@ -188,6 +194,26 @@
           _selectedThumb: HTMLElement,
           _slides: HTMLElement,
           _thumbs: HTMLElement,
+
+          _translateAmount: {
+            type: Number,
+            value: 0
+          },
+
+          _translatePerImage: {
+            type: Number,
+            value: 0
+          },
+
+          _baseTranslation: {
+            type: Number,
+            value: 0
+          },
+
+          _afRequested: {
+            type: Boolean,
+            value: false
+          },
 
           // for iron-a11y-keys-behavior
           keyEventTarget: {
@@ -208,19 +234,8 @@
 
       ready() {
         super.ready();
-        this.addEventListener('dom-change', () => {
-
-          this._slides = this.shadowRoot.querySelectorAll('.wrapper');
-          this._thumbs = this.shadowRoot.querySelectorAll('.thumb');
-
-          if(!this._slides || this._slides.length === 0 ||
-              !this._thumbs || this._thumbs.length === 0) {
-            return;
-          }
-
-          this._selectedThumb = this._thumbs[0];
-          this._initSlides();
-        });
+        this.addEventListener('dom-change', this._initCarousel.bind(this));
+        this.addEventListener('iron-resize', this._calcTranslates.bind(this));
       }
 
       moveTo(slideNumber) {
@@ -265,6 +280,25 @@
 
       }
 
+      _initCarousel() {
+        this._slides = this.shadowRoot.querySelectorAll('.wrapper');
+        this._thumbs = this.shadowRoot.querySelectorAll('.thumb');
+
+        if(!this._slides || this._slides.length === 0 ||
+            !this._thumbs || this._thumbs.length === 0) {
+          return;
+        }
+
+        this._translateAmount = 0;
+        this._translatePerImage = 0;
+        this._baseTranslation = 0;
+
+        this._selectedThumb = this._thumbs[0];
+        this._initSlides();
+
+        this._calcTranslates();
+      }
+
       _initSlides() {
         for(let i=0; i<this._slides.length; i++) {
           if(i < this.selected) {
@@ -284,15 +318,58 @@
       }
 
       _updateThumb() {
-        this._selectedThumb.classList.remove('selected');
+        if(this._selectedThumb) {
+          this._selectedThumb.classList.remove('selected');
+        }
+
         this._selectedThumb = this._thumbs[this.selected];
         this._selectedThumb.classList.add('selected');
+
+        this.set('_translateAmount', this._baseTranslation - this._translatePerImage * this.selected);
       }
 
       _containerClicked() {
         this.dispatchEvent(new CustomEvent('el-carousel-clicked', {composed: true, bubbles: true}));
       }
 
+      // check if our thumbs fit in our page or if we have to scroll them
+      _calcTranslates() {
+        this._debouncer = Polymer.Debouncer.debounce(
+          this._debouncer,
+          Polymer.Async.timeOut.after(10),
+          this._calcTranslatesDebounced.bind(this));
+      }
+
+      _calcTranslatesDebounced() {
+        // if this ran multiple times, dont queue up multiple requests
+        if(this._afRequested) {
+          return;
+        }
+
+        this._afRequested = true;
+
+        requestAnimationFrame(() => {
+          this._afRequested = false;
+
+          if(!this._thumbs || this._thumbs.length === 0) {
+            return;
+          }
+
+          const left = this._thumbs[0].offsetLeft;
+
+          if(left < 0) {
+            const n = this._thumbs.length - 1;
+            const right = this._thumbs[n].offsetLeft + this._thumbs[n].offsetWidth;
+            const contSize = this.$.thumbCont.offsetWidth;
+            const overhang = right - contSize - left;
+
+            this._translatePerImage = Math.ceil(overhang / this._thumbs.length);
+            this._baseTranslation = -left;
+
+            this.set('_translateAmount', this._baseTranslation - this._translatePerImage * this.selected);
+          }
+        });
+      }
     }
 
     window.customElements.define(ElCarousel.is, ElCarousel);

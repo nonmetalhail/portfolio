@@ -19,7 +19,7 @@
     }
   },{
     "title":"Phauffiti: A Mobile Geocoded 3d Street Art Platform",
-    "id":"graffiti",
+    "id":"phauffiti",
     "thumb":{
       "type":"apps",
       "src":"graffiti/graffiti_thumb.jpg",
@@ -46,7 +46,7 @@
     }
   },{
     "title":"Map of the German Speaking Countries",
-    "id":"gsc",
+    "id":"germanmap",
     "thumb":{
       "type":"info_vis",
       "src":"gsc/gsc_thumb.png",

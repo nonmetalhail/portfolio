@@ -89,6 +89,18 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         margin: 20px auto 0 auto;
       }
 
+      #mobileLogo {
+        --iron-image-height: 100%;
+        height: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        transition: margin-top 0.28s;
+      }
+
+      .mobileLogoTop {
+        margin-top: 20px;
+      }
+
       #nav {
         width: var(--el-drawer-nav-width);
         display: block;
@@ -231,10 +243,10 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       <!-- Main content -->
       <app-header-layout>
 
-        <app-header class="showOnSmall" slot="header" condenses reveals effects="waterfall">
+        <app-header threshold="10" id="appHead" class="showOnSmall" slot="header" condenses reveals effects="waterfall">
           <app-toolbar>
             <paper-icon-button icon="my-icons:menu" drawer-toggle></paper-icon-button>
-            <iron-image id="logo" src="../images/logo.png"></iron-image>
+            <iron-image id="mobileLogo" class="mobileLogoTop" src="../images/logo.svg"></iron-image>
           </app-toolbar>
         </app-header>
 
@@ -295,6 +307,13 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         super.ready();
 
         this.addEventListener('iron-resize', this._showHideScrim.bind(this));
+        this.$.appHead.addEventListener('threshold-triggered-changed', (evt) => {
+          if(evt.detail.value) {
+            this.$.mobileLogo.classList.remove('mobileLogoTop');
+          } else {
+            this.$.mobileLogo.classList.add('mobileLogoTop');
+          }
+        });
       }
 
       connectedCallback() {

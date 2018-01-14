@@ -1,5 +1,14 @@
 [
   {
+    "title":"px-vis",
+    "id":"pxvis",
+    "thumb":{
+      "type":"code",
+      "src":"pxvis/pxvis_thumb.png",
+      "alt":"px-vis",
+      "title":"px-vis"
+    }
+  }, {
     "title":"Drinke: The Hydration Tracking Smartcup",
     "id":"drinke",
     "thumb":{
@@ -70,15 +79,6 @@
       "src":"pap/pap_thumb.jpg",
       "alt":"PAP",
       "title":"Pole Aerial Photography"
-    }
-  },{
-    "title":"Code Samples",
-    "id":"codesam",
-    "thumb":{
-      "type":"code",
-      "src":"code/codesam_thumb.jpg",
-      "alt":"Code Samples",
-      "title":"Code Samples"
     }
   }
 ]

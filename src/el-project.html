@@ -66,7 +66,12 @@
         <template is="dom-if" if="[[_elemList(item)]]">
           <ul>
             <template is="dom-repeat" items="[[item.list]]" as="li">
-              <li>[[li]]</li>
+              <template is="dom-if" if="[[_elemLink(item)]]">
+                <li><a href="[[li.link.src]]" target="_blank">[[li.link.text]]</a></li>
+              </template>
+              <template is="dom-if" if="[[!_elemLink(item)]]">
+                <li>[[li]]</li>
+              </template>
             </template>
           </ul>
         </template>
@@ -126,6 +131,10 @@
 
       _elemList(item) {
         return item.type === 'list';
+      }
+
+      _elemLink(item) {
+        return typeof item === 'object';
       }
 
     }

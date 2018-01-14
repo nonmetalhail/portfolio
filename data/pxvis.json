@@ -15,9 +15,8 @@
   "site":[
     {
       "title":"Github repo",
-      "src":"https://github.com/PredixDev/px-vis"
-    },
-    {
+      "src":"https://github.com/PredixDev?q=px-vis"
+    },{
       "title":"Predix UI site",
       "src":"https://www.predix-ui.com/#/elements/vis/px-vis/px-vis"
     }
@@ -25,41 +24,106 @@
   "text":[
     {
       "type":"text",
-      "text":"While at GE: Digital, my primary project has been building px-vis, a charting library for the Predix design system. "
-    },
-    {
+      "text":"While at GE: Digital, my primary project has been building px-vis, a charting library and set of charts for the Predix design system (PDS)."
+    },{
       "type":"text",
-      "text":"Px-vis itself is a set of semi-standalone web components with which, one can build charts. From these building blocks, I and my collegue have built a number of reusable, customizable chart components, including the following types of charts:"
-    },
-    {
+      "text":"Px-vis itself is a set of semi-standalone web components with which, one can build charts. From these building blocks, my collegue and I have built a number of reusable, customizable chart components, including the following types of charts:"
+    },{
       "type": "list",
       "list":[
-        "Timeseries",
-        "XY",
-        "Polar",
-        "Parallel Coordinates",
-        "Radar",
-        "Pie",
-        "Area"
+        {
+          "type":"link",
+          "link":{
+            "src":"https://www.predix-ui.com/#/elements/vis/px-vis-timeseries",
+            "text":"Timeseries"
+          }
+        },{
+          "type":"link",
+          "link":{
+            "src":"https://www.predix-ui.com/#/elements/vis/px-vis-xy-chart",
+            "text":"XY"
+          }
+        },{
+          "type":"link",
+          "link":{
+            "src":"https://www.predix-ui.com/#/elements/vis/px-vis-polar",
+            "text":"Polar"
+          }
+        },{
+          "type":"link",
+          "link":{
+            "src":"https://www.predix-ui.com/#/elements/vis/px-vis-parallel-coordinates",
+            "text":"Parallel Coordinates"
+          }
+        },{
+          "type":"link",
+          "link":{
+            "src":"https://www.predix-ui.com/#/elements/vis/px-vis-radar",
+            "text":"Radar"
+          }
+        },{
+          "type":"link",
+          "link":{
+            "src":"https://www.predix-ui.com/#/elements/vis/px-vis-pie-chart",
+            "text":"Pie"
+          }
+        },{
+          "type":"link",
+          "link":{
+            "src":"https://www.predix-ui.com/#/elements/vis/px-simple-area-chart",
+            "text":"Area"
+          }
+        },{
+          "type":"link",
+          "link":{
+            "src":"https://www.predix-ui.com/#/elements/vis/px-vis-bar-chart",
+            "text":"Bar/Column"
+          }
+        }
       ]
-    },
-    {
+    },{
+      "type":"text",
+      "text":"Before I joined GE, the Predix Design System was using Highcharts as a base for PDS charts. Besides licensing issues, customization of both visual and interaction design, the ability to support custom features, and chart performance were starting to be concerns. When I joined and was given ownership over the PDS visualization effort, I decided to move us over to pure d3.js in order to alleviate these issues. While it was more work to get started with than a prebuilt charting library, it gave us full control to create the visualizations and features we needed to drive the Industrial Internet of Things."
+    },{
       "type":"text",
       "text":"Px-vis includes a series of novel features, such as hybrid svg-canvas charts, using web workers for data processing, a specialized canvas renderer to maintain 60fps frame rate, and a customizable toolbar allowing end developer hooks to create custom interactions on the chart."
-    },
-    {
+    },{
       "type":"text",
-      "text":"One of the greatest challenges in creating this charting library is creating an open system allowing end developers who consume our web components a high degree of customization."
+      "text":"One of the greatest challenges in creating this charting library is creating an open system which allows the end developers who consume our web components a high degree of customization."
     }
   ],
   "images":[
     {
-      "src":"code/barcode1.jpg",
-      "caption":"Acoustic Barcodes"
-    },
-    {
-      "src":"slopegraph/slopegraph.jpg",
-      "caption":"The basic slopegraph, comparing Male vs Female Asthama rates in 2007"
+      "src":"pxvis/timeseries.png",
+      "caption":"Timeseries - light theme"
+    },{
+      "src":"pxvis/timeseries_dark.png",
+      "caption":"Timeseries - dark theme"
+    },{
+      "src":"pxvis/xy.png",
+      "caption":"XY - light theme"
+    },{
+      "src":"pxvis/xy_dark.png",
+      "caption":"XY - dark theme"
+    },{
+      "src":"pxvis/polar.png",
+      "caption":"Polar - light theme"
+    },{
+      "src":"pxvis/polar_dark.png",
+      "caption":"Polar - dark theme"
+    },{
+      "src":"pxvis/pxvis_thumb.png",
+      "caption":"Parallel Coordinates - light theme"
+    },{
+      "src":"pxvis/parallel_dark.png",
+      "caption":"Parallel Coordinates - dark theme"
+    },{
+      "src":"pxvis/radar.png",
+      "caption":"Radar - light theme"
+    },{
+      "src":"pxvis/radar_dark.png",
+      "caption":"Radar - dark theme"
     }
+
   ]
 }

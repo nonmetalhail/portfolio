@@ -45,6 +45,15 @@
       "title":"Slopegraph"
     }
   },{
+    "title":"px-slider",
+    "id":"pxslider",
+    "thumb":{
+      "type":"code",
+      "src":"pxslider/slider_thumb.png",
+      "alt":"px-slider",
+      "title":"px-slider"
+    }
+  },{
     "title":"CrossMetRx: A CrossFit programming and tracking app",
     "id":"xfit",
     "thumb":{

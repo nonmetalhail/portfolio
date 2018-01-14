@@ -1,0 +1,36 @@
+{
+  "id":"pxslider",
+  "title":"px-slider",
+  "thumb":{
+    "type":"code",
+    "src":"",
+    "alt":"px-slider",
+    "title":"px-slider"
+  },
+  "date":"2017",
+  "keywords":"Javascript, Polymer, d3.js, SVG",
+  "site":[
+    {
+      "title":"Github repo",
+      "src":"https://github.com/PredixDev/px-slider"
+    },{
+      "title":"Predix UI site",
+      "src":"https://www.predix-ui.com/#/elements/px-slider"
+    }
+  ],
+  "text":[
+    {
+      "type":"text",
+      "text":"Although I have contributed to many components in the Predix Design System other than px-vis, px-slider is one that is almost entirely my code. "
+    },{
+      "type":"text",
+      "text":"The original px-slider was riddled with technical debt, so I took it upon myself to do a complete rewrite of the component. The new px-sider is much more maintainable, efficient, and extensible than the previous version."
+    }
+  ],
+  "images":[
+    {
+      "src":"pxslider/slider.png",
+      "caption":"A single value slider and a mutli-value slider"
+    }
+  ]
+}

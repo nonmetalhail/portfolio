@@ -1,16 +1,31 @@
 {
   "entrypoint": "index.html",
-  "shell": "src/my-app.html",
+  "shell": "src/el-main.html",
   "fragments": [
-    "src/my-view1.html",
-    "src/my-view2.html",
-    "src/my-view3.html",
-    "src/my-view404.html"
+    "src/el-about.html",
+    "src/el-resume-experience-helper.html",
+    "src/el-carousel.html",
+    "src/el-resume-experience.html",
+    "src/el-resume-link-list.html",
+    "src/el-overlay.html",
+    "src/el-resume-list.html",
+    "src/el-portfolio-item.html",   
+    "src/el-resume.html",
+    "src/el-portfolio.html",        
+    "src/el-view404.html",
+    "src/el-project-images.html",      
+    "src/my-icons.html",
+    "src/el-project-meta.html",         
+    "src/shared-styles-mid-break.html",
+    "src/el-project.html",             
+    "src/shared-styles.html",
+    "src/el-resume-block.html"
   ],
   "sources": [
     "src/**/*",
     "images/**/*",
-    "bower.json"
+    "bower.json",
+    "data/*"
   ],
   "extraDependencies": [
     "manifest.json",

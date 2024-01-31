@@ -14,11 +14,11 @@
   }],
   "site":[
     {
-      "title":"Github repo",
-      "src":"https://github.com/PredixDev?q=px-vis"
+      "title":"Forked Github repos",
+      "src":"https://github.com/nonmetalhail?tab=repositories&q=px-vis"
     },{
-      "title":"Predix UI site",
-      "src":"https://www.predix-ui.com/#/elements/vis/px-vis/px-vis"
+      "title":"Copy of Predix UI site",
+      "src":"http://www.nonmetalhail.com/predix-ui//#/elements/vis/px-vis/px-vis"
     }
   ],
   "text":[
@@ -34,49 +34,49 @@
         {
           "type":"link",
           "link":{
-            "src":"https://www.predix-ui.com/#/elements/vis/px-vis-timeseries",
+            "src":"http://www.nonmetalhail.com/predix-ui//#/elements/vis/px-vis-timeseries",
             "text":"Timeseries"
           }
         },{
           "type":"link",
           "link":{
-            "src":"https://www.predix-ui.com/#/elements/vis/px-vis-xy-chart",
+            "src":"http://www.nonmetalhail.com/predix-ui//#/elements/vis/px-vis-xy-chart",
             "text":"XY"
           }
         },{
           "type":"link",
           "link":{
-            "src":"https://www.predix-ui.com/#/elements/vis/px-vis-polar",
+            "src":"http://www.nonmetalhail.com/predix-ui//#/elements/vis/px-vis-polar",
             "text":"Polar"
           }
         },{
           "type":"link",
           "link":{
-            "src":"https://www.predix-ui.com/#/elements/vis/px-vis-parallel-coordinates",
+            "src":"http://www.nonmetalhail.com/predix-ui//#/elements/vis/px-vis-parallel-coordinates",
             "text":"Parallel Coordinates"
           }
         },{
           "type":"link",
           "link":{
-            "src":"https://www.predix-ui.com/#/elements/vis/px-vis-radar",
+            "src":"http://www.nonmetalhail.com/predix-ui//#/elements/vis/px-vis-radar",
             "text":"Radar"
           }
         },{
           "type":"link",
           "link":{
-            "src":"https://www.predix-ui.com/#/elements/vis/px-vis-pie-chart",
+            "src":"http://www.nonmetalhail.com/predix-ui//#/elements/vis/px-vis-pie-chart",
             "text":"Pie"
           }
         },{
           "type":"link",
           "link":{
-            "src":"https://www.predix-ui.com/#/elements/vis/px-simple-area-chart",
+            "src":"http://www.nonmetalhail.com/predix-ui//#/elements/vis/px-simple-area-chart",
             "text":"Area"
           }
         },{
           "type":"link",
           "link":{
-            "src":"https://www.predix-ui.com/#/elements/vis/px-vis-bar-chart",
+            "src":"http://www.nonmetalhail.com/predix-ui//#/elements/vis/px-vis-bar-chart",
             "text":"Bar/Column"
           }
         }

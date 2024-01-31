@@ -11,11 +11,11 @@
   "keywords":"Javascript, Polymer, d3.js, SVG",
   "site":[
     {
-      "title":"Github repo",
-      "src":"https://github.com/PredixDev/px-slider"
+      "title":"Forked Github repo",
+      "src":"https://github.com/nonmetalhail/px-slider"
     },{
-      "title":"Predix UI site",
-      "src":"https://www.predix-ui.com/#/elements/px-slider"
+      "title":"Copy of Predix UI site",
+      "src":"http://www.nonmetalhail.com/predix-ui//#/elements/px-slider"
     }
   ],
   "text":[

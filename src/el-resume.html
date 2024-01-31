@@ -43,13 +43,13 @@
     <el-resume-block title="Education">
       <h2>
         <a href="http://www.ischool.berkeley.edu/" target="_blank">
-          University of California, Berkeley: <br />School of Information</a>,
+          University of California, Berkeley: <br>School of Information</a>,
         <small> 2011-2013</small>
       </h2>
       <p class="education">Masters of Information Management and Systems</p>
 
       <h2 class="largeTopMargin">
-        <a href="http://arch.ced.berkeley.edu/" target = "_blank">
+        <a href="http://arch.ced.berkeley.edu/" target="_blank">
           University of California, Berkeley</a>, <small>2001-2006</small>
       </h2>
       <p class="education">Bachelor of Arts, Architecture</p>
@@ -59,30 +59,21 @@
     <el-resume-block title="Skills">
       <div class="container">
         <div class="container50">
-          <el-resume-list
-            title="Programing"
-            list-items='[[prgList]]'>
+          <el-resume-list title="Programing" list-items="[[prgList]]">
           </el-resume-list>
         </div>
         <div class="container50">
-          <el-resume-list
-            title="Research"
-            list-items='[[researchList]]'>
-          </el-resume-list>
+          <el-resume-list title="Expertise" list-items="[[expertiseList]]">
         </div>
       </div>
 
       <div class="container">
         <div class="container50">
-          <el-resume-list
-            title="Design Software"
-            list-items='[[designList]]'>
+          <el-resume-list title="Software" list-items="[[softwareList]]">
           </el-resume-list>
         </div>
         <div class="container50">
-          <el-resume-list
-            title="Expertise"
-            list-items='[[expertiseList]]'>
+          <el-resume-list title="Leadership" list-items="[[leadershipList]]">
           </el-resume-list>
         </div>
       </div>
@@ -94,14 +85,7 @@
         <!-- stick the first one into the preexisting slots -->
         <template is="dom-if" if="[[!index]]">
           <div slot="sidebar"><h4>[[item.startDate]] to [[item.endDate]]</h4></div>
-          <el-resume-experience
-            company="[[item.company]]"
-            url="[[item.url]]"
-            city="[[item.city]]"
-            state="[[item.state]]"
-            title="[[item.title]]"
-            start-date="[[item.startDate]]"
-            end-date="[[item.endDate]]">
+          <el-resume-experience company="[[item.company]]" url="[[item.url]]" city="[[item.city]]" state="[[item.state]]" title="[[item.title]]" start-date="[[item.startDate]]" end-date="[[item.endDate]]">
             <span slot="description">
               <el-resume-experience-helper description="[[item.desc]]"></el-resume-experience-helper>
             </span>
@@ -113,14 +97,7 @@
           <div slot="custom" class="container medTopMargin">
             <div class="container25"><h4>[[item.startDate]] to [[item.endDate]]</h4></div>
             <div class="container75">
-              <el-resume-experience
-                company="[[item.company]]"
-                url="[[item.url]]"
-                city="[[item.city]]"
-                state="[[item.state]]"
-                title="[[item.title]]"
-                start-date="[[item.startDate]]"
-                end-date="[[item.endDate]]">
+              <el-resume-experience company="[[item.company]]" url="[[item.url]]" city="[[item.city]]" state="[[item.state]]" title="[[item.title]]" start-date="[[item.startDate]]" end-date="[[item.endDate]]">
                 <span slot="description">
                   <el-resume-experience-helper description="[[item.desc]]"></el-resume-experience-helper>
                 </span>
@@ -132,70 +109,23 @@
     </el-resume-block>
 
     <el-resume-block title="Patents">
-      <el-resume-link-list
-        title="Granted"
-        list-items='[[patentIssued]]'>
+      <el-resume-link-list title="Granted" list-items="[[patentIssued]]">
       </el-resume-link-list>
-      <el-resume-link-list
-        title="Pending"
-        list-items='[[patentPending]]'>
+      <el-resume-link-list title="Pending" list-items="[[patentPending]]">
       </el-resume-link-list>
     </el-resume-block>
 
     <el-resume-block title="Awards and Grants">
-      <el-resume-list
-        list-items='[
-          "Dr. James R. Chen Award for Enhancing Information Systems, May 2013",
-          "1st Place: MIMS 2013 Final Project Video, May 2013",
-          "Best Project: Interactive Device Design, Fall 2012",
-          "3rd Place: Mobile User Experience Design, Fall 2012",
-          "UC Berkeley Green Initiative Fund (TGIF) Grant Award for 2009 and 2010 for a total of $114,000 towards the development of water monitoring infrastructure on the campus",
-          "American Society of Heating, Refrigeration, and Air-Conditioning Engineers (ASHRAE) Golden Gate Chapter Scholarship 2009"
-        ]'>
+      <el-resume-list list-items="[
+          &quot;Dr. James R. Chen Award for Enhancing Information Systems, May 2013&quot;,
+          &quot;1st Place: MIMS 2013 Final Project Video, May 2013&quot;,
+          &quot;Best Project: Interactive Device Design, Fall 2012&quot;,
+          &quot;3rd Place: Mobile User Experience Design, Fall 2012&quot;,
+          &quot;UC Berkeley Green Initiative Fund (TGIF) Grant Award for 2009 and 2010 for a total of $114,000 towards the development of water monitoring infrastructure on the campus&quot;,
+          &quot;American Society of Heating, Refrigeration, and Air-Conditioning Engineers (ASHRAE) Golden Gate Chapter Scholarship 2009&quot;
+        ]">
       </el-resume-list>
     </el-resume-block>
-
-    <el-resume-block title="Relevant Coursework">
-      <div class="container">
-        <div class="container50">
-          <el-resume-list
-            title="Design & Prototyping"
-            list-items='[
-              "User Interface Design and Development",
-              "Mobile User Experience Design",
-              "Interactive Device Design",
-              "Tangible User Interfaces",
-              "UI Prototyping",
-              "Information Visualization",
-              "IO Lab: Rapid prototyping with microservices",
-              "Information Organization and Retrieval",
-              "Web Architecture",
-              "XML Foundations",
-              "Drone Lab"
-            ]'>
-          </el-resume-list>
-        </div>
-        <div class="container50">
-          <el-resume-list
-            title="Research & Analysis"
-            list-items='[
-              "Survey Research",
-              "Statistics",
-              "Building Science Research Methods",
-              "Architectural Research Methods",
-              "Building Energy Simulations",
-              "Measurement and Verification in Existing Buildings",
-              "Energy and Society",
-              "The Green Workplace",
-              "Daylight Analysis",
-              "Sustainable Water Systems",
-              "Ecological Analysis"
-            ]'>
-          </el-resume-list>
-        </div>
-      </div>
-    </el-resume-block>
-
   </template>
 
   <script>
@@ -205,47 +135,48 @@
       constructor() {
         super();
         this.prgList = [
-          "Javascript / ES6",
-          "HTML & CSS",
-          "Polymer & web components",
+          "Javascript",
+          "web components",
           "d3.js",
+          "HTML",
+          "CSS",
+          "SVG",
+          "HTML Canvas",
           "Node.js",
-          "Python",
-          "Django",
+          "AST",
           "SASS",
-          "Arduino / microcontrollers"
+          "frontend development"
         ];
 
-        this.researchList = [
-          "Qualitative and Quantitative research experience",
-          "Survey design, implementation, and analysis",
-          "Contextual inquires",
-          "Interviews",
-          "Experimental research",
-          "Simulations",
-          "Case studies",
-          "Field work"
+        this.leadershipList = [
+          "Jumpstarting new projects and teams",
+          "mentoring junior engineers",
+          "cross-team and cross functuional coordination",
+          "scoping and defining technical feature work"
         ];
 
-        this.designList = [
+        this.softwareList = [
+          "VoiceOver",
+          "NVDA",
+          "JAWS",
+          "ZoomText",
           "Illustrator",
           "InDesign",
           "PhotoShop",
-          "Lightroom",
-          "Solidworks",
-          "Eagle PCB",
-          "AutoCAD"
+          "Lightroom"
         ];
 
         this.expertiseList = [
           "Data visualization",
-          "Rapid prototyping",
           "Design Systems",
+          "Accessibility",
+          "WCAG",
+          "frontend / javascript performance",
+          "API design",
+          "User Experience Design",
+          "Rapid prototyping",
           "HCI",
-          "Tangible product design",
-          "Graphic and web design",
-          "Statistical analysis",
-          "Equally comfortable working in teams and independently"
+          "Arduino / microcontrollers"
         ];
 
         this.patentIssued = [{
@@ -367,14 +298,38 @@
         }];
 
         this.exp = [
-          {
+        {
+            "company": "ServiceNow",
+            "url": "https://www.servicenow.com/",
+            "city": "Pleasanton",
+            "state": "CA",
+            "title": "Sr. Staff Software Engineer",
+            "startDate": "May 2018",
+            "endDate": "present",
+            "desc": [{
+              "type": "p",
+              "content": "Founding member of ServiceNow’s Now Design System team and tech lead for the data visualization portion of the design system. The design system as a whole is key to ServiceNow’s UI re-platforming strategy aimed at creating modern web app experiences, and providing cohesion and design consistency to independent, decentralized engineering groups. After almost 4 years in that role, I am now the architect on the Web Platform Accessibility Team. The WPA11Y Team is a brand new team devoted to defining and coordinating cross organizational accessibility efforts, both to improve the platform in general and reach WCAG 2.1AA conformance."
+            },{
+              "type": "p",
+              "content": "As the tech lead in data vis, I architected and developed an internal charting library that provided highly customizable and reusable chart web components. Some key features of the library include theming, accessibility best practices, internationalization, and imbuing data visualization best practices into every chart."
+            },{
+              "type": "p",
+              "content": "My work resulted in more performant, feature rich charts and directly impacted the way visualizations at ServiceNow are conceived and configured. I worked with the business units to rethink their visualization needs and approaches, and the features offered to the end users."
+            },{
+              "type": "p",
+              "content": "I also spearheaded a large hiring push on the design system, growing the engineering team by 30%. I standardized our interview process, developed an official set of interview questions, and created metrics to fairly judge candidates’ performances."
+            },{
+              "type": "p",
+              "content": "As an architect on the Web Platform Accessibility Team, I work across the entire ServiceNow platform to engineer accessibility solutions for dozens of engineering teams as we work towards building a more accessible platform. I work with leadership across the company and across functions to scope, coordinate, and plan accessibility goals and features. My work accelerated delivery of a11y goals in a highly interdependent platform ecosystem and created foundational capabilities in the platform to enable future improvements at a faster pace.."
+            }]
+        },{
             "company": "GE Digital: Predix Design System",
             "url": "https://www.predix-ui.com",
             "city": "San Ramon",
             "state": "CA",
             "title": "Sr. UX Design Technologist",
             "startDate": "Jan 2016",
-            "endDate": "present",
+            "endDate": "May 2018",
             "desc": [{
               "type": "p",
               "content": "As part of GE's Design & Experience studio, I work on the Predix UI team to architect and develop the Predix Design System for GE's industrial IoT platform."
@@ -436,150 +391,7 @@
                 "Interfacing with other R&D groups, UX groups, product divisions, and the Technology Strategy team at Harman."
               ]
             }]
-          },{
-            "company": "Building Robotics",
-            "url": "http://www.buildingrobotics.com/",
-            "city": "Oakland",
-            "state": "CA",
-            "title": "Frontend / UX Engineer",
-            "startDate": "May 2013",
-            "endDate": "Nov 2013",
-            "desc": [{
-              "type": "p",
-              "content": "Responsible for implementing a redesign of their main product, Comfy."
-            },{
-              "type": "li",
-              "content": [
-                "Developed the new, fully responsive frontend using HTML5, CSS3, and javascript.",
-                "Designed for mobile and desktop.",
-                "Implemented custom, advanced map selection with Leaflet.",
-                "Custom animations with SVG.",
-                "Worked on Django backend developing/modifying views, routes, models, and writing tests."
-              ]
-            },{
-              "type": "p",
-              "content": "Technologies included:"
-            },{
-              "type": "li",
-              "content": [
-                "Leaflet with custom building plan images to create scaleable building-level maps with clickable hotspots",
-                "Django",
-                "jQuery",
-                "Bootstrap"
-              ]
-            }]
-          },{
-            "company": "Google: Fusion Tables",
-            "url": "http://www.google.com/fusiontables/",
-            "city": "Mountain View",
-            "state": "CA",
-            "title": "Technical Program Manager Intern",
-            "startDate": "May 2012",
-            "endDate": "Aug 2012",
-            "desc": [{
-              "type": "p",
-              "content": "Successfully completed my internship project by bringing the State of Oregon Department of Human Services on-board to host data through Fusion Tables"
-            },{
-              "type": "p",
-              "content": "Specific tasks included:"
-            },{
-              "type": "li",
-              "content": [
-                "Wrote Python scripts to clean and process datasets and connect to the Fusion Tables API. ",
-                "Developed information visualizations using Gviz charts, Google Map, and d3.js",
-                "Developed functional prototypes using a Chrome Extension to inject scripts and html into existing pages to mock up possible features and functionality.",
-                "Assessed and suggested features needed to support specific user-group work flows",
-                "Developed UI mockups for new features and conceptual mockups and wireframes demonstrating the trajectory and long range goals of the product"
-              ]
-            }]
-          },{
-            "company": "Institute for the Sustainable Performance of Buildings",
-            "url": "http://www.su-per-b.org/",
-            "city": "Berkeley",
-            "state": "CA",
-            "title": "Research Associate",
-            "startDate": "Aug 2010",
-            "endDate": "May 2012",
-            "desc": [{
-              "type": "p",
-              "content": "Built educational software to teach building industry professionals about building systems, installation, and integration. Projects included: CEC Learn Green Buildings software, DOE/NIBS Weatherization training program, DHS/NIBS building design tool, among others."
-            },{
-              "type": "li",
-              "content": [
-                "Managed contractors including developing scopes of work (SOW) and reviewing their submissions.",
-                "Acted as building science technical lead for the projects",
-                "Worked with stakeholders and educators to ensure the product met their needs. ",
-                "Produced technical and pedagogical reports for the projects",
-                "Created graphic materials/assets.",
-                "Conducted parametric energy simulations using Energy Plus"
-              ]
-            }]
-          }
-          // ,{
-          //   "company": "Center for the Built Environment",
-          //   "url": "http://cbe.berkeley.edu/",
-          //   "city": "Berkeley",
-          //   "state": "CA",
-          //   "title": "Graduate Student Researcher",
-          //   "startDate": "July 2008",
-          //   "endDate": "Aug 2010",
-          //   "secondStartDate": "Aug 2011",
-          //   "secondEndDate": "Dec 2011",
-          //   "desc": [{
-          //     "type": "li",
-          //     "content": [
-          //       "Conducted research on a wide variety of projects including thermal comfort, integrated buildings systems, water and energy studies, UFAD systems, and radiant heating and cooling systems.",
-          //       'Research methods included computer simulations, field measurements using "off the shelf" tools, building custom tools, controlled chamber studies, IEQ Occupant surveys, interviews, literary reviews/case studies.'
-          //     ]
-          //   }]
-          // },{
-          //   "company": "The Green Initiative Fund",
-          //   "url": "http://tgif.berkeley.edu/",
-          //   "city": "University of California",
-          //   "state": "Berkeley",
-          //   "title": "TGIF Grant Recipient",
-          //   "startDate": "April 2009",
-          //   "endDate": "Dec 2012",
-          //   "desc": [{
-          //     "type": "li",
-          //     "content": [
-          //       "Received a grant of $114,000 to conduct water metering research and build infrastructure on campus; partnered with a PhD student in Mechanical Engineering, Lindsay Miller.",
-          //       "Responsible for Project Management: coordinating with campus facilities (and getting them onboard and committed to the project), budgeting, cost estimating, (re)allocating funds, researching metering technologies, and hiring/coordinating undergrad assistants"
-          //     ]
-          //   }]
-          // },{
-          //   "company": "Department of Architecture",
-          //   "url": "http://www.ced.berkeley.edu/courses/sp10/arch140/",
-          //   "city": "University of California",
-          //   "state": "Berkeley",
-          //   "title": "Graduate Student Instructor: Architecture 140",
-          //   "startDate": "Jan 2010",
-          //   "endDate": "June 2010",
-          //   "desc": [{
-          //     "type": "li",
-          //     "content": [
-          //       "Taught a lab/section on the fundamentals of building science: building physics, daylighting, solar control, and the evolving nature of building technologies, energy efficiency, ecology, and design.",
-          //       "Developed homeworks, labs, and a final design project. Graded homeworks, labs, tests, and design projects. Managed grades for the all course labs.",
-          //       "Developed computer tools to aid the pedagogical objectives of the course."
-          //     ]
-          //   }]
-          // },{
-          //   "company": "Leland Saylor Associates",
-          //   "url": "http://www.lelandsaylor.com/",
-          //   "city": "San Francisco",
-          //   "state": "CA",
-          //   "title": "Junior Estimator",
-          //   "startDate": "Dec 2007",
-          //   "endDate": "July 2008",
-          //   "desc": [{
-          //     "type": "li",
-          //     "content": [
-          //       "Developed construction cost estimates for all phases of design and construction in collaboration with clients and members of the design team.",
-          //       "Projects included public schools, residences, SF municipal water supply projects, and airports: LAX, SFO, SAC, OAK, SJC"
-          //     ]
-          //   }]
-          // }
-        ]
+          }]
       }
     }
 

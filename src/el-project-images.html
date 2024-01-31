@@ -36,15 +36,15 @@
     <div class="container">
       <template is="dom-repeat" items="[[images]]">
         <div class="container50">
-          <iron-image class="img" src="../images/projects/[[item.src]]" on-tap="_openModal" data-index$="[[index]]"></iron-image>
+          <iron-image class="img" src="../images/projects/[[item.src]]" on-tap="_openModal" data-index$="[[index]]" alt="[[item.caption]]"></iron-image>
           <p class="img_caption">[[item.caption]]</p>
         </div>
       </template>
       <template id="vidRepeat" is="dom-repeat" items="[[videos]]">
         <div class="container50">
-          <video controls class="vid">
-            <source src$="../images/projects/[[item.src]].webm" type="video/webm"/>
-            <source src$="../images/projects/[[item.src]].mp4" type="video/mp4"/>
+          <video controls="" class="vid">
+            <source src$="../images/projects/[[item.src]].webm" type="video/webm">
+            <source src$="../images/projects/[[item.src]].mp4" type="video/mp4">
             'There would be a video here if your browser supported it...'
           </video>
           <p class="img_caption">[[item.caption]]</p>
@@ -52,9 +52,7 @@
       </template>
     </div>
 
-    <el-overlay
-      id="modal"
-      with-backdrop>
+    <el-overlay id="modal" with-backdrop="">
       <!-- <div style="height:50px;width:50px;background-color:transparent;position:absolute;top:-25px;left:-25px;font-size:40px;text-align:center;color: transparent;text-shadow: 0 0 0 #444;pointer-events:none;">&#x274C;</div> -->
       <el-carousel id="carousel" images="[[images]]"></el-carousel>
     </el-overlay>
@@ -112,7 +110,7 @@
       _reloadVids() {
         if(this.videos && this.videos.length > 0 && this._hadVids) {
           let vids = this.shadowRoot.querySelectorAll('.vid');
-          for(let i=0; i<vids.length;i++) {
+          for(let i=0; i<vids.length; i++) {
             vids[i].load();
           }
         }

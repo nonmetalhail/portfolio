@@ -6,9 +6,7 @@ The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
 The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
 Code distributed by Google as part of the polymer project is also
 subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
--->
-
-<link rel="import" href="../bower_components/polymer/polymer-element.html">
+--><link rel="import" href="../bower_components/polymer/polymer-element.html">
 
 <!-- shared styles for all views -->
 <dom-module id="shared-styles">
@@ -17,12 +15,12 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
       :host {
         --el-primary-color: #fff;
-        --el-secondary-color: #E97724;
+        --el-secondary-color: #c74c00;
         --el-tertiary-color: #e5e5e5;
 
-        --el-grey1: #444;
-        --el-grey2: #666;
-        --el-grey3: #999;
+        --el-grey1: #222;
+        --el-grey2: #444;
+        --el-grey3: #666;
       }
 
       h1 {
@@ -86,7 +84,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       }
 
       a:hover {
-        color: #808080;
+        color: var(--el-grey3);
       }
 
       ul {

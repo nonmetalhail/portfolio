@@ -9,7 +9,7 @@
       }
       .titles{
         text-transform: uppercase;
-        color:#888;
+        color:var(--el-grey-3);
       }
     </style>
 
@@ -31,7 +31,7 @@
           </template>
 
           <template is="dom-if" if="[[_isLastItem(index, drCount)]]">
-            <span >,</span>
+            <span>,</span>
           </template>
 
         </template>

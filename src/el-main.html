@@ -6,9 +6,7 @@ The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
 The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
 Code distributed by Google as part of the polymer project is also
 subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
--->
-
-<link rel="import" href="../bower_components/polymer/polymer-element.html">
+--><link rel="import" href="../bower_components/polymer/polymer-element.html">
 <link rel="import" href="../bower_components/app-layout/app-drawer/app-drawer.html">
 <link rel="import" href="../bower_components/app-layout/app-drawer-layout/app-drawer-layout.html">
 <link rel="import" href="../bower_components/app-layout/app-header/app-header.html">
@@ -176,11 +174,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     </style>
 
     <app-location route="{{route}}"></app-location>
-    <app-route
-      route="{{route}}"
-      pattern="/:page"
-      data="{{routeData}}"
-      tail="{{subroute}}">
+    <app-route route="{{route}}" pattern="/:page" data="{{routeData}}" tail="{{subroute}}">
     </app-route>
 
     <app-drawer-layout>
@@ -189,42 +183,42 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         <div id="drawer_cont">
           <!-- Logo -->
           <a name="portfolio" href="/portfolio" class="nav-item nav-item-large">
-            <iron-image id="logo" src="../images/logo.svg"></iron-image>
+            <iron-image id="logo" src="../images/logo.svg" alt="Elliot Nahman logo"></iron-image>
           </a>
 
-          <hr class="orange" />
+          <hr class="orange">
 
           <div id="nav">
             <iron-selector class="drawer-list" selected="[[page]]" attr-for-selected="name" role="navigation">
               <a name="about" href="/about" class="nav-item nav-item-large">About</a>
 
-              <a name="resume" href="/resume" class="nav-item-large">Resum&#233;</a>
+              <a name="resume" href="/resume" class="nav-item-large">Resumé</a>
               <a name="resume_pdf" href="resume_pdf" class="nav-item-small">PDF VERSION</a>
 
               <a name="portfolio" href="/portfolio" class="nav-item-large">Portfolio</a>
-              <hr class="grey" />
+              <hr class="grey">
 
               <p class="nav-item-small nav-heading">COMPONENTS</p>
               <a name="view1" href="/project/pxvis" class="nav-item-small">px-vis</a>
               <a name="view2" href="/project/pxslider" class="nav-item-small">px-slider</a>
-              <hr class="grey" />
+              <hr class="grey">
 
               <p class="nav-item-small nav-heading">APPS</p>
               <a name="mapestry" href="/project/mapestry" class="nav-item-small">Mapestry</a>
               <a name="phauffiti" href="/project/phauffiti" class="nav-item-small">Phauffiti</a>
               <a name="xfit" href="/project/xfit" class="nav-item-small">CrossMetRx</a>
-              <hr class="grey" />
+              <hr class="grey">
 
               <p class="nav-item-small nav-heading">INFO VIS</p>
               <a name="slopegraph" href="/project/slopegraph" class="nav-item-small">Slopegraph</a>
               <a name="germanmap" href="/project/germanmap" class="nav-item-small">German Map</a>
               <a name="eplus" href="/project/eplus" class="nav-item-small">Energy+ Sim Viewer</a>
-              <hr class="grey" />
+              <hr class="grey">
 
               <p class="nav-item-small nav-heading">TANGIBLE DEVICES</p>
               <a name="drinke" href="/project/drinke" class="nav-item-small">Drinke</a>
               <a name="pap" href="/project/pap" class="nav-item-small">Pole Aerial Photography</a>
-              <hr class="grey" />
+              <hr class="grey">
             </iron-selector>
           </div>  <!-- nav -->
 
@@ -242,18 +236,14 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       <!-- Main content -->
       <app-header-layout>
 
-        <app-header threshold="10" id="appHead" class="showOnSmall" slot="header" condenses reveals effects="waterfall">
+        <app-header threshold="10" id="appHead" class="showOnSmall" slot="header" condenses="" reveals="" effects="waterfall">
           <app-toolbar>
-            <paper-icon-button icon="my-icons:menu" drawer-toggle></paper-icon-button>
+            <paper-icon-button icon="my-icons:menu" drawer-toggle=""></paper-icon-button>
             <iron-image id="mobileLogo" class="mobileLogoTop" src="../images/logo.svg"></iron-image>
           </app-toolbar>
         </app-header>
 
-        <iron-pages
-          selected="[[page]]"
-          attr-for-selected="name"
-          fallback-selection="view404"
-          role="main">
+        <iron-pages selected="[[page]]" attr-for-selected="name" fallback-selection="view404" role="main">
 
           <el-about name="about"></el-about>
           <el-resume name="resume"></el-resume>
@@ -265,9 +255,9 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       </app-header-layout>
 
       <footer>
-        <hr class="small"/>
+        <hr class="small">
         <div id="copyright">
-          <p>&copy; 2012-2018 All rights reserved</p>
+          <p>© 2012-2022 All rights reserved</p>
         </div>
       </footer>
 
@@ -357,7 +347,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         }
 
         if(page === 'resume_pdf') {
-          window.open('../images/nahman_elliot_resume_2018.pdf');
+          window.open('../images/nahman_elliot_resume_2022.pdf');
           page = 'resume';
         }
 
